@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'loncom';
+  src:  url('fonts/loncom.eot?9ibb6g');
+  src:  url('fonts/loncom.eot?9ibb6g#iefix') format('embedded-opentype'),
+    url('fonts/loncom.ttf?9ibb6g') format('truetype'),
+    url('fonts/loncom.woff?9ibb6g') format('woff'),
+    url('fonts/loncom.svg?9ibb6g#loncom') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'loncom' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ic_zhuye:before {
+  content: "\e908";
+  color: #8f9bc0;
+}
+.icon-ic_zichan:before {
+  content: "\e909";
+  color: #8f9bc0;
+}
+.icon-ic_baobiao:before {
+  content: "\e900";
+  color: #8f9bc0;
+}
+.icon-ic_jiankong:before {
+  content: "\e901";
+  color: #8f9bc0;
+}
+.icon-ic_menjin:before {
+  content: "\e902";
+  color: #8f9bc0;
+}
+.icon-ic_nengxiao:before {
+  content: "\e903";
+  color: #8f9bc0;
+}
+.icon-ic_shipin:before {
+  content: "\e904";
+  color: #8f9bc0;
+}
+.icon-ic_xitong:before {
+  content: "\e905";
+  color: #8f9bc0;
+}
+.icon-top_fold:before {
+  content: "\e906";
+  color: #8f9bc0;
+}
+.icon-top_unfold:before {
+  content: "\e907";
+  color: #8f9bc0;
+}
