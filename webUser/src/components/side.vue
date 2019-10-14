@@ -4,7 +4,7 @@
             <img src="images/sideLogo.png">
         </div>
         <div class="side-center">
-            <div class="side-center-info bgffffff box-shadow mb5">
+            <div class="side-center-info bgfff box-shadow mb5">
                 <div class="side-center-infobox mb15">
                     <p>信用类产品<span class="color40A563">122款</span></p>
                     <div class="info bg40A563">审核快 手续简 产品丰富</div>

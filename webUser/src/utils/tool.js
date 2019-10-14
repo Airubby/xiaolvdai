@@ -1,7 +1,5 @@
-import echarts from 'echarts'
+
 import CryptoJS from 'crypto-js/crypto-js'
-import Vue from 'vue'
-import axios from 'axios'
 
 // 默认的 KEY 与 iv 如果没有给
 const KEY = "Airubby";//""中与后台一样  密码
@@ -60,9 +58,26 @@ function Format(fmt,value){
       if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
   return fmt;
 }
-
+function checkPHONE(obj) {
+    if (!obj.value) {
+        if(obj.rules.required){
+            obj.callback(new Error('不能为空'))
+        }else{
+            obj.callback()
+        }
+    } else {
+        let reg = /^1[345789]\d{9}$/
+        if(reg.test(obj.value)){
+            obj.callback()
+        }else{
+            obj.callback("手机格式错误")
+        }
+    }
+    
+}
 export default {
     Encrypt,
     Decrypt,
-    Format
+    Format,
+    checkPHONE
 }

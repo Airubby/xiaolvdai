@@ -3,7 +3,7 @@
         <side></side>
         <div class="main">
             <top></top>
-            <div class="main-box box-shadow bgffffff">
+            <div class="main-box box-shadow bgfff">
                 <router-view />
             </div>
             <bottom></bottom>

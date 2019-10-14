@@ -58,9 +58,9 @@ function getServerConfig() {
     })
   })
 }
-
+import './permission'
 async function init() {
-  await getServerConfig();
+  // await getServerConfig();
   new Vue({
     router,
     store,
