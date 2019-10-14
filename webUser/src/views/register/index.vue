@@ -1,6 +1,8 @@
 <template>
-	<div class="content" v-loading="loading">
-		登录
+	<div class="content">
+		<div class="main-top color40A563">
+			<span>首页</span><em>/</em><span>用户注册</span>
+		</div>
     </div>
 </template>
 
@@ -10,10 +12,7 @@ export default {
 	
   	},
 	mounted() {
-        //加载完成了去掉根节点的loading;
-        this.$nextTick(function(){
-            this.$emit("routerLoading")
-        })
+        
     },
 	data(){
 		let checkpassword = (rule, value, callback) => {
@@ -85,5 +84,5 @@ export default {
 </script>
 
 <style scoped lang="less">
-	@import "~@/assets/css/login.less";
+	
 </style>

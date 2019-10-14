@@ -8,12 +8,27 @@ export const syncRouter=[
         name: 'home',
         meta: { title: 'index'},
         component: () => import('@/views/index.vue'),
-    },
-    {
-      path: '/login',
-      name: 'login',
-      meta: { title: 'login'},
-      component: () => import('@/views/login.vue'),
+        redirect:'/index',
+        children:[
+            {
+                path: '/index',
+                name: 'index',
+                meta: { title: 'index'},
+                component: () => import('@/views/home/index.vue'),
+            },
+            {
+                path: '/login',
+                name: 'login',
+                meta: { title: 'login'},
+                component: () => import('@/views/login/index.vue'),
+            },
+            {
+                path: '/register',
+                name: 'register',
+                meta: { title: 'register'},
+                component: () => import('@/views/register/index.vue'),
+            },
+        ]
     },
     { path: '/404',name:'404',meta: { title: '404'}, component: () => import('@/views/errorPage/404') },
     { path: '/401',name:'401',meta: { title: '401'}, component: () => import('@/views/errorPage/401') },
