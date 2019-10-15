@@ -28,8 +28,15 @@ export const syncRouter=[
                 meta: { title: 'register'},
                 component: () => import('@/views/register/index.vue'),
             },
+            {
+                path: '/myCenter',
+                name: 'myCenter',
+                meta: { title: 'myCenter'},
+                component: () => import('@/views/myCenter/index.vue'),
+            },
         ]
     },
+    
     { path: '/404',name:'404',meta: { title: '404'}, component: () => import('@/views/errorPage/404') },
     { path: '/401',name:'401',meta: { title: '401'}, component: () => import('@/views/errorPage/401') },
 ];

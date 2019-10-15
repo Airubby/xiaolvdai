@@ -17,13 +17,13 @@
 							<el-input v-model="initParams.phone"></el-input>
 						</el-form-item>
 					</el-col>
-					<el-col :span="15" :offset="4" v-show="!flag">
+					<el-col :span="15" :offset="4" v-if="!flag">
 						<el-form-item prop="code" label="验证码">
 							<el-input v-model="initParams.code" style="width:calc(100% - 130px)"></el-input>
 							<el-button type="success" class="fr" @click="getCode">发送验证码</el-button>
 						</el-form-item>
 					</el-col>
-					<el-col :span="15" :offset="4" v-show="flag">
+					<el-col :span="15" :offset="4" v-if="flag">
 						<el-form-item prop="psword" label="密码">
 							<el-input v-model="initParams.psword"></el-input>
 						</el-form-item>
@@ -107,6 +107,7 @@ export default {
 			this.$refs['ValidateForm'].validate((valid) => {
 				if(valid){
 					this.loading=true;
+					console.log(13123123)
 					this.$r.post('/login', this.initParams, r => {
 						console.log(r);
 						if(r.err_code=="0"){

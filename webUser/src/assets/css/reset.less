@@ -30,12 +30,16 @@
 .el-input__inner{
     border-radius: 0;
 }
-.el-checkbox__input.is-checked+.el-checkbox__label{
+.el-checkbox__input.is-checked+.el-checkbox__label,
+.el-tabs__item:hover,.el-tabs__item.is-active{
     color: @color;
 }
 .el-input__inner,.el-checkbox__inner:hover,
 .el-button{
     border-color: @color;
+}
+.el-tabs__active-bar{
+    background-color: @color;
 }
 .el-button--success.is-active, .el-button--success:active, .el-button--success:hover,.el-button--success:focus{
     background: #50b172;
@@ -52,4 +56,14 @@
 .success:focus, .success:hover{
     color: #fff;
     background-color: #50b172;
+}
+.el-tabs--left .el-tabs__active-bar.is-left,
+.el-tabs--left .el-tabs__nav-wrap.is-left::after, .el-tabs--left .el-tabs__nav-wrap.is-right::after, .el-tabs--right .el-tabs__nav-wrap.is-left::after, .el-tabs--right .el-tabs__nav-wrap.is-right::after{
+    width: 1px;
+}
+.el-tabs__nav.is-left{
+    transform: translateY(40px) !important;
+}
+.el-tabs__content,.el-tab-pane{
+    height: 100%;
 }

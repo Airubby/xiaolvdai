@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 @color: #40A563;
+@ocolor: #FFA74F;
 html,
 body,
 #app{
@@ -51,6 +52,9 @@ ul,li{
 .ml5{
     margin-left: 5px;
 }
+.pd25{
+    padding: 25px;
+}
 em{
     font-style: normal;
 }
@@ -77,10 +81,10 @@ em{
     background: @color;
 }
 .colorFFA74F{
-    color: #FFA74F;
+    color: @ocolor;
 }
 .bgFFA74F{
-    background: #FFA74F;
+    background: @ocolor;
 }
 .box-shadow{
     box-shadow: 0 0 5px #61896E;
@@ -88,6 +92,15 @@ em{
 .appcontent{
     width: 1000px;
     margin: 0 auto;
+}
+.info-box{
+    width: 100%;
+    height: auto;
+    color: @ocolor;
+    border: 1px solid @ocolor;
+    font-size: 12px;
+    padding: 5px 10px;
+    line-height: 16px;
 }
 .main{
     width: 770px;
@@ -169,6 +182,15 @@ em{
             font-size: 16px;
             .separate{
                 margin: 0 5px;
+            }
+        }
+        .main-top-moreinfo{
+            height: 68px;
+            .img-info span{
+                height: 68px;
+                line-height: 80px;
+                margin-left: 10px;
+                font-style: italic;
             }
         }
     }
