@@ -73,11 +73,27 @@ function checkPHONE(obj) {
             obj.callback("手机格式错误")
         }
     }
-    
+}
+function checkPasspord(obj) {
+    if (!obj.value) {
+        if(obj.rules.required){
+            obj.callback(new Error('不能为空'))
+        }else{
+            obj.callback()
+        }
+    } else {
+        let regPos = /^[A-Za-z0-9]{6,20}$/; 
+        if(/[a-zA-Z]/.test(obj.value) && /[0-9]/.test(obj.value) && obj.value.length>6 && obj.value.length<16){
+            obj.callback()
+        }else{
+            obj.callback('密码格式错误')
+        }
+    } 
 }
 export default {
     Encrypt,
     Decrypt,
     Format,
-    checkPHONE
+    checkPHONE,
+    checkPasspord
 }

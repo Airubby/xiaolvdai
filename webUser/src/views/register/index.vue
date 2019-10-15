@@ -7,14 +7,14 @@
 			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="100px">
 				<el-row :gutter="20">
 					<el-col :span="15" :offset="4">
-						<el-form-item prop="phone" label="手机">
+						<el-form-item prop="phone" label="手机号">
 							<el-input v-model="initParams.phone"></el-input>
 						</el-form-item>
 					</el-col>
 					<el-col :span="15" :offset="4">
 						<el-form-item prop="code" label="验证码">
 							<el-input v-model="initParams.code" style="width:calc(100% - 130px)"></el-input>
-							<el-button type="success" class="fr">发送验证码</el-button>
+							<el-button type="success" class="fr" @click="getCode">发送验证码</el-button>
 						</el-form-item>
 					</el-col>
 					<el-col :span="15" :offset="4">
@@ -25,8 +25,8 @@
 					</el-col>
 					<el-col :span="19" :offset="4" class="mb15">
 						<el-checkbox v-model="checked">我已阅读并同意遵守</el-checkbox>
-						<a class="color40A563 ml5">《小驴贷用户注册协议》</a>
-						<a class="color40A563 ml5">《用户隐私保护政策》</a>
+						<a class="color40A563 ml5" @click="agreementInfo.visible=true">《小驴贷用户注册协议》</a>
+						<a class="color40A563 ml5" @click="policyInfo.visible=true">《用户隐私保护政策》</a>
 					</el-col>
 					<el-col :span="14" :offset="6" class="mb15">
 						<el-button type="success" size="medium" class="form-submit" @click="submitForm()" @keydown="keyLogin($event)">注 册</el-button>
@@ -36,12 +36,17 @@
 					</el-col>
 				</el-row>
 			</el-form>
+			<policy v-if="policyInfo.visible" :dialogInfo="policyInfo"></policy>
+			<agreement v-if="agreementInfo.visible" :dialogInfo="agreementInfo"></agreement>
 		</div>
     </div>
 </template>
 
 <script>
+import policy from "./components/policy.vue"
+import agreement from "./components/agreement.vue"
 export default {
+	components:{agreement,policy},
 	created () {
 	
   	},
@@ -49,18 +54,11 @@ export default {
         
     },
 	data(){
-		let checkpassword = (rule, value, callback) => {
-			if (value === '') {
-				this.initParams.psword="";
-				this.$nextTick(() => {
-					callback(new Error('请输入密码'));
-				})
-			} else {
-				callback();
-			}
+		let checkpassword = (rules, value, callback) => {
+			this.$tool.checkPasspord({rules,value,callback});
 		};
-		let checkPhone = (rule, value, callback) => {
-			this.$tool.checkPHONE({rule,value,callback});
+		let checkPhone = (rules, value, callback) => {
+			this.$tool.checkPHONE({rules,value,callback});
 		};
 		return {
 			checked:false,
@@ -80,17 +78,26 @@ export default {
 				psword:[
 					{ required: true,  trigger: 'blur' ,validator:checkpassword},
 				]
+			},
+			policyInfo:{
+				visible:false,
+			},
+			agreementInfo:{
+				visible:false
 			}
 		}
 	},
 	methods:{
+		getCode:function(){
+
+		},
 		keyLogin:function(ev){
 			if(ev.keyCode == 13){
 				this.submitForm();
 			}
 		},
 		submitForm:function(){
-			this.$refs['form'].validate((valid) => {
+			this.$refs['ValidateForm'].validate((valid) => {
 				if(valid){
 					this.loading=true;
 					this.$r.post('/register', this.initParams, r => {
@@ -107,6 +114,12 @@ export default {
 				}
 			});
 		},
+		getAgreement:function(){
+			this.agreementInfo.visible=true;
+		},
+		getPolicy:function(){
+			this.policyInfo.visible=true;
+		}
 	},
 	watch:{
 			

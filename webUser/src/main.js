@@ -41,23 +41,23 @@ Vue.prototype.publicPath=process.env.BASE_URL
 Vue.use(ElSearchTablePagination)
 
 Vue.config.productionTip = false
-function getServerConfig() {
-  return new Promise ((resolve, reject) => {
-    axios.get('./serverConfig.json').then((result) => {
-      let config = result.data;
-      let ajaxUrl = process.env.NODE_ENV == 'production' ? config.production:config.develop;
-      Vue.prototype.$ajaxUrl=ajaxUrl;
-      store.dispatch('setAjaxUrl',ajaxUrl);
+// function getServerConfig() {
+//   return new Promise ((resolve, reject) => {
+//     axios.get('./serverConfig.json').then((result) => {
+//       let config = result.data;
+//       let ajaxUrl = process.env.NODE_ENV == 'production' ? config.production:config.develop;
+//       Vue.prototype.$ajaxUrl=ajaxUrl;
+//       store.dispatch('setAjaxUrl',ajaxUrl);
 
-      require('@/permission')
+//       require('@/permission')
 
-      resolve();
-    }).catch((error) => {
-      console.log(error)
-      reject()
-    })
-  })
-}
+//       resolve();
+//     }).catch((error) => {
+//       console.log(error)
+//       reject()
+//     })
+//   })
+// }
 import './permission'
 async function init() {
   // await getServerConfig();
