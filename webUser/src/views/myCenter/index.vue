@@ -4,7 +4,7 @@
 			<div class="main-top-moreinfo mb15 flex">
 				<div class="img-info">
 					<img src="images/titleLogo.png" class="fl">
-					<span>用户1525252525,您好!</span>
+					<span>用户15222222222,您好!</span>
 				</div>
 			</div>
 		</div>
@@ -46,7 +46,7 @@ export default {
     },
 	data(){
 		return {
-			activeName:'third'
+			activeName:'first'
 		}
 	},
 	methods:{

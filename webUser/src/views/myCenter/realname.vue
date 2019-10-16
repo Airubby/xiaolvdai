@@ -1,14 +1,27 @@
 <template>
 	<el-scrollbar class="scrollbar">
-		<p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p>
-		<p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p>
-		<p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p>
-		<p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p>
-		<p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p>
-		<p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p>
-		<p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p>
-		<p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p>
-		<p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p>
+		<div class="mycenter-pd">
+			<div class="info-box mb25">
+				<p>实名认证是为了核实用户的真实性，有利于贷款办理。认证成功后，可获得小驴贷款100用户积分！</p>
+			</div>
+			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="85px">
+				<el-row :gutter="20">
+					<el-col :span="17">
+						<el-form-item prop="name" label="真实姓名">
+							<el-input v-model="initParams.name"></el-input>
+						</el-form-item>
+					</el-col>
+					<el-col :span="17">
+						<el-form-item prop="card" label="身份证号">
+							<el-input v-model="initParams.card"></el-input>
+						</el-form-item>
+					</el-col>
+					<el-col :span="14" :offset="4" class="mb15">
+						<el-button type="success" size="medium" style="width:200px;" @click="submitForm()" @keydown="keyLogin($event)">提 交</el-button>
+					</el-col>
+				</el-row>
+			</el-form>
+		</div>
 	</el-scrollbar>
 </template>
 
@@ -22,37 +35,16 @@ export default {
         
     },
 	data(){
-		let checkpassword = (rules, value, callback) => {
-			this.$tool.checkPasspord({rules,value,callback});
-		};
-		let checkPhone = (rules, value, callback) => {
-			this.$tool.checkPHONE({rules,value,callback});
-		};
 		return {
 			flag:false,
 			loading:false,
 			initParams:{
-				userid:"",
-				code:"",
-				psword:""
+				name:"",
+				card:"",
 			},
 			rules: {
-				phone:[
-					{ required: true, trigger: 'change',validator:checkPhone },
-				],
-				code:[
-					{ required: true,  trigger: 'change',message: '验证码不能为空' },
-				],
-				psword:[
-					{ required: true,  trigger: 'blur' ,validator:checkpassword},
-				]
+				
 			},
-			policyInfo:{
-				visible:false,
-			},
-			agreementInfo:{
-				visible:false
-			}
 		}
 	},
 	methods:{
@@ -76,6 +68,8 @@ export default {
 			}
 		},
 		submitForm:function(){
+			this.$message.info("功能正在完善中，敬请期待！");
+			return;
 			this.$refs['ValidateForm'].validate((valid) => {
 				if(valid){
 					this.loading=true;

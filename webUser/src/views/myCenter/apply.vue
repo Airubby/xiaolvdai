@@ -1,7 +1,36 @@
 <template>
 	<el-scrollbar class="scrollbar">
-		<p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p><p>13</p>
-		
+		<div class="mycenter-pd">
+			<div class="info-box mb25">
+				<p>亲爱的用户，7天内仅可发起一次贷款产品申请！请随时关注产品申请进度！</p>
+			</div>
+			<div class="info" v-if="show">
+				<span>您暂时还没有申请：</span>
+				<el-button type="success" @click="select()">马上选择贷款产品</el-button>
+			</div>
+			<div v-if="!show">
+				<el-search-table-pagination
+					type="local"
+					:data="table_data"
+                    :params="initParams"
+                    :showPagination="true"
+					:show-header="false"
+					:page-sizes="[1]"
+                    :columns="table_columns" ref="thisRef">   
+                    <template slot-scope="scope" slot="preview-handle">
+                        <el-card class="box-card">
+							<div slot="header" class="clearfix">
+								<span>卡片名称</span>
+								<el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+							</div>
+							<div v-for="o in 4" :key="o" class="text item">
+								{{'列表内容 ' + o }}
+							</div>
+						</el-card>
+                    </template>
+                </el-search-table-pagination>
+			</div>
+		</div>
 	</el-scrollbar>
 </template>
 
@@ -15,78 +44,27 @@ export default {
         
     },
 	data(){
-		let checkpassword = (rules, value, callback) => {
-			this.$tool.checkPasspord({rules,value,callback});
-		};
-		let checkPhone = (rules, value, callback) => {
-			this.$tool.checkPHONE({rules,value,callback});
-		};
+		
 		return {
-			flag:false,
 			loading:false,
-			initParams:{
-				userid:"",
-				code:"",
-				psword:""
-			},
-			rules: {
-				phone:[
-					{ required: true, trigger: 'change',validator:checkPhone },
-				],
-				code:[
-					{ required: true,  trigger: 'change',message: '验证码不能为空' },
-				],
-				psword:[
-					{ required: true,  trigger: 'blur' ,validator:checkpassword},
-				]
-			},
-			policyInfo:{
-				visible:false,
-			},
-			agreementInfo:{
-				visible:false
-			}
+			show:false,
+			initParams:{},
+			table_data:[
+				{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},
+				{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},
+				{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},
+				{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},
+				{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},
+			],
+			table_columns:[
+				{ prop: 'handle', label: '操作',slotName:'preview-handle',minWidth:150},
+            ],
 		}
 	},
 	methods:{
-		getCode:function(){
+		select:function(){
 
-		},
-		change:function(flag){
-			if(flag=='true'){
-				if(!this.flag){
-					this.flag=true;
-				}
-			}else{
-				if(this.flag){
-					this.flag=false;
-				}
-			}
-		},
-		keyLogin:function(ev){
-			if(ev.keyCode == 13){
-				this.submitForm();
-			}
-		},
-		submitForm:function(){
-			this.$refs['ValidateForm'].validate((valid) => {
-				if(valid){
-					this.loading=true;
-					console.log(13123123)
-					this.$r.post('/login', this.initParams, r => {
-						console.log(r);
-						if(r.err_code=="0"){
-							this.$message.success(r.err_msg);
-							sessionStorage.userid=this.$tool.Encrypt(r.data.roleid);  //刷新页面的时候用userid获取权限问题；
-						}else{
-							this.initParams.psword="";
-							this.$refs.psinput.focus();
-							this.$message.error(r.err_msg);
-						}
-					});
-				}
-			});
-		},
+		}
 	},
 	watch:{
 			
@@ -95,5 +73,11 @@ export default {
 </script>
 
 <style scoped lang="less">
-	
+	.info{
+		background: #F4F4F5;
+		text-align: center;
+		padding: 20px;
+		border-radius: 5px;
+		color: #909399;
+	}
 </style>

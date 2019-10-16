@@ -3,7 +3,7 @@
 		<div class="mycenter-pd">
 			<div class="info-box mb15">
 				<p>设置的密码必须介于6到15个字符之间,包含字母和数字</p>
-				<p>修改密码需要短信验证,我们将发送短信至您注册的手机号{{phone}}上</p>
+				<p>修改密码需要短信验证,我们将发送短信至您注册的手机号{{initParams.phone}}上</p>
 			</div>
 			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="65px">
 				<el-row :gutter="20">
@@ -41,9 +41,9 @@ export default {
 			this.$tool.checkPasspord({rules,value,callback});
 		};
 		return {
-			phone:'1525252525',
 			loading:false,
 			initParams:{
+				phone:"15222222222",
 				code:"",
 				psword:""
 			},
@@ -58,6 +58,9 @@ export default {
 		}
 	},
 	methods:{
+		getCode:function(){
+			
+		},
 		keyLogin:function(ev){
 			if(ev.keyCode == 13){
 				this.submitForm();
