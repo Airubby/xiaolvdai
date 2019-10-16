@@ -12,7 +12,7 @@
             <template v-if="login">
                 <span>用户Airubby,您好!</span>
                 <span class="btn">退出登录</span>
-                <span class="btn button box-shadow">个人中心</span>
+                <router-link to="/myCenter" class="btn button box-shadow">个人中心</router-link>
             </template>
         </div>
     </div>

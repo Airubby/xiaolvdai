@@ -22,7 +22,8 @@
 }
 
 .el-button--success,
-.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner,
+.el-radio.is-bordered.is-checked{
     background: @color;
     border-color: @color;
 }
@@ -35,7 +36,8 @@
     color: @color;
 }
 .el-input__inner,.el-checkbox__inner:hover,
-.el-button{
+.el-button,
+.el-radio.is-bordered{
     border-color: @color;
 }
 .el-tabs__active-bar{
@@ -53,9 +55,24 @@
     border-color: @color;
     background-color: transparent;
 }
+.el-radio__input.is-checked+.el-radio__label{
+    color: #fff;
+}
 .success:focus, .success:hover{
     color: #fff;
     background-color: #50b172;
+}
+.el-radio.is-bordered{
+    border-radius: 0px;
+}
+.el-radio__input{
+    display: none;
+}
+.el-radio--mini.is-bordered{
+    padding:6px 10px 0 0px;
+}
+.el-radio{
+    margin-right: 0px;
 }
 .el-tabs--left .el-tabs__active-bar.is-left,
 .el-tabs--left .el-tabs__nav-wrap.is-left::after, .el-tabs--left .el-tabs__nav-wrap.is-right::after, .el-tabs--right .el-tabs__nav-wrap.is-left::after, .el-tabs--right .el-tabs__nav-wrap.is-right::after{
@@ -66,4 +83,13 @@
 }
 .el-tabs__content,.el-tab-pane{
     height: 100%;
+}
+.el-radio.is-bordered+.el-radio.is-bordered{
+    margin-left: 5px;
+}
+.ValidateForm .el-form-item--mini.el-form-item, .ValidateForm .el-form-item--small.el-form-item{
+    margin-bottom: 10px;
+}
+.ValidateForm .el-form-item--mini.form-title, .ValidateForm .el-form-item--small.form-title{
+    margin-bottom: 0px;
 }

@@ -1,6 +1,6 @@
 <template>
 	<el-scrollbar class="scrollbar">
-		<div class="pd25">
+		<div class="mycenter-pd">
 			<div class="info-box mb15">
 				<p>设置的密码必须介于6到15个字符之间,包含字母和数字</p>
 				<p>修改密码需要短信验证,我们将发送短信至您注册的手机号{{phone}}上</p>
@@ -39,9 +39,6 @@ export default {
 	data(){
 		let checkpassword = (rules, value, callback) => {
 			this.$tool.checkPasspord({rules,value,callback});
-		};
-		let checkPhone = (rules, value, callback) => {
-			this.$tool.checkPHONE({rules,value,callback});
 		};
 		return {
 			phone:'1525252525',

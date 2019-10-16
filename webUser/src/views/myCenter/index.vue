@@ -9,20 +9,20 @@
 			</div>
 		</div>
 		<div class="main-center">
-			<el-tabs tab-position="left" style="height: 920px;">
-				<el-tab-pane label="我的申请">
+			<el-tabs tab-position="left" style="height: 920px;" v-model="activeName">
+				<el-tab-pane label="我的申请" name="first">
 					<apply></apply>
 				</el-tab-pane>
-				<el-tab-pane label="实名认证">
+				<el-tab-pane label="实名认证" name="second">
 					<realname></realname>
 				</el-tab-pane>
-				<el-tab-pane label="我的资料">
+				<el-tab-pane label="我的资料" name="third">
 					<mydata></mydata>
 				</el-tab-pane>
-				<el-tab-pane label="修改密码">
+				<el-tab-pane label="修改密码" name="fourth">
 					<psword></psword>
 				</el-tab-pane>
-				<el-tab-pane label="我的消息">
+				<el-tab-pane label="我的消息" name="five">
 					<info></info>
 				</el-tab-pane>
 			</el-tabs>
@@ -46,7 +46,7 @@ export default {
     },
 	data(){
 		return {
-			
+			activeName:'third'
 		}
 	},
 	methods:{
