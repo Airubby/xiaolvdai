@@ -106,11 +106,11 @@
 					</div>
 				</div>
 				<el-pagination
-				background
-				:page-size="10"
-				@current-change="handleCurrentChange"
-				layout="total,prev, pager, next,jumper"
-				:total="520">
+					background
+					:page-size="3"
+					@current-change="handleCurrentChange"
+					layout="total,prev, pager, next,jumper"
+					:total="520">
 				</el-pagination>
 			</div>
 		</div>

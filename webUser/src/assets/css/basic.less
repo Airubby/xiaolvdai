@@ -5,6 +5,7 @@
 }
 @color: #40A563;
 @ocolor: #FFA74F;
+@hcolor:#5a5a5a;
 html,
 body,
 #app{
@@ -14,6 +15,7 @@ body,
     background: @color;
     font-family: "Microsoft YaHei";
     font-size: 14px;
+    color: #666;
 }
 .content ,.scrollbar {
     width: 100%;
@@ -54,6 +56,9 @@ ul,li{
 }
 .ml5{
     margin-left: 5px;
+}
+.mr10{
+    margin-right: 10px;
 }
 .ml15{
     margin-left: 15px;
@@ -134,7 +139,7 @@ em{
             p{
                 font-size: 16px;
                 font-weight: bold;
-                color: #3a3a3a;
+                color: @hcolor;
                 margin-bottom: 10px;
                 span{
                     font-size: 12px;
@@ -195,11 +200,31 @@ em{
         border-bottom: 1px solid @color;
         .main-top-info{
             height: 45px;
-            line-height: 65px;
+            line-height: 60px;
             text-indent: 10px;
             font-size: 16px;
+            color: @hcolor;
             .separate{
                 margin: 0 5px;
+            }
+            .addr{
+                font-size: 14px;
+                margin-left: 10px;
+                i{
+                    font-size: 16px;
+                    vertical-align: middle;
+                }
+            }
+            .addrbtn{
+                background: #999;
+                color: #fff;
+                font-size: 12px;
+                padding: 2px 5px;
+                border-radius: 3px;
+                cursor: pointer;
+                &:hover{
+                    background: #a9a9a9;
+                }
             }
         }
         .main-top-moreinfo{
@@ -209,7 +234,47 @@ em{
                 line-height: 80px;
                 margin-left: 10px;
                 font-style: italic;
+                color: @hcolor;
             }
+        }
+    }
+}
+.index-form{
+    border-bottom: 1px solid @color;
+    padding: 30px 15px 10px;
+    .more .el-radio:nth-of-type(9){
+        margin: 8px 0 0 0 !important;
+    }
+}
+.index-con{
+    .index-con-box{
+        padding: 20px 15px;
+        display: flex;
+        border-bottom: 1px solid #e4e7ed;
+        justify-content: space-between;
+        .index-con-box-info{
+            width: calc(100% - 120px);
+            em{
+                margin: 0 10px;
+            }
+            .index-con-box-infotop{
+                background: #40a563;
+                color: #fff;
+                padding: 6px 15px;
+                border-radius: 5px;
+                display: inline-block;
+                margin-bottom: 11px;
+            }
+            .index-con-box-infobottom{
+                .text{
+                    margin: 0 5px 0 0;
+                }
+            }
+            
+
+        }
+        .index-con-box-btn{
+            text-align: right;
         }
     }
 }
@@ -259,6 +324,7 @@ em{
         .title{
             color: #666;
             width: 72px;
+            line-height: 60px;
         }
         .steps{
             width: calc(100% - 72px);

@@ -9,11 +9,11 @@
 			</div>
 		</div>
 		<div class="main-center">
-			<el-tabs tab-position="left" style="height: 920px;" v-model="activeName">
+			<el-tabs tab-position="left" style="height: 920px;" v-model="activeName" @tab-click="tabClick">
 				<el-tab-pane label="我的申请" name="first">
 					<apply></apply>
 				</el-tab-pane>
-				<el-tab-pane label="实名认证" name="second">
+				<el-tab-pane label="实名认证" name="second" disabled>
 					<realname></realname>
 				</el-tab-pane>
 				<el-tab-pane label="我的资料" name="third">
@@ -22,7 +22,7 @@
 				<el-tab-pane label="修改密码" name="fourth">
 					<psword></psword>
 				</el-tab-pane>
-				<el-tab-pane label="我的消息" name="five">
+				<el-tab-pane label="我的消息" name="five" disabled>
 					<info></info>
 				</el-tab-pane>
 			</el-tabs>
@@ -50,7 +50,9 @@ export default {
 		}
 	},
 	methods:{
-		
+		tabClick:function(tab){
+			console.log(tab)
+		}
 	},
 	watch:{
 			
