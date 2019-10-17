@@ -9,26 +9,109 @@
 				<el-button type="success" @click="select()">马上选择贷款产品</el-button>
 			</div>
 			<div v-if="!show">
-				<el-search-table-pagination
-					type="local"
-					:data="table_data"
-                    :params="initParams"
-                    :showPagination="true"
-					:show-header="false"
-					:page-sizes="[1]"
-                    :columns="table_columns" ref="thisRef">   
-                    <template slot-scope="scope" slot="preview-handle">
-                        <el-card class="box-card">
-							<div slot="header" class="clearfix">
-								<span>卡片名称</span>
-								<el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+				<div class="box-card box-shadow-card">
+					<div class="box-card-title">
+						<span>申请订单：c363632563</span>
+						<span>申请时间：2019.10.16 19:10</span>
+					</div>
+					<div class="box-card-con">
+						<div class="card-center flex">
+							<div class="card-center-box">
+								<img src="images/cardLogo.png">
+								<div class="card-center-info">
+									<p>平安银行成都分行人民南路支行-工薪贷</p>
+									<p>信贷经理：陈小斌</p>
+									<p>联系电话：13999999999</p>
+								</div>
 							</div>
-							<div v-for="o in 4" :key="o" class="text item">
-								{{'列表内容 ' + o }}
+							<div class="card-center-btn">
+								<p class="mb10"><el-button type="success">服务好赞</el-button></p>
+								<p><el-button type="warning">发起投诉</el-button></p>
 							</div>
-						</el-card>
-                    </template>
-                </el-search-table-pagination>
+						</div>
+						<div class="box-card-step">
+							<div class="title">办理进度：</div>
+							<el-steps :active="2" finish-status="success" simple class="steps">
+								<el-step title="首电联系" icon></el-step>
+								<el-step title="资料准备" ></el-step>
+								<el-step title="提交审核" ></el-step>
+								<el-step title="签订协议" ></el-step>
+								<el-step title="放款成功" ></el-step>
+							</el-steps>
+						</div>
+					</div>
+				</div>
+				<div class="box-card box-shadow-card">
+					<div class="box-card-title">
+						<span>申请订单：c363632563</span>
+						<span>申请时间：2019.10.16 19:10</span>
+					</div>
+					<div class="box-card-con">
+						<div class="card-center flex">
+							<div class="card-center-box">
+								<img src="images/cardLogo.png">
+								<div class="card-center-info">
+									<p>平安银行成都分行人民南路支行-工薪贷</p>
+									<p>信贷经理：陈小斌</p>
+									<p>联系电话：13999999999</p>
+								</div>
+							</div>
+							<div class="card-center-btn">
+								<p class="mb10"><el-button type="success">服务好赞</el-button></p>
+								<p><el-button type="warning">发起投诉</el-button></p>
+							</div>
+						</div>
+						<div class="box-card-step">
+							<div class="title">办理进度：</div>
+							<el-steps :active="6" finish-status="success" simple class="steps">
+								<el-step title="首电联系" icon></el-step>
+								<el-step title="资料准备" ></el-step>
+								<el-step title="提交审核" ></el-step>
+								<el-step title="签订协议" ></el-step>
+								<el-step title="放款成功" ></el-step>
+							</el-steps>
+						</div>
+					</div>
+				</div>
+				<div class="box-card box-shadow-card">
+					<div class="box-card-title">
+						<span>申请订单：c363632563</span>
+						<span>申请时间：2019.10.16 19:10</span>
+					</div>
+					<div class="box-card-con">
+						<div class="card-center flex">
+							<div class="card-center-box">
+								<img src="images/cardLogo.png">
+								<div class="card-center-info">
+									<p>平安银行成都分行人民南路支行-工薪贷</p>
+									<p>信贷经理：陈小斌</p>
+									<p>联系电话：13999999999</p>
+								</div>
+							</div>
+							<div class="card-center-btn">
+								<p class="mb10"><el-button type="success">服务好赞</el-button></p>
+								<p><el-button type="warning">发起投诉</el-button></p>
+							</div>
+						</div>
+						<div class="box-card-step">
+							<div class="title">办理进度：</div>
+							<el-steps :active="0" finish-status="success" simple class="steps">
+								<el-step title="首电联系" icon></el-step>
+								<el-step title="资料准备" ></el-step>
+								<el-step title="提交审核" ></el-step>
+								<el-step title="签订协议" ></el-step>
+								<el-step title="放款成功" ></el-step>
+							</el-steps>
+						</div>
+					</div>
+				</div>
+				<el-pagination
+				background
+				:page-size="10"
+				@current-change="handleCurrentChange"
+				layout="total,prev, pager, next,jumper"
+				:total="520">
+				</el-pagination>
 			</div>
 		</div>
 	</el-scrollbar>
@@ -44,16 +127,11 @@ export default {
         
     },
 	data(){
-		
 		return {
 			loading:false,
 			show:false,
 			initParams:{},
 			table_data:[
-				{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},
-				{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},
-				{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},
-				{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},
 				{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},
 			],
 			table_columns:[
@@ -64,7 +142,10 @@ export default {
 	methods:{
 		select:function(){
 
-		}
+		},
+		handleCurrentChange:function(val){
+			console.log(`当前页: ${val}`);
+		},
 	},
 	watch:{
 			

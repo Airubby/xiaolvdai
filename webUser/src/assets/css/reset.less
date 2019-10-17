@@ -27,21 +27,22 @@
     background: @color;
     border-color: @color;
 }
-.el-button--mini, .el-button--small,.el-button--medium,
-.el-input__inner{
-    border-radius: 0;
-}
 .el-checkbox__input.is-checked+.el-checkbox__label,
-.el-tabs__item:hover,.el-tabs__item.is-active{
+.el-tabs__item:hover,.el-tabs__item.is-active,
+.el-pagination.is-background .el-pager li:not(.disabled):hover{
     color: @color;
 }
 .el-input__inner,.el-checkbox__inner:hover,
-.el-button,
+.el-button--success,
 .el-radio.is-bordered{
     border-color: @color;
 }
 .el-tabs__active-bar{
     background-color: @color;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active{
+    background: @color;
+    color: #fff;
 }
 .el-button--success.is-active, .el-button--success:active, .el-button--success:hover,.el-button--success:focus{
     background: #50b172;
@@ -49,6 +50,10 @@
 }
 .el-input__inner:hover,.el-input.is-active .el-input__inner, .el-input__inner:focus{
     border-color: #50b172;
+}
+.el-button--warning{
+    background-color: @ocolor;
+    border-color: @ocolor; 
 }
 .changebtn:focus, .changebtn:hover{
     color: @color;
@@ -62,9 +67,12 @@
     color: #fff;
     background-color: #50b172;
 }
-.el-radio.is-bordered{
+/**
+.el-radio.is-bordered,
+.el-button--mini, .el-button--small,.el-button--medium,
+.el-input__inner{
     border-radius: 0px;
-}
+}*/
 .el-radio__input{
     display: none;
 }
@@ -92,4 +100,35 @@
 }
 .ValidateForm .el-form-item--mini.form-title, .ValidateForm .el-form-item--small.form-title{
     margin-bottom: 0px;
+}
+.el-pagination{
+    text-align: right;
+    padding: 10px 0;
+}
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
+    margin: 0 2px;
+}
+.el-pagination__jump{
+    margin-left: 5px;
+}
+.el-step.is-simple .el-step__title{
+    font-size: 12px;
+}
+.el-step.is-simple .el-step__head{
+    padding-right: 5px;
+}
+.el-step.is-simple .el-step__main{
+    flex-grow: 0;
+}
+.el-step.is-simple .el-step__arrow::after, .el-step.is-simple .el-step__arrow::before{
+    height: 8px;
+}
+.el-step.is-simple .el-step__arrow::before{
+    transform: rotate(-45deg) translateY(-2px);
+}
+.el-step.is-simple .el-step__arrow::after{
+    transform: rotate(45deg) translateY(2px);
+}
+.el-steps--simple{
+    padding: 10px;
 }

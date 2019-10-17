@@ -46,6 +46,9 @@ ul,li{
 .mb15{
     margin-bottom: 15px;
 }
+.mb10{
+    margin-bottom:10px; 
+}
 .mb5{
     margin-bottom: 5px;
 }
@@ -100,6 +103,9 @@ em{
 }
 .box-shadow{
     box-shadow: 0 0 5px #61896E;
+}
+.box-shadow-card{
+    box-shadow: 0 0 5px #e8e8e8;
 }
 .appcontent{
     width: 1000px;
@@ -216,11 +222,50 @@ em{
     padding: 15px 0;
     font-size: 16px;
 }
-
 .form-title .el-form-item__label{
     color: @color;
     text-align: left;
 }
+.box-card{
+    margin-bottom: 15px;
+    .box-card-title{
+        background: @color;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+    .box-card-con{
+        padding: 20px 15px;
+        .card-center{
+            justify-content: space-between;
+            border-bottom: 1px solid #e4e7ed;
+            padding-bottom: 10px;
+            .card-center-box{
+                width: calc(100% - 90px);
+                display: table;
+                color: #666;
+                line-height: 22px;
+                .card-center-info{
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+    .box-card-step{
+        padding-top: 10px;
+        display: flex;
+        .title{
+            color: #666;
+            width: 72px;
+        }
+        .steps{
+            width: calc(100% - 72px);
+        }
+    }
+}
+
 
 .bottom{
     color: #fff;
