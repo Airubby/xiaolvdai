@@ -29,9 +29,6 @@ export default {
             this.dialogInfo.visible=false;
         },
     },
-    methods:{
-        
-    },
     components:{},
     props:["dialogInfo"]
 }

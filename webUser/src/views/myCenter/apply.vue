@@ -129,7 +129,7 @@ export default {
 	data(){
 		return {
 			loading:false,
-			show:false,
+			show:true,
 			initParams:{},
 		}
 	},

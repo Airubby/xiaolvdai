@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="index-detail-box">
-                <router-link to="/register" class="index-detail-box-btn">马上申请</router-link>
+                <div class="index-detail-box-btn" @click="apply">马上申请</div>
                 <p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>小驴贷立志于优选贷款产品和信贷经理，从而降低客户的融资成本。</p>
                 <p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>小驴贷不会向客户收费，若有人以本平台名义向您索取钱财，请勿上当受骗，以免给您带来损失！</p>
                 <p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>申请成功后您可以登录“个人中心”查看该笔贷款办理进度。</p>
@@ -99,7 +99,9 @@ export default {
         
     },
 	methods: {
-        
+        apply:function(){
+            
+        }
 	},
     components: {
         

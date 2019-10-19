@@ -45,7 +45,7 @@
 .el-message-box__headerbtn:focus .el-message-box__close, .el-message-box__headerbtn:hover .el-message-box__close{
     color: @color;
 }
-.el-radio--mini.is-bordered:hover{
+.el-radio--mini.is-bordered:hover,.el-radio--small.is-bordered:hover{
     border-color: @color;
 }
 /**
@@ -150,4 +150,10 @@
 }
 .el-steps--simple{
     padding: 10px;
+}
+
+.city{
+    .el-radio.is-bordered{
+        margin: 6px;
+    }
 }

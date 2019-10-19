@@ -3,8 +3,9 @@
         <div class="main-top hcolor">
             <div class="main-top-info">
                 <span>产品搜索</span>
-                <span class="color addr"><i class="el-icon-location"></i>成都</span>
-                <span class="addr addrbtn">切换城市</span>
+                <span class="color addr"><i class="el-icon-location"></i>{{LocalCity}}</span>
+                <span class="addr addrbtn" @click="cityInfo.visible=true">切换城市</span>
+                <baidu-map @ready="handler"></baidu-map>
             </div>
         </div>
         <div class="index-form">
@@ -188,11 +189,14 @@
                 :total="520">
             </el-pagination>
         </div>
+        <city v-if="cityInfo.visible" :dialog-info="cityInfo" v-on:backInfo="selectCity"></city>
     </div>
 </template>
 
 <script>
+import city from './components/citys.vue'
 export default {
+    components: {city},
     created() {
         
     },
@@ -201,6 +205,7 @@ export default {
     },
     data(){
         return{
+            LocalCity:"正在定位...",
             initParams:{
 				money:'',
                 type:"1",
@@ -209,6 +214,9 @@ export default {
 			},
             rules:{
 
+            },
+            cityInfo:{
+                visible:false,
             }
         }
     },
@@ -223,10 +231,34 @@ export default {
             this.$router.push({path:'/detail',query:{
                 params:JSON.stringify({id:"123"})
             }});
-        }
+        },
+        handler ({BMap, map}) {
+            let _this = this;
+            //地理定位
+            // const geolocation = new BMap.Geolocation();
+            // geolocation.getCurrentPosition(function getInfo(position){
+            //     let city = position.address.city;             //获取城市信息
+            //     let province = position.address.province;    //获取省份信息
+            //     _this.LocalCity =sessionStorage.city?sessionStorage.city:city;
+            // }, function(e) {
+            //     _this.LocalCity = "定位失败"
+            // }, {provider: 'baidu'});
+
+            //用户ip定位
+            let myCity = new BMap.LocalCity();
+            myCity.get(function getInfo(result){
+                let cityName = result.name;
+                map.setCenter(cityName);   //关于setCenter()可参考API文档---”传送门“
+                _this.LocalCity=sessionStorage.city?sessionStorage.city:cityName;
+            },function(e){
+                 _this.LocalCity = "定位失败"
+            },{provider: 'baidu'})
+
+        },
+        selectCity:function(info){
+            this.LocalCity=info;
+        },
 	},
-    components: {
-        
-    }
+    
 }
 </script>

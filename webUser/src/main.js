@@ -8,16 +8,13 @@ import request from './utils/request'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import ElSearchTablePagination from 'el-table-pagination'
-// import Swiper from 'swiper'  //3.4.2 打包不报错，4.+打包报错
-// import 'swiper/dist/css/swiper.min.css'
 import './utils/filters' // 自定义过滤器
 import tool from './utils/tool'  //工具函数
 import 'promise-polyfill'  //兼容低版本浏览器  
 import 'babel-polyfill'
-// import i18n from './lang'  //国际化，用下面的做在配置文件中，打包后可修改
 
 import './utils/directive'  //自定义指令
-
+import BaiduMap from 'vue-baidu-map'
 // import './utils/mock.js'  //测试接口
 
 // import 'vue-transition.css'
@@ -25,7 +22,6 @@ import './utils/directive'  //自定义指令
 import './assets/css/index.less'
 
 // // 将API方法绑定到全局
-// Vue.prototype.$api = api
 Vue.prototype.$r=request
 
 //绑定工具函数到全局
@@ -36,7 +32,10 @@ Vue.use(ElementUI,{
 })
 Vue.prototype.publicPath=process.env.BASE_URL
 
-// Vue.prototype.$Swiper = Swiper 
+Vue.use(BaiduMap, {
+  // ak 是在百度地图开发者平台申请的密钥 详见 http://lbsyun.baidu.com/apiconsole/key */
+  ak: 'fGPfT9cGkLHcbE4DpCGXuZzaDsnwfdLe'
+})
 
 Vue.use(ElSearchTablePagination)
 
