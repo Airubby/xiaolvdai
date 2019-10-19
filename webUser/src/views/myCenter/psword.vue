@@ -15,11 +15,11 @@
 					<el-col :span="17">
 						<el-form-item prop="code" label="验证码">
 							<el-input v-model="initParams.code" style="width:calc(100% - 130px)"></el-input>
-							<el-button type="success" class="fr" @click="getCode">发送验证码</el-button>
+							<el-button type="primary" class="fr" @click="getCode">发送验证码</el-button>
 						</el-form-item>
 					</el-col>
 					<el-col :span="14" :offset="3" class="mb15">
-						<el-button type="success" size="medium" style="width:200px;" @click="submitForm()" @keydown="keyLogin($event)">确认修改</el-button>
+						<el-button type="primary" size="medium" style="width:200px;" @click="submitForm()" @keydown="keyLogin($event)">确认修改</el-button>
 					</el-col>
 				</el-row>
 			</el-form>

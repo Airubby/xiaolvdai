@@ -3,7 +3,7 @@ import Cookies from 'js-cookie'
 const app = {
   state: {
     AjaxUrl:Cookies.get('AjaxUrl')||'',
-    token:'token888',
+    token:'',
   },
   mutations: {
     setAjaxUrl(state,ajaxUrl){

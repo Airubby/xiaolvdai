@@ -26,8 +26,10 @@
 </template>
 
 <script>
+import routerLoading from "@/views/mixin/routerLoading"
 export default {
   name: 'page401',
+  mixins:[routerLoading],
   data() {
     return {
       dialogVisible: false

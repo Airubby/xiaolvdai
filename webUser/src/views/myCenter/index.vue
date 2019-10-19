@@ -4,7 +4,7 @@
 			<div class="main-top-moreinfo mb15 flex">
 				<div class="img-info">
 					<img src="images/titleLogo.png" class="fl">
-					<span>用户15222222222,您好!</span>
+					<span>用户{{phone}},您好!</span>
 				</div>
 			</div>
 		</div>
@@ -40,13 +40,22 @@ export default {
 	components:{apply,realname,mydata,psword,info},
 	created () {
 	
-  	},
+	},
+	computed:{
+        phone:{
+			get(){
+				if(this.$store.getters.token){
+					return this.$tool.Decrypt(this.$store.getters.token).split("_")[1];
+				}
+			}
+        }
+    }, 
 	mounted() {
         
     },
 	data(){
 		return {
-			activeName:'first'
+			activeName:'first',
 		}
 	},
 	methods:{

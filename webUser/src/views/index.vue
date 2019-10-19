@@ -15,15 +15,14 @@
 import side from "@/components/side.vue"
 import top from "@/components/top.vue"
 import bottom from "@/components/bottom.vue"
+import routerLoading from "@/views/mixin/routerLoading"
 export default {
+    mixins:[routerLoading],
     created() {
         
     },
     mounted() {
-        //加载完成了去掉根节点的loading;
-        this.$nextTick(function(){
-            this.$emit("routerLoading")
-        })
+        
     },
     data(){
         return{

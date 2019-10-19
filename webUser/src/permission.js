@@ -13,19 +13,21 @@ async function routerGo(){
     // }
     router.beforeEach((to, from, next) => {
         NProgress.start()
-        const whiteList = ['/login','/401','/404'] // 不重定向白名单
+        const whiteList = ['/login','/401','/404','/index','/detail','/register'] // 不重定向白名单
         let token=store.getters.token;
-        console.log(token)
-        if(token){
+        if (to.path!=="/"&&whiteList.indexOf(to.path) !== -1) {
             next()
-        }else{
-            if (to.path!=="/"&&whiteList.indexOf(to.path) !== -1) {
-                next()
-            } else {
-                next('/login')
+        } else {
+            if(JSON.stringify(to.meta)!="{}"){
+                if(sessionStorage.token){
+                    next() 
+                }else{
+                    next('/index') 
+                }
+            }else{
+                next('/404') 
             }
         }
-    
     })
     
     router.afterEach((to,from) => {

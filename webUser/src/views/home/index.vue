@@ -1,9 +1,9 @@
 <template>
     <div class="content">
-        <div class="main-top">
+        <div class="main-top hcolor">
             <div class="main-top-info">
                 <span>产品搜索</span>
-                <span class="color40A563 addr"><i class="el-icon-location"></i>成都</span>
+                <span class="color addr"><i class="el-icon-location"></i>成都</span>
                 <span class="addr addrbtn">切换城市</span>
             </div>
         </div>
@@ -59,7 +59,7 @@
 								<el-radio label="12" border>240</el-radio>
 								<el-radio label="13" border>360</el-radio>
 							</el-radio-group>
-                            <span class="ml5 color40A563">期</span>
+                            <span class="ml5 color">期</span>
 						</el-form-item>
 					</el-col>
 				</el-row>
@@ -74,7 +74,7 @@
                         <span>信贷经理:010101</span>
                     </div>
                     <div class="index-con-box-infobottom">
-                        <span class="color40A563 mr10"><em class="text">月利率</em>0.55-0.99%</span>
+                        <span class="color mr10"><em class="text">月利率</em>0.55-0.99%</span>
                         <span><em class="text">额度</em>30000-200000元</span><em>|</em>
                         <span>12、24、36期</span><em>|</em>
                         <span>等额本息</span>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="index-con-box-btn">
                     <p class="mb10"><el-button type="warning" @click="enterDetail">查看详情</el-button></p>
-                    <p><span class="color40A563">1232341</span>人申请</p>
+                    <p><span class="color">1232341</span>人申请</p>
                 </div>
             </div>
             <div class="index-con-box">
@@ -93,7 +93,7 @@
                         <span>信贷经理:010101</span>
                     </div>
                     <div class="index-con-box-infobottom">
-                        <span class="color40A563 mr10"><em class="text">月利率</em>0.55-0.99%</span>
+                        <span class="color mr10"><em class="text">月利率</em>0.55-0.99%</span>
                         <span><em class="text">额度</em>30000-200000元</span><em>|</em>
                         <span>12、24、36期</span><em>|</em>
                         <span>等额本息</span>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="index-con-box-btn">
                     <p class="mb10"><el-button type="warning" @click="enterDetail">查看详情</el-button></p>
-                    <p><span class="color40A563">1232341</span>人申请</p>
+                    <p><span class="color">1232341</span>人申请</p>
                 </div>
             </div>
             <div class="index-con-box">
@@ -112,7 +112,7 @@
                         <span>信贷经理:010101</span>
                     </div>
                     <div class="index-con-box-infobottom">
-                        <span class="color40A563 mr10"><em class="text">月利率</em>0.55-0.99%</span>
+                        <span class="color mr10"><em class="text">月利率</em>0.55-0.99%</span>
                         <span><em class="text">额度</em>30000-200000元</span><em>|</em>
                         <span>12、24、36期</span><em>|</em>
                         <span>等额本息</span>
@@ -120,7 +120,7 @@
                 </div>
                 <div class="index-con-box-btn">
                     <p class="mb10"><el-button type="warning" @click="enterDetail">查看详情</el-button></p>
-                    <p><span class="color40A563">1232341</span>人申请</p>
+                    <p><span class="color">1232341</span>人申请</p>
                 </div>
             </div>
             <div class="index-con-box">
@@ -131,7 +131,7 @@
                         <span>信贷经理:010101</span>
                     </div>
                     <div class="index-con-box-infobottom">
-                        <span class="color40A563 mr10"><em class="text">月利率</em>0.55-0.99%</span>
+                        <span class="color mr10"><em class="text">月利率</em>0.55-0.99%</span>
                         <span><em class="text">额度</em>30000-200000元</span><em>|</em>
                         <span>12、24、36期</span><em>|</em>
                         <span>等额本息</span>
@@ -139,7 +139,7 @@
                 </div>
                 <div class="index-con-box-btn">
                     <p class="mb10"><el-button type="warning" @click="enterDetail">查看详情</el-button></p>
-                    <p><span class="color40A563">1232341</span>人申请</p>
+                    <p><span class="color">1232341</span>人申请</p>
                 </div>
             </div>
             <div class="index-con-box">
@@ -150,7 +150,7 @@
                         <span>信贷经理:010101</span>
                     </div>
                     <div class="index-con-box-infobottom">
-                        <span class="color40A563 mr10"><em class="text">月利率</em>0.55-0.99%</span>
+                        <span class="color mr10"><em class="text">月利率</em>0.55-0.99%</span>
                         <span><em class="text">额度</em>30000-200000元</span><em>|</em>
                         <span>12、24、36期</span><em>|</em>
                         <span>等额本息</span>
@@ -158,7 +158,7 @@
                 </div>
                 <div class="index-con-box-btn">
                     <p class="mb10"><el-button type="warning" @click="enterDetail">查看详情</el-button></p>
-                    <p><span class="color40A563">1232341</span>人申请</p>
+                    <p><span class="color">1232341</span>人申请</p>
                 </div>
             </div>
             <div class="index-con-box">
@@ -169,7 +169,7 @@
                         <span>信贷经理:010101</span>
                     </div>
                     <div class="index-con-box-infobottom">
-                        <span class="color40A563 mr10"><em class="text">月利率</em>0.55-0.99%</span>
+                        <span class="color mr10"><em class="text">月利率</em>0.55-0.99%</span>
                         <span><em class="text">额度</em>30000-200000元</span><em>|</em>
                         <span>12、24、36期</span><em>|</em>
                         <span>等额本息</span>
@@ -177,7 +177,7 @@
                 </div>
                 <div class="index-con-box-btn">
                     <p class="mb10"><el-button type="warning" @click="enterDetail">查看详情</el-button></p>
-                    <p><span class="color40A563">1232341</span>人申请</p>
+                    <p><span class="color">1232341</span>人申请</p>
                 </div>
             </div>
             <el-pagination
@@ -220,7 +220,9 @@ export default {
 			console.log(`当前页: ${val}`);
 		},
         enterDetail:function(){
-            
+            this.$router.push({path:'/detail',query:{
+                params:JSON.stringify({id:"123"})
+            }});
         }
 	},
     components: {

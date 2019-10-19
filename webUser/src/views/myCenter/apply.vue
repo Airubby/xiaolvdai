@@ -6,7 +6,7 @@
 			</div>
 			<div class="info" v-if="show">
 				<span>您暂时还没有申请：</span>
-				<el-button type="success" @click="select()">马上选择贷款产品</el-button>
+				<el-button type="primary" @click="select()">马上选择贷款产品</el-button>
 			</div>
 			<div v-if="!show">
 				<div class="box-card box-shadow-card">
@@ -25,7 +25,7 @@
 								</div>
 							</div>
 							<div class="card-center-btn">
-								<p class="mb10"><el-button type="success">服务好赞</el-button></p>
+								<p class="mb10"><el-button type="primary">服务好赞</el-button></p>
 								<p><el-button type="warning">发起投诉</el-button></p>
 							</div>
 						</div>
@@ -57,7 +57,7 @@
 								</div>
 							</div>
 							<div class="card-center-btn">
-								<p class="mb10"><el-button type="success">服务好赞</el-button></p>
+								<p class="mb10"><el-button type="primary">服务好赞</el-button></p>
 								<p><el-button type="warning">发起投诉</el-button></p>
 							</div>
 						</div>
@@ -89,14 +89,14 @@
 								</div>
 							</div>
 							<div class="card-center-btn">
-								<p class="mb10"><el-button type="success">服务好赞</el-button></p>
+								<p class="mb10"><el-button type="primary">服务好赞</el-button></p>
 								<p><el-button type="warning">发起投诉</el-button></p>
 							</div>
 						</div>
 						<div class="box-card-step">
 							<div class="title">办理进度：</div>
 							<el-steps :active="0" finish-status="success" simple class="steps">
-								<el-step title="首电联系" icon></el-step>
+								<el-step title="首电联系"></el-step>
 								<el-step title="资料准备" ></el-step>
 								<el-step title="提交审核" ></el-step>
 								<el-step title="签订协议" ></el-step>
@@ -131,12 +131,6 @@ export default {
 			loading:false,
 			show:false,
 			initParams:{},
-			table_data:[
-				{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},{1:"1"},
-			],
-			table_columns:[
-				{ prop: 'handle', label: '操作',slotName:'preview-handle',minWidth:150},
-            ],
 		}
 	},
 	methods:{

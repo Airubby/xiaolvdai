@@ -1,35 +1,35 @@
 <template>
 	<div class="content">
-		<div class="main-top color40A563">
+		<div class="main-top color">
 			<div class="main-top-info"><span>首页</span><em class="separate">/</em><span>用户登录</span></div>
 		</div>
-		<div class="main-center" style="margin-top:100px;">
+		<div class="main-center" style="margin-top:100px;" v-loading="loading">
 			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="100px">
 				<el-row :gutter="20">
 					<el-col :span="14" :offset="6" style="margin-bottom:35px;">
 						<el-button-group style="width:100%;">
-							<el-button :type="flag?'success':''" :class="{'success':flag}" class="changebtn" size="medium" style="width:50%;" @click="change('true')">密码登录</el-button>
-							<el-button :type="!flag?'success':''" :class="{'success':!flag}" class="changebtn" size="medium" style="width:50%;" @click="change('false')">验证码登录</el-button>
+							<el-button :type="flag?'primary':''" :class="{'primary':flag}" class="changebtn" size="medium" style="width:50%;" @click="change('true')">密码登录</el-button>
+							<el-button :type="!flag?'primary':''" :class="{'primary':!flag}" class="changebtn" size="medium" style="width:50%;" @click="change('false')">验证码登录</el-button>
 						</el-button-group>
 					</el-col>
 					<el-col :span="15" :offset="4">
-						<el-form-item prop="phone" label="手机号">
+						<el-form-item label="手机号" prop="phone">
 							<el-input v-model="initParams.phone"></el-input>
 						</el-form-item>
 					</el-col>
 					<el-col :span="15" :offset="4" v-if="!flag">
-						<el-form-item prop="code" label="验证码">
+						<el-form-item label="验证码" prop="code">
 							<el-input v-model="initParams.code" style="width:calc(100% - 130px)"></el-input>
-							<el-button type="success" class="fr" @click="getCode">发送验证码</el-button>
+							<el-button type="primary" class="fr" @click="getCode">发送验证码</el-button>
 						</el-form-item>
 					</el-col>
 					<el-col :span="15" :offset="4" v-if="flag">
-						<el-form-item prop="psword" label="密码">
+						<el-form-item label="密码" prop="psword">
 							<el-input v-model="initParams.psword"></el-input>
 						</el-form-item>
 					</el-col>
 					<el-col :span="14" :offset="6" class="mb15">
-						<el-button type="success" size="medium" class="form-submit" @click="submitForm()" @keydown="keyLogin($event)">登 录</el-button>
+						<el-button type="primary" size="medium" class="form-submit" @click="submitForm()" @keydown="keyLogin($event)">登 录</el-button>
 					</el-col>
 					<el-col :span="14" :offset="6">
 						<div class="text-center color999 font12">小驴科技 人人享融</div>
@@ -60,7 +60,7 @@ export default {
 			flag:false,
 			loading:false,
 			initParams:{
-				userid:"",
+				phone:"",
 				code:"",
 				psword:""
 			},
@@ -99,6 +99,7 @@ export default {
 			}
 		},
 		keyLogin:function(ev){
+			console.log(ev)
 			if(ev.keyCode == 13){
 				this.submitForm();
 			}
@@ -107,17 +108,13 @@ export default {
 			this.$refs['ValidateForm'].validate((valid) => {
 				if(valid){
 					this.loading=true;
-					console.log(13123123)
 					this.$r.post('/login', this.initParams, r => {
-						console.log(r);
-						if(r.err_code=="0"){
-							this.$message.success(r.err_msg);
-							sessionStorage.userid=this.$tool.Encrypt(r.data.roleid);  //刷新页面的时候用userid获取权限问题；
-						}else{
-							this.initParams.psword="";
-							this.$refs.psinput.focus();
-							this.$message.error(r.err_msg);
-						}
+						this.loading=false;
+						this.$message.success("登录成功");
+						let token=this.$tool.Encrypt(r.token+"_"+this.initParams.phone);
+						sessionStorage.token=token
+						this.$store.dispatch('setToken',token);
+						this.$router.push({path:'/index'})
 					});
 				}
 			});

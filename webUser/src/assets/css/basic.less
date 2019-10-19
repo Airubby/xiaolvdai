@@ -4,8 +4,11 @@
     box-sizing: border-box;
 }
 @color: #40A563;
+@colors:#50b172;
 @ocolor: #FFA74F;
+@ocolorp:#FF870F;
 @hcolor:#5a5a5a;
+@lcolor:#e4e7ed;
 html,
 body,
 #app{
@@ -91,17 +94,23 @@ em{
 .bgfff{
     background: #fff;
 }
-.color40A563{
+.color{
     color: @color;
 }
-.bg40A563{
+.bg{
     background: @color;
 }
-.colorFFA74F{
+.ocolor{
     color: @ocolor;
 }
-.bgFFA74F{
+.obg{
     background: @ocolor;
+}
+.hcolor{
+    color: @hcolor;
+}
+.ocolorp{
+    color: @ocolorp;
 }
 .overhidden{
     overflow: hidden;
@@ -203,7 +212,6 @@ em{
             line-height: 60px;
             text-indent: 10px;
             font-size: 16px;
-            color: @hcolor;
             .separate{
                 margin: 0 5px;
             }
@@ -250,7 +258,7 @@ em{
     .index-con-box{
         padding: 20px 15px;
         display: flex;
-        border-bottom: 1px solid #e4e7ed;
+        border-bottom: 1px solid @lcolor;
         justify-content: space-between;
         .index-con-box-info{
             width: calc(100% - 120px);
@@ -258,7 +266,7 @@ em{
                 margin: 0 10px;
             }
             .index-con-box-infotop{
-                background: #40a563;
+                background: @color;
                 color: #fff;
                 padding: 6px 15px;
                 border-radius: 5px;
@@ -280,7 +288,7 @@ em{
 }
 .form-info{
     font-size: 12px;
-    color: #424242;
+    color: #999;
 }
 .form-submit{
     width: 100%;
@@ -302,21 +310,6 @@ em{
     }
     .box-card-con{
         padding: 20px 15px;
-        .card-center{
-            justify-content: space-between;
-            border-bottom: 1px solid #e4e7ed;
-            padding-bottom: 10px;
-            .card-center-box{
-                width: calc(100% - 90px);
-                display: table;
-                color: #666;
-                line-height: 22px;
-                .card-center-info{
-                    display: table-cell;
-                    vertical-align: middle;
-                }
-            }
-        }
     }
     .box-card-step{
         padding-top: 10px;
@@ -331,7 +324,88 @@ em{
         }
     }
 }
+.card-center{
+    justify-content: space-between;
+    border-bottom: 1px solid @lcolor;
+    padding-bottom: 10px;
+    .card-center-box{
+        width: calc(100% - 90px);
+        color: #666;
+        line-height: 24px;
+        img{
+            float: left;
+            margin-right: 15px;
+        }
+    }
+}
 
+.index-detail-top{
+    font-size: 18px;
+    margin: 30px 0 15px 0;
+    padding-left: 20px;
+}
+.index-detail-box{
+    line-height: 22px;
+    .index-detail-box-con{
+        display: flex;
+        i{
+            margin: 0 8px;
+            img{
+                width: 7px;
+                height: 8px;
+            }
+        }
+    }
+    .index-detail-box-title{
+        color: @color;
+        font-weight: bold;
+        padding-left: 22px;
+        margin: 30px 0 5px 0;
+    }
+    .index-detail-box-steps{
+        color: @ocolor;
+        padding-left: 22px;
+        em{
+            margin: 0 12px;
+        }
+    }
+    &.index-detail-card{
+        margin: 15px 0;
+        padding: 20px 15px 0;
+        border-bottom: 1px solid @lcolor;
+        border-top: 1px solid @lcolor;
+        .card-center{
+            border: none;
+            .card-center-box{
+                width: calc(100% - 140px);
+                .btn{
+                    background: @color;
+                    color: #fff;
+                    font-size: 12px;
+                    padding: 2px 6px;
+                    border-radius: 3px;
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+    .index-detail-box-btn{
+        width: 280px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #fff;
+        background: @ocolorp;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        display: block;
+        cursor: pointer;
+        &:hover{
+            background: @ocolor;
+            text-decoration: none;
+        }
+    }
+}
 
 .bottom{
     color: #fff;

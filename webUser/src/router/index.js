@@ -13,25 +13,31 @@ export const syncRouter=[
             {
                 path: '/index',
                 name: 'index',
-                meta: { title: 'index'},
+                meta: { title: '小驴贷-首页'},
                 component: () => import('@/views/home/index.vue'),
+            },
+            {
+                path: '/detail',
+                name: 'detail',
+                meta: { title: '小驴贷-详情'},
+                component: () => import('@/views/home/detail.vue'),
             },
             {
                 path: '/login',
                 name: 'login',
-                meta: { title: 'login'},
+                meta: { title: '小驴贷-登录'},
                 component: () => import('@/views/login/index.vue'),
             },
             {
                 path: '/register',
                 name: 'register',
-                meta: { title: 'register'},
+                meta: { title: '小驴贷-注册'},
                 component: () => import('@/views/register/index.vue'),
             },
             {
                 path: '/myCenter',
                 name: 'myCenter',
-                meta: { title: 'myCenter'},
+                meta: { title: '小驴贷-个人中心'},
                 component: () => import('@/views/myCenter/index.vue'),
             },
         ]

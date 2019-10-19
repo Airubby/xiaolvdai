@@ -20,8 +20,20 @@
     display: block !important;
     background-color: transparent !important;
 }
-
-.el-button--success,
+.el-button:focus, .el-button:hover{
+    color: @color;
+    border-color: @color;
+    background: transparent;
+}
+.el-button--primary:focus,.el-button--primary:hover{
+    color: #fff;
+}
+.el-button--warning:focus, .el-button--warning:hover{
+    color: #fff;
+    border-color: @ocolorp;
+    background: @ocolorp;
+}
+.el-button--primary,
 .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner,
 .el-radio.is-bordered.is-checked{
     background: @color;
@@ -29,14 +41,20 @@
 }
 .el-checkbox__input.is-checked+.el-checkbox__label,
 .el-tabs__item:hover,.el-tabs__item.is-active,
-.el-pagination.is-background .el-pager li:not(.disabled):hover{
+.el-pagination.is-background .el-pager li:not(.disabled):hover,
+.el-message-box__headerbtn:focus .el-message-box__close, .el-message-box__headerbtn:hover .el-message-box__close{
     color: @color;
 }
+.el-radio--mini.is-bordered:hover{
+    border-color: @color;
+}
+/**
 .el-input__inner,.el-checkbox__inner:hover,
-.el-button--success,
+.el-button--primary,
 .el-radio.is-bordered{
     border-color: @color;
 }
+**/
 .el-tabs__active-bar{
     background-color: @color;
 }
@@ -47,12 +65,12 @@
     background: @color;
     color: #fff;
 }
-.el-button--success.is-active, .el-button--success:active, .el-button--success:hover,.el-button--success:focus{
-    background: #50b172;
-    border-color: #50b172;
+.el-button--primary.is-active, .el-button--primary:active, .el-button--primary:hover,.el-button--primary:focus{
+    background: @colors;
+    border-color: @colors;
 }
 .el-input__inner:hover,.el-input.is-active .el-input__inner, .el-input__inner:focus{
-    border-color: #50b172;
+    border-color: @colors;
 }
 .el-button--warning{
     background-color: @ocolor;
@@ -66,10 +84,11 @@
 .el-radio__input.is-checked+.el-radio__label{
     color: #fff;
 }
-.success:focus, .success:hover{
+.primary:focus, .primary:hover{
     color: #fff;
-    background-color: #50b172;
+    background-color: @colors;
 }
+
 /**
 .el-radio.is-bordered,
 .el-button--mini, .el-button--small,.el-button--medium,
@@ -119,9 +138,6 @@
 }
 .el-step.is-simple .el-step__head{
     padding-right: 5px;
-}
-.el-step.is-simple .el-step__main{
-    flex-grow: 0;
 }
 .el-step.is-simple .el-step__arrow::after, .el-step.is-simple .el-step__arrow::before{
     height: 8px;

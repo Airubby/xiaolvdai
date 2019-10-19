@@ -15,7 +15,9 @@
   export default {
     name: 'app',
     created () {
-        
+        if(sessionStorage.token){
+            this.$store.dispatch('setToken',sessionStorage.token);
+        }
     },
     computed:{
         

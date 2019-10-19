@@ -175,7 +175,7 @@
 				</el-row>
 				<el-row>
 					<el-col :span="14" class="mb15">
-						<el-button type="success" size="medium" style="width:120px;" @click="submitForm()" @keydown="keyLogin($event)">保存修改</el-button>
+						<el-button type="primary" size="medium" style="width:120px;" @click="submitForm()" @keydown="keyLogin($event)">保存修改</el-button>
 					</el-col>
 				</el-row>
 			</el-form>

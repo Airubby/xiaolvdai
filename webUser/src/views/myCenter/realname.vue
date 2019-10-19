@@ -17,7 +17,7 @@
 						</el-form-item>
 					</el-col>
 					<el-col :span="14" :offset="4" class="mb15">
-						<el-button type="success" size="medium" style="width:200px;" @click="submitForm()" @keydown="keyLogin($event)">提 交</el-button>
+						<el-button type="primary" size="medium" style="width:200px;" @click="submitForm()" @keydown="keyLogin($event)">提 交</el-button>
 					</el-col>
 				</el-row>
 			</el-form>
