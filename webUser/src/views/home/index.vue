@@ -3,7 +3,7 @@
         <div class="main-top hcolor">
             <div class="main-top-info">
                 <span>产品搜索</span>
-                <span class="color addr"><i class="el-icon-location"></i>{{LocalCity}}</span>
+                <span class="color addr"><i class="el-icon-location"></i>{{currentCity}}</span>
                 <span class="addr addrbtn" @click="cityInfo.visible=true">切换城市</span>
                 <baidu-map @ready="handler"></baidu-map>
             </div>
@@ -195,6 +195,7 @@
 
 <script>
 import city from './components/citys.vue'
+import { mapState,mapGetters,mapMutations } from 'vuex'
 export default {
     components: {city},
     created() {
@@ -203,9 +204,13 @@ export default {
     mounted() {
         
     },
+    computed:{
+        ...mapGetters({
+            currentCity:"LocalCity"
+        }),
+    },
     data(){
         return{
-            LocalCity:"正在定位...",
             initParams:{
 				money:'',
                 type:"1",
@@ -219,9 +224,6 @@ export default {
                 visible:false,
             }
         }
-    },
-    computed: {
-        
     },
 	methods: {
         handleCurrentChange:function(val){
@@ -250,15 +252,16 @@ export default {
                 myCity.get(function getInfo(result){
                     let cityName = result.name;
                     map.setCenter(cityName);   //关于setCenter()可参考API文档---”传送门“
-                    _this.LocalCity=sessionStorage.city?sessionStorage.city:cityName;
+                    _this.$store.dispatch('setCity',cityName);
+                    console.log("map")
                 },function(e){
-                    _this.LocalCity = "定位失败"
+                    _this.$store.dispatch('setCity',"定位失败");
                 },{provider: 'baidu'})
                 this.$store.dispatch('setMap',false);
             }
         },
         selectCity:function(info){
-            this.LocalCity=info;
+            this.$store.dispatch('setCity',info);
         },
 	},
     
