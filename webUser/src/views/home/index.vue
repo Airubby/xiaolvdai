@@ -233,27 +233,29 @@ export default {
             }});
         },
         handler ({BMap, map}) {
-            let _this = this;
-            //地理定位
-            // const geolocation = new BMap.Geolocation();
-            // geolocation.getCurrentPosition(function getInfo(position){
-            //     let city = position.address.city;             //获取城市信息
-            //     let province = position.address.province;    //获取省份信息
-            //     _this.LocalCity =sessionStorage.city?sessionStorage.city:city;
-            // }, function(e) {
-            //     _this.LocalCity = "定位失败"
-            // }, {provider: 'baidu'});
+            if(this.$store.getters.map){
+                let _this = this;
+                //地理定位
+                // const geolocation = new BMap.Geolocation();
+                // geolocation.getCurrentPosition(function getInfo(position){
+                //     let city = position.address.city;             //获取城市信息
+                //     let province = position.address.province;    //获取省份信息
+                //     _this.LocalCity =sessionStorage.city?sessionStorage.city:city;
+                // }, function(e) {
+                //     _this.LocalCity = "定位失败"
+                // }, {provider: 'baidu'});
 
-            //用户ip定位
-            let myCity = new BMap.LocalCity();
-            myCity.get(function getInfo(result){
-                let cityName = result.name;
-                map.setCenter(cityName);   //关于setCenter()可参考API文档---”传送门“
-                _this.LocalCity=sessionStorage.city?sessionStorage.city:cityName;
-            },function(e){
-                 _this.LocalCity = "定位失败"
-            },{provider: 'baidu'})
-
+                //用户ip定位
+                let myCity = new BMap.LocalCity();
+                myCity.get(function getInfo(result){
+                    let cityName = result.name;
+                    map.setCenter(cityName);   //关于setCenter()可参考API文档---”传送门“
+                    _this.LocalCity=sessionStorage.city?sessionStorage.city:cityName;
+                },function(e){
+                    _this.LocalCity = "定位失败"
+                },{provider: 'baidu'})
+                this.$store.dispatch('setMap',false);
+            }
         },
         selectCity:function(info){
             this.LocalCity=info;

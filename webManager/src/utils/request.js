@@ -3,6 +3,7 @@ import Qs from "querystring";
 import { Message } from 'element-ui'
 import {router} from '@/router/index'
 import store from '@/store/index'
+import tool from '@/utils/tool'
 let service = axios.create({
   // baseURL: 'http://www.javasoft.top:9090/service',
   baseURL: store.getters.AjaxUrl,
@@ -46,7 +47,7 @@ service.interceptors.request.use(
       config.params=filterNull(Object.assign({},config.params))
     }
     if (store.getters.token) {
-      config.headers['X-Token'] =store.getters.token // 让每个请求携带token--['X-Token']为自定义key 请根据实际情况自行修改
+      config.headers['X-Token'] =tool.Decrypt(store.getters.token).split("_")[0]    // 让每个请求携带token--['X-Token']为自定义key 请根据实际情况自行修改
     }
     return config;
   },
@@ -62,21 +63,15 @@ service.interceptors.response.use(
     /**
      * code为非200/900是抛错 可结合自己业务进行修改
      */
-    
-    const res = response.data;
-    if(res.data.err_code=="-1"&&sessionStorage.loginInfo){
-        Message.warning("请登录系统");
-        router.push({path:'/login'});
-        sessionStorage.removeItem('loginInfo');
-    }
-    if(res.data.err_code!="-1"){
-      return response.data;
-    }
+    return response.data;
   },
   error => {
     console.log("err" + error); // for debug
-    Message.error('服务器错误，请联系管理人员！');
-    router.push({path:'/login'});
+    debugger;
+    
+    Message.error(error);
+    // sessionStorage.removeItem('token');
+    // store.dispatch('setToken',"");
     return Promise.reject("重新登录");
   }
 );

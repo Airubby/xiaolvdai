@@ -67,9 +67,11 @@ service.interceptors.response.use(
   },
   error => {
     console.log("err" + error); // for debug
+    debugger;
+    
     Message.error(error);
-    sessionStorage.removeItem('token');
-    store.dispatch('setToken',"");
+    // sessionStorage.removeItem('token');
+    // store.dispatch('setToken',"");
     return Promise.reject("重新登录");
   }
 );

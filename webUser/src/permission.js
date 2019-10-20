@@ -3,26 +3,37 @@ import store from '@/store/index'
 import NProgress from 'nprogress' // Progress 进度条
 import 'nprogress/nprogress.css'// Progress 进度条样式
 import { Loading } from 'element-ui'
+import request from './utils/request'
+import tool from './utils/tool'
 import './utils/mock.js'  //测试接口 
 
 routerGo();
-
+function getInfo(){  //刷新页面重新获取权限
+    request.post('/checkToken',{"token":tool.Encrypt(sessionStorage.token).split("_")[0]},res=>{
+        if(res.token){
+            store.dispatch('setToken',sessionStorage.token);
+        }else{
+            sessionStorage.removeItem('token');
+            this.$store.dispatch('setToken',"");
+        }
+    })
+}
 async function routerGo(){
-    // if(sessionStorage.userid){
-    //     await getInfo();
-    // }
+    if(sessionStorage.token){
+        await getInfo();
+    }
     router.beforeEach((to, from, next) => {
+        let token=store.getters.token;
         NProgress.start()
         const whiteList = ['/login','/401','/404','/index','/detail','/register'] // 不重定向白名单
-        let token=store.getters.token;
         if (to.path!=="/"&&whiteList.indexOf(to.path) !== -1) {
             next()
         } else {
             if(JSON.stringify(to.meta)!="{}"){
-                if(sessionStorage.token){
+                if(token){
                     next() 
                 }else{
-                    next('/index') 
+                    next('/401') 
                 }
             }else{
                 next('/404') 

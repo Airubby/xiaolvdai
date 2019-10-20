@@ -31,6 +31,8 @@ const getdata = function(){
 Mock.mock(store.getters.AjaxUrl+'/getMockData', /post/i,getdata) //调用模拟数据方法
 Mock.mock(RegExp(store.getters.AjaxUrl+'/getInfo' + ".*"), /get/i,getdata) 
 
+
+
 const getLogin=function(){
     return {
         token:"sdsdfsdf#%#$%$@$",
@@ -44,3 +46,10 @@ const outLogin=function(){
     }
 }
 Mock.mock(store.getters.AjaxUrl+'/outLogin', /post/i,outLogin) //调用模拟登录
+
+const checkToken=function(){
+    return {
+        token:true,
+    }
+}
+Mock.mock(store.getters.AjaxUrl+'/checkToken', /post/i,checkToken) //调用模拟登录

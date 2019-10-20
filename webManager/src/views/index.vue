@@ -1,19 +1,28 @@
 <template>
-    <div class="content">
-        首页
+    <div class="appcontent flex">
+        <side></side>
+        <div class="main">
+            <top></top>
+            <div class="main-box box-shadow bgfff">
+                <router-view />
+            </div>
+            <bottom></bottom>
+        </div>
     </div>
 </template>
 
 <script>
+import side from "@/components/side.vue"
+import top from "@/components/top.vue"
+import bottom from "@/components/bottom.vue"
+import routerLoading from "@/views/mixin/routerLoading"
 export default {
+    mixins:[routerLoading],
     created() {
         
     },
     mounted() {
-        //加载完成了去掉根节点的loading;
-        this.$nextTick(function(){
-            this.$emit("routerLoading")
-        })
+        
     },
     data(){
         return{
@@ -27,7 +36,7 @@ export default {
 
 	},
     components: {
-        
+        side,top,bottom
     }
 }
 </script>

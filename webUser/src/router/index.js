@@ -34,15 +34,8 @@ export const syncRouter=[
                 meta: { title: '小驴贷-注册'},
                 component: () => import('@/views/register/index.vue'),
             },
-            {
-                path: '/myCenter',
-                name: 'myCenter',
-                meta: { title: '小驴贷-个人中心'},
-                component: () => import('@/views/myCenter/index.vue'),
-            },
         ]
     },
-    
     { path: '/404',name:'404',meta: { title: '404'}, component: () => import('@/views/errorPage/404') },
     { path: '/401',name:'401',meta: { title: '401'}, component: () => import('@/views/errorPage/401') },
 ];
@@ -52,7 +45,15 @@ const createRouter = () => new Router({
     base: process.env.BASE_URL,
     routes: syncRouter
  })
- 
+export function addRouter (routes) {
+    const newRouter = new Router({
+        mode: 'hash',
+        base: process.env.BASE_URL,
+        routes: []
+    });
+    router.matcher = newRouter.matcher
+    router.addRoutes(routes)
+ }
  export function resetRouter () {
     const newRouter = createRouter()
     router.matcher = newRouter.matcher
