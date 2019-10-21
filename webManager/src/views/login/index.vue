@@ -23,7 +23,7 @@
 					</el-col>
 					<el-col :span="14" :offset="5" v-if="flag">
 						<el-form-item label="" prop="psword" class="form-bborder">
-							<el-input v-model="initParams.psword" placeholder="密码"></el-input>
+							<el-input v-model="initParams.psword" placeholder="密码" type="password"></el-input>
 						</el-form-item>
 					</el-col>
 					<el-col :span="6" :offset="6" class="mt20 mr10">
@@ -66,7 +66,7 @@ export default {
 			},
 			rules: {
 				phone:[
-					{ required: true, trigger: 'change',validator:checkPhone },
+					{ required: true, trigger: 'blur',validator:checkPhone },
 				],
 				code:[
 					{ required: true,  trigger: 'change',message: '验证码不能为空' },
@@ -108,7 +108,7 @@ export default {
 						let token=this.$tool.Encrypt(r.token+"_"+this.initParams.phone);
 						sessionStorage.token=token
 						this.$store.dispatch('setToken',token);
-						this.$router.push({path:'/index'})
+						this.$router.push({path:'/myCenter'})
 					});
 				}
 			});

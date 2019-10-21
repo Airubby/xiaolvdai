@@ -12,18 +12,7 @@ const app = {
         Cookies.set('AjaxUrl', ajaxUrl)
     },
     setToken(state,token){
-      resetRouter();
-      if(token&&token!=""){
-        let newRouter=asyncRouter;
-        let router={
-            path: '/myCenter',
-            name: 'myCenter',
-            meta: { title: '小驴贷-个人中心'},
-            component: () => import('@/views/myCenter/index.vue'),
-        };
-        newRouter[0].children.push(router)
-        addRouter(newRouter);
-      }
+      
       state.token=token;
     },
     setMap(state,flag){

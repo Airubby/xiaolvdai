@@ -25,7 +25,7 @@ async function routerGo(){
     router.beforeEach((to, from, next) => {
         let token=store.getters.token;
         NProgress.start()
-        const whiteList = ['/login','/401','/404','/index','/detail','/register'] // 不重定向白名单
+        const whiteList = ['/login','/401','/404','/register','/approve'] // 不重定向白名单
         if (to.path!=="/"&&whiteList.indexOf(to.path) !== -1) {
             next()
         } else {

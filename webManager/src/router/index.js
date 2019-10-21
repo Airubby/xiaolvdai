@@ -22,6 +22,27 @@ export const syncRouter=[
                 meta: { title: '小驴贷-注册'},
                 component: () => import('@/views/register/index.vue'),
             },
+            {
+                path: '/approve',
+                name: 'approve',
+                meta: { title: '小驴贷-实名认证'},
+                component: () => import('@/views/register/approve.vue'),
+            },
+            {
+                path: '/myCenter',
+                name: 'myCenter',
+                meta: { title: '小驴贷-个人中心'},
+                component: () => import('@/views/myCenter.vue'),
+                redirect:'/myCenter/index',
+                children:[
+                    {
+                        path: '/myCenter/index',
+                        name: 'index',
+                        meta: { title: '小驴贷-个人中心首页'},
+                        component: () => import('@/views/home/index.vue'),
+                    },
+                ],
+            },
         ]
     },
     { path: '/404',name:'404',meta: { title: '404'}, component: () => import('@/views/errorPage/404') },

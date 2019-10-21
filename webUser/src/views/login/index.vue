@@ -60,8 +60,8 @@ export default {
 			flag:false,
 			loading:false,
 			initParams:{
-				phone:"15252525252",
-				code:"525",
+				phone:"",
+				code:"",
 				psword:""
 			},
 			rules: {

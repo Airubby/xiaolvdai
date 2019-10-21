@@ -99,18 +99,22 @@ export default {
 		submitForm:function(){
 			this.$refs['ValidateForm'].validate((valid) => {
 				if(valid){
-					this.loading=true;
-					this.$r.post('/register', this.initParams, r => {
-						console.log(r);
-						if(r.err_code=="0"){
-							this.$message.success(r.err_msg);
-							sessionStorage.userid=this.$tool.Encrypt(r.data.roleid);  //刷新页面的时候用userid获取权限问题；
-						}else{
-							this.initParams.psword="";
-							this.$refs.psinput.focus();
-							this.$message.error(r.err_msg);
-						}
-					});
+					if(this.checked){
+						this.loading=true;
+						this.$r.post('/register', this.initParams, r => {
+							console.log(r);
+							if(r.err_code=="0"){
+								this.$message.success(r.err_msg);
+								sessionStorage.userid=this.$tool.Encrypt(r.data.roleid);  //刷新页面的时候用userid获取权限问题；
+							}else{
+								this.initParams.psword="";
+								this.$refs.psinput.focus();
+								this.$message.error(r.err_msg);
+							}
+						});
+					}else{
+						this.$message.warning("请阅读并同意遵守注册协议");
+					}
 				}
 			});
 		},

@@ -5,39 +5,21 @@
 			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="90px">
 				<el-row :gutter="20">
 					<el-col :span="14" :offset="5" class="mb25">
-						<div class="register-title">信贷经理注册</div>
+						<div class="register-title">信贷经理-实名认证</div>
 					</el-col>
 					<el-col :span="14" :offset="5">
-						<el-form-item prop="phone" label="手机号">
+						<el-form-item prop="phone" label="真实姓名">
 							<el-input v-model="initParams.phone"></el-input>
 						</el-form-item>
 					</el-col>
 					<el-col :span="14" :offset="5">
-						<el-form-item prop="code" label="验证码">
+						<el-form-item prop="code" label="身份证号">
 							<el-input v-model="initParams.code" style="width:calc(100% - 130px)"></el-input>
 							<el-button type="warning" class="fr" @click="getCode">发送验证码</el-button>
 						</el-form-item>
 					</el-col>
-					<el-col :span="14" :offset="5">
-						<el-form-item prop="psword" label="设置密码">
-							<el-input v-model="initParams.psword" type="password"></el-input>
-							<p class="form-info">设置的密码必须介于6到15个字符之间,包含字母和数字</p>
-						</el-form-item>
-					</el-col>
-					<el-col :span="14" :offset="5">
-						<el-form-item label="邀请码">
-							<el-input v-model="initParams.invitecode" style="width:calc(100% - 130px)"></el-input>
-							<p class="form-info fr" style="width: 120px;text-align:left;">(非必填)</p>
-						</el-form-item>
-					</el-col>
-					<el-col :span="20" :offset="2" class="mb15">
-						<el-checkbox v-model="checked">我已阅读并同意遵守</el-checkbox>
-						<a class="color ml5" @click="agreementInfo.visible=true">《信贷经理用户注册协议》</a>
-						<a class="color ml5" @click="policyInfo.visible=true">《信贷经理隐私保护政策》</a>
-						<a class="color ml5" @click="collaborateInfo.visible=true">《信贷经理合作协议》</a>
-					</el-col>
 					<el-col :span="14" :offset="5" class="mb15">
-						<el-button type="primary" size="medium" class="form-submit" @click="submitForm()" @keydown="keyLogin($event)">注 册</el-button>
+						<el-button type="primary" size="medium" class="form-submit" @click="submitForm()" @keydown="keyLogin($event)">提交认证</el-button>
 					</el-col>
 				</el-row>
 			</el-form>
@@ -80,7 +62,7 @@ export default {
 			},
 			rules: {
 				phone:[
-					{ required: true, trigger: 'blur',validator:checkPhone },
+					{ required: true, trigger: 'change',validator:checkPhone },
 				],
 				code:[
 					{ required: true,  trigger: 'change',message: '验证码不能为空' },
@@ -116,8 +98,13 @@ export default {
 						this.loading=true;
 						this.$r.post('/register', this.initParams, r => {
 							console.log(r);
-							if(r.data){
-								this.$router.push({path:'/approve'});
+							if(r.err_code=="0"){
+								this.$message.success(r.err_msg);
+								sessionStorage.userid=this.$tool.Encrypt(r.data.roleid);  //刷新页面的时候用userid获取权限问题；
+							}else{
+								this.initParams.psword="";
+								this.$refs.psinput.focus();
+								this.$message.error(r.err_msg);
 							}
 						});
 					}else{

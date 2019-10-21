@@ -15,14 +15,22 @@ const app = {
       resetRouter();
       if(token&&token!=""){
         let newRouter=asyncRouter;
-        let router={
-            path: '/myCenter',
-            name: 'myCenter',
-            meta: { title: '小驴贷-个人中心'},
-            component: () => import('@/views/myCenter/index.vue'),
-        };
-        newRouter[0].children.push(router)
-        addRouter(newRouter);
+        let flag=false;
+        for(let i=0;i<newRouter[0].children.length;i++){
+          if(newRouter[0].children[i].name=="myCenter"){
+            flag=true;
+          }
+        }
+        if(!flag){
+          let routes={
+              path: '/myCenter',
+              name: 'myCenter',
+              meta: { title: '小驴贷-个人中心'},
+              component: () => import('@/views/myCenter/index.vue'),
+          };
+          newRouter[0].children.push(routes)
+          addRouter(newRouter);
+        }
       }
       state.token=token;
     },

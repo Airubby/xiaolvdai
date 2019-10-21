@@ -53,3 +53,10 @@ const checkToken=function(){
     }
 }
 Mock.mock(store.getters.AjaxUrl+'/checkToken', /post/i,checkToken) //调用模拟登录
+
+const register=function(){
+    return {
+        data:true,
+    }
+}
+Mock.mock(store.getters.AjaxUrl+'/register', /post/i,register) //调用模拟登录
