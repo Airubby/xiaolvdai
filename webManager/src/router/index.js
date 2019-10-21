@@ -8,20 +8,8 @@ export const syncRouter=[
         name: 'home',
         meta: { title: 'index'},
         component: () => import('@/views/index.vue'),
-        redirect:'/index',
+        redirect:'/login',
         children:[
-            {
-                path: '/index',
-                name: 'index',
-                meta: { title: '小驴贷-首页'},
-                component: () => import('@/views/home/index.vue'),
-            },
-            {
-                path: '/detail',
-                name: 'detail',
-                meta: { title: '小驴贷-详情'},
-                component: () => import('@/views/home/detail.vue'),
-            },
             {
                 path: '/login',
                 name: 'login',
@@ -39,7 +27,31 @@ export const syncRouter=[
     { path: '/404',name:'404',meta: { title: '404'}, component: () => import('@/views/errorPage/404') },
     { path: '/401',name:'401',meta: { title: '401'}, component: () => import('@/views/errorPage/401') },
 ];
-
+export const asyncRouter=[
+    {
+        path: '/',
+        name: 'home',
+        meta: { title: 'index'},
+        component: () => import('@/views/index.vue'),
+        redirect:'/login',
+        children:[
+            {
+                path: '/login',
+                name: 'login',
+                meta: { title: '小驴贷-登录'},
+                component: () => import('@/views/login/index.vue'),
+            },
+            {
+                path: '/register',
+                name: 'register',
+                meta: { title: '小驴贷-注册'},
+                component: () => import('@/views/register/index.vue'),
+            },
+        ]
+    },
+    { path: '/404',name:'404',meta: { title: '404'}, component: () => import('@/views/errorPage/404') },
+    { path: '/401',name:'401',meta: { title: '401'}, component: () => import('@/views/errorPage/401') },
+]
 const createRouter = () => new Router({
     mode: 'hash',
     base: process.env.BASE_URL,

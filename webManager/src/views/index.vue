@@ -1,20 +1,8 @@
 <template>
-    <div class="appcontent flex">
-        <side></side>
-        <div class="main">
-            <top></top>
-            <div class="main-box box-shadow bgfff">
-                <router-view />
-            </div>
-            <bottom></bottom>
-        </div>
-    </div>
+    <router-view />
 </template>
 
 <script>
-import side from "@/components/side.vue"
-import top from "@/components/top.vue"
-import bottom from "@/components/bottom.vue"
 import routerLoading from "@/views/mixin/routerLoading"
 export default {
     mixins:[routerLoading],
@@ -36,7 +24,6 @@ export default {
 
 	},
     components: {
-        side,top,bottom
     }
 }
 </script>

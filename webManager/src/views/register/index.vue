@@ -1,52 +1,61 @@
 <template>
-	<div class="content">
-		<div class="main-top color">
-			<div class="main-top-info"><span>首页</span><em class="separate">/</em><span>用户注册</span></div>
-		</div>
-		<div class="main-center" style="margin-top:100px;">
-			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="100px">
+	<div class="content prelative" v-loading="loading">
+		<div class="login register">
+			<div class="login-top"><img src="images/loginTop.png"></div>
+			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="90px">
 				<el-row :gutter="20">
-					<el-col :span="15" :offset="4">
+					<el-col :span="14" :offset="5" class="mb25">
+						<div class="register-title">信贷经理注册</div>
+					</el-col>
+					<el-col :span="14" :offset="5">
 						<el-form-item prop="phone" label="手机号">
 							<el-input v-model="initParams.phone"></el-input>
 						</el-form-item>
 					</el-col>
-					<el-col :span="15" :offset="4">
+					<el-col :span="14" :offset="5">
 						<el-form-item prop="code" label="验证码">
 							<el-input v-model="initParams.code" style="width:calc(100% - 130px)"></el-input>
-							<el-button type="primary" class="fr" @click="getCode">发送验证码</el-button>
+							<el-button type="warning" class="fr" @click="getCode">发送验证码</el-button>
 						</el-form-item>
 					</el-col>
-					<el-col :span="15" :offset="4">
+					<el-col :span="14" :offset="5">
 						<el-form-item prop="psword" label="设置密码">
 							<el-input v-model="initParams.psword"></el-input>
 							<p class="form-info">设置的密码必须介于6到15个字符之间,包含字母和数字</p>
 						</el-form-item>
 					</el-col>
-					<el-col :span="19" :offset="4" class="mb15">
+					<el-col :span="14" :offset="5">
+						<el-form-item label="邀请码">
+							<el-input v-model="initParams.invitecode" style="width:calc(100% - 130px)"></el-input>
+							<p class="form-info fr" style="width: 120px;text-align:left;">(非必填)</p>
+						</el-form-item>
+					</el-col>
+					<el-col :span="20" :offset="2" class="mb15">
 						<el-checkbox v-model="checked">我已阅读并同意遵守</el-checkbox>
-						<a class="color ml5" @click="agreementInfo.visible=true">《小驴贷用户注册协议》</a>
-						<a class="color ml5" @click="policyInfo.visible=true">《用户隐私保护政策》</a>
+						<a class="color ml5" @click="agreementInfo.visible=true">《信贷经理用户注册协议》</a>
+						<a class="color ml5" @click="policyInfo.visible=true">《信贷经理隐私保护政策》</a>
+						<a class="color ml5" @click="collaborateInfo.visible=true">《信贷经理合作协议》</a>
 					</el-col>
 					<el-col :span="14" :offset="6" class="mb15">
 						<el-button type="primary" size="medium" class="form-submit" @click="submitForm()" @keydown="keyLogin($event)">注 册</el-button>
-					</el-col>
-					<el-col :span="14" :offset="6">
-						<div class="text-center color999 font12">小驴科技 人人享融</div>
 					</el-col>
 				</el-row>
 			</el-form>
 			<policy v-if="policyInfo.visible" :dialogInfo="policyInfo"></policy>
 			<agreement v-if="agreementInfo.visible" :dialogInfo="agreementInfo"></agreement>
+			<collaborate v-if="collaborateInfo.visible" :dialogInfo="collaborateInfo"></collaborate>
 		</div>
+		<bottom class="login-bottom"></bottom>
     </div>
 </template>
 
 <script>
 import policy from "./components/policy.vue"
 import agreement from "./components/agreement.vue"
+import collaborate from "./components/collaborate.vue"
+import bottom from "@/components/bottom.vue"
 export default {
-	components:{agreement,policy},
+	components:{agreement,policy,collaborate,bottom},
 	created () {
 	
   	},
@@ -66,7 +75,8 @@ export default {
 			initParams:{
 				userid:"",
 				code:"",
-				psword:""
+				psword:"",
+				invitecode:"",
 			},
 			rules: {
 				phone:[
@@ -83,6 +93,9 @@ export default {
 				visible:false,
 			},
 			agreementInfo:{
+				visible:false
+			},
+			collaborateInfo:{
 				visible:false
 			}
 		}

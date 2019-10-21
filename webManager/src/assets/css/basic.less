@@ -54,6 +54,9 @@ ul,li{
 .mb10{
     margin-bottom:10px; 
 }
+.mt20{
+    margin-top: 20px;
+}
 .mb5{
     margin-bottom: 5px;
 }
@@ -69,6 +72,9 @@ ul,li{
 .mb25{
     margin-bottom: 25px;
 }
+.pdb10{
+    padding-bottom: 10px;
+}
 .pd25{
     padding: 25px;
 }
@@ -78,7 +84,6 @@ ul,li{
 em{
     font-style: normal;
 }
-
 .flex{
     display: flex;
 }
@@ -407,8 +412,18 @@ em{
     }
 }
 
+.form-noborder{
+    .el-input__inner{
+        border: none;
+    }
+    .form-bborder{
+        border-bottom: 1px solid #DCDFE6;
+    }
+}
+
 .bottom{
     color: #fff;
+    width: 100%;
     .link{
         margin: 60px 0 15px 0;
         a{
@@ -423,3 +438,45 @@ em{
         font-size: 12px;
     }
 }
+
+
+.login{
+    width: 800px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -360px auto auto -400px;
+    padding: 10px 0 40px 0;
+    .login-top{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+.register{
+    margin-top:-400px;
+    .register-title{
+        height: 26px;
+        line-height: 26px;
+        font-weight: bold;
+        border-bottom: 1px solid @color;
+        color: @color;
+    }
+}
+.login-bottom{
+    position: absolute;
+    bottom: 0px;
+    .info{
+        margin-bottom: 25px;
+    }
+}
+
+
+
+
+
+
+
+
+
+

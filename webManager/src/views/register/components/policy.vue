@@ -1,8 +1,8 @@
 <template>
-    <el-dialog title="用户隐私保护政策" :visible.sync="dialogInfo.visible" width="600px" v-dialogDrag>
+    <el-dialog title="信贷经理隐私保护政策" :visible.sync="dialogInfo.visible" width="600px" v-dialogDrag>
         <el-scrollbar style="height:400px;" class="scrollbar">
             <div v-loading="loading">
-                <p>用户隐私保护政策内容</p>
+                <p>信贷经理隐私保护政策内容</p>
             </div>
         </el-scrollbar>
         <div slot="footer" class="dialog-footer">

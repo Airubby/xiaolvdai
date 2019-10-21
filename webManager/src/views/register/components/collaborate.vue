@@ -1,8 +1,8 @@
 <template>
-    <el-dialog title="信贷经理用户注册协议" :visible.sync="dialogInfo.visible" width="600px" v-dialogDrag>
+    <el-dialog title="信贷经理合作协议" :visible.sync="dialogInfo.visible" width="600px" v-dialogDrag>
         <el-scrollbar style="height:400px;" class="scrollbar">
             <div v-loading="loading">
-                <p>信贷经理用户注册协议内容</p>
+                <p>信贷经理合作协议内容</p>
             </div>
         </el-scrollbar>
         <div slot="footer" class="dialog-footer">
