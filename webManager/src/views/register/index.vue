@@ -50,9 +50,9 @@
 </template>
 
 <script>
-import policy from "./components/policy.vue"
-import agreement from "./components/agreement.vue"
-import collaborate from "./components/collaborate.vue"
+import policy from "@/components/policy.vue"
+import agreement from "@/components/agreement.vue"
+import collaborate from "@/components/collaborate.vue"
 import bottom from "@/components/bottom.vue"
 export default {
 	components:{agreement,policy,collaborate,bottom},

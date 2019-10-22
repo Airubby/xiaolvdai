@@ -57,6 +57,12 @@ ul,li{
 .mt20{
     margin-top: 20px;
 }
+.mt25{
+    margin-top: 25px;
+}
+.mt10{
+    margin-top: 10px;
+}
 .mb5{
     margin-bottom: 5px;
 }
@@ -139,6 +145,13 @@ em{
     padding: 5px 10px;
     line-height: 16px;
 }
+.info-border{
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid @color;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
 .main{
     width: 770px;
     padding: 26px 5px 5px 5px;
@@ -147,32 +160,75 @@ em{
     width: 230px;
     padding: 5px 45px 5px 5px;
     .side-center-info{
-        padding: 15px 12px;
-        .side-center-infobox{
-            width: 100%;
-            p{
-                font-size: 16px;
-                font-weight: bold;
-                color: @hcolor;
-                margin-bottom: 10px;
-                span{
-                    font-size: 12px;
-                    margin-left: 5px;
-                }
-            }
-            .info{
-                width: 100%;
-                height: 26px;
-                line-height: 26px;
-                color: #fff;
-                text-align: center;
+        padding: 10px 20px 20px;
+        .side-center-img{
+            img{
+                width: 50px;
             }
         }
+        .side-center-user{
+            font-weight: bold;
+            p{
+                margin-bottom: 10px;
+            }
+            .discuss{
+                color: @color;
+                font-size: 16px;
+            }
+            .number{
+                background: @ocolorp;
+                color: #fff;
+                padding: 1px 6px;
+            }
+        }
+        .pay{
+            margin: 30px 0 16px 0;
+            p{
+                font-size: 12px;
+                span{
+                    color: @color;
+                    font-size: 22px;
+                    margin-right: 5px;
+                }
+            }
+            .content{
+                font-size: 14px;
+            }
+        }
+        .product{
+            line-height: 22px;
+            color: @hcolor;
+        }
+
     }
-    .side-code{
-        width: 100%;
-        img{
+    .side-policy{
+        padding: 10px 0;
+        font-size: 14px;
+        line-height: 22px;
+        a{
+            display: block;
+        }
+    }
+    .side-info{
+        padding: 15px;
+        p{
             width: 100%;
+            padding: 8px 0;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
+        .jr{
+            background: #3a8ee8;
+        }
+        .jr:hover{
+            background: #5298E3;
+        }
+        .xd{
+            background: @color;
+        }
+        .xd:hover{
+            background: @colors;
         }
     }
 }
@@ -208,7 +264,8 @@ em{
 .main-box{
     width: 100%;
     height: 1100px;
-    padding: 25px 40px 50px;
+    padding: 25px 40px 50px 15px;
+    /*
     .main-top{
         font-weight: bold;
         border-bottom: 1px solid @color;
@@ -251,6 +308,7 @@ em{
             }
         }
     }
+    */
 }
 .index-form{
     border-bottom: 1px solid @color;

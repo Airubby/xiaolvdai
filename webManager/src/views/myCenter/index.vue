@@ -1,43 +1,41 @@
 <template>
 	<div class="content">
-		<div class="main-top">
-			<div class="main-top-moreinfo mb15 flex">
-				<div class="img-info">
-					<img src="images/titleLogo.png" class="fl">
-					<span>用户{{phone}},您好!</span>
-				</div>
-			</div>
-		</div>
 		<div class="main-center">
 			<el-tabs tab-position="left" style="height: 920px;" v-model="activeName" @tab-click="tabClick">
-				<el-tab-pane label="我的申请" name="first">
+				<el-tab-pane label="我的客户" name="first">
 					<apply></apply>
 				</el-tab-pane>
-				<el-tab-pane label="实名认证" name="second" disabled>
+				<el-tab-pane label="资质认证" name="second">
 					<realname></realname>
 				</el-tab-pane>
-				<el-tab-pane label="我的资料" name="third">
+				<el-tab-pane label="产品上传" name="third">
 					<mydata></mydata>
 				</el-tab-pane>
-				<el-tab-pane label="修改密码" name="fourth">
+				<el-tab-pane label="发布产品" name="fourth">
 					<psword></psword>
 				</el-tab-pane>
-				<el-tab-pane label="我的消息" name="five" disabled>
-					<info></info>
+				<el-tab-pane label="消费明细" name="five">
+					<expense></expense>
 				</el-tab-pane>
+				<el-tab-pane label="修改密码" name="six">
+					<psword></psword>
+				</el-tab-pane>
+				
 			</el-tabs>
 		</div>
     </div>
 </template>
 
 <script>
+import psword from './psword.vue'
+import expense from './expense.vue'
+
 import apply from './apply.vue'
 import realname from './realname.vue'
 import mydata from './mydata.vue'
-import psword from './psword.vue'
 import info from './info.vue'
 export default {
-	components:{apply,realname,mydata,psword,info},
+	components:{apply,realname,mydata,psword,info,expense},
 	created () {
 	
 	},
@@ -55,7 +53,7 @@ export default {
     },
 	data(){
 		return {
-			activeName:'first',
+			activeName:'five',
 		}
 	},
 	methods:{

@@ -39,7 +39,7 @@ export const syncRouter=[
                         path: '/myCenter/index',
                         name: 'index',
                         meta: { title: '小驴贷-个人中心首页'},
-                        component: () => import('@/views/home/index.vue'),
+                        component: () => import('@/views/myCenter/index.vue'),
                     },
                 ],
             },
