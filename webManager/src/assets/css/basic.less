@@ -86,7 +86,7 @@ ul,li{
     padding: 25px;
 }
 .mycenter-pd{
-    padding: 25px 39px 25px 20px;
+    padding: 25px 50px 25px 15px;
 }
 em{
     font-style: normal;
@@ -266,7 +266,7 @@ em{
 .main-box{
     width: 100%;
     height: 1100px;
-    padding:  25px 0px 50px 5px;
+    padding:  25px 0px 50px 25px;
     /*
     .main-top{
         font-weight: bold;
@@ -349,14 +349,22 @@ em{
 .box-card{
     margin-bottom: 15px;
     .box-card-title{
-        background: @color;
-        color: #fff;
+        color: @color;
         display: flex;
         justify-content: space-between;
-        padding: 10px 20px;
+        padding: 10px 15px;
+        border-bottom: 1px solid @color;
     }
     .box-card-con{
         padding: 20px 15px;
+        .userinfo{
+            border-color: #E4E7ED;
+            margin-bottom: 15px;
+        }
+        .box-card-conbtn{
+            justify-content: space-between;
+            line-height: 28px;
+        }
     }
     .box-card-step{
         padding-top: 10px;
@@ -606,8 +614,41 @@ em{
     color: #999;
     line-height: 22px;
 }
-
-
-
+.product-deadline{
+    width: 355px;
+    height: 66px;
+    position: relative;
+    .el-radio--mini.is-bordered{
+        margin-bottom: 5px;
+    }
+    .radio-deadline{
+        margin-left: 0 !important;
+    }
+    .deadline{
+        position: absolute;
+        bottom: 5px;
+        left: 145px;
+    }
+}
+.violet.el-button--primary{
+    background: transparent;
+    border-color: #6c8cb3;
+    color: #6c8cb3;
+}
+.violet.el-button--primary.is-active, .violet.el-button--primary:active, .violet.el-button--primary:hover, .violet.el-button--primary:focus{
+    background: #86A3C6;
+    border-color: #86A3C6;
+    color: #fff;
+}
+.cyan.el-button--primary{
+    background: transparent;
+    border-color: #56b0b3;
+    color: #56b0b3;
+}
+.cyan.el-button--primary.is-active, .cyan.el-button--primary:active, .cyan.el-button--primary:hover, .cyan.el-button--primary:focus{
+    background: #6DB8BA;
+    border-color: #6DB8BA;
+    color: #fff;
+}
 
 

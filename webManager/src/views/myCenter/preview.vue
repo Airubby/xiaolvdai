@@ -1,5 +1,5 @@
 <template>
-    <div class="content" style="padding: 25px 40px 50px;">
+    <div class="content">
         <div class="main-top color">
             <div class="main-top-info">
                 <span>产品详情</span>

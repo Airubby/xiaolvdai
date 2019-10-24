@@ -1,9 +1,9 @@
 <template>
 	<div class="content">
 		<div class="main-center">
-			<el-tabs tab-position="left" style="height: 920px;" v-model="activeName" @tab-click="tabClick">
+			<el-tabs tab-position="left" style="height: 930px;" v-model="activeName" @tab-click="tabClick">
 				<el-tab-pane label="我的客户" name="first">
-					<customer></customer>
+					<customer v-on:backInfo="backInfo"></customer>
 				</el-tab-pane>
 				<el-tab-pane label="资质认证" name="second">
 					<qualification></qualification>

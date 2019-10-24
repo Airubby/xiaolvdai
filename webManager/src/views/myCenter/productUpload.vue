@@ -34,7 +34,7 @@
 						</el-form-item>
 					</el-col>
 					<el-col :span="24" v-if="initParams.marriage=='1'">
-						<el-form-item label="信贷产品:" class="ml15">
+						<el-form-item label="信贷产品:">
 							<el-radio-group v-model="initParams.child" size="mini">
 								<el-radio label="1" border>工薪贷款</el-radio>
 								<el-radio label="2" border>公积金贷</el-radio>
@@ -66,21 +66,23 @@
 					</el-col>
 					<el-col :span="24">
 						<el-form-item label="借款期限:">
-							<el-radio-group v-model="initParams.salary" size="mini">
-								<el-radio label="2" border>1</el-radio>
-								<el-radio label="3" border>3</el-radio>
-								<el-radio label="4" border>6</el-radio>
-								<el-radio label="5" border>12</el-radio>
-								<el-radio label="6" border>24</el-radio>
-								<el-radio label="7" border>36</el-radio>
-								<el-radio label="8" border>48</el-radio>
-								<el-radio label="9" border>60</el-radio>
-								<el-radio label="10" border>120</el-radio>
-								<el-radio label="11" border>180</el-radio>
-								<el-radio label="12" border>240</el-radio>
-								<el-radio label="13" border>360</el-radio>
-							</el-radio-group>
-                            <span class="ml5 color">期</span>
+							<div class="product-deadline">
+								<el-radio-group v-model="initParams.salary" size="mini">
+									<el-radio label="1" border>1</el-radio>
+									<el-radio label="3" border>3</el-radio>
+									<el-radio label="4" border>6</el-radio>
+									<el-radio label="5" border>12</el-radio>
+									<el-radio label="6" border>24</el-radio>
+									<el-radio label="7" border>36</el-radio>
+									<el-radio label="8" border>48</el-radio>
+									<el-radio label="9" border>60</el-radio>
+									<el-radio label="10" border>120</el-radio>
+									<el-radio label="11" border class="radio-deadline">180</el-radio>
+									<el-radio label="12" border>240</el-radio>
+									<el-radio label="13" border>360</el-radio>
+								</el-radio-group>
+								<span class="deadline color">期</span>
+							</div>
 						</el-form-item>
 					</el-col>
 					<el-col :span="24" class="flex">
