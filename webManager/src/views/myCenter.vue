@@ -28,6 +28,9 @@ export default {
             
         }
     },
+    destroyed(){
+        sessionStorage.activeName="";
+    },
     computed: {
         
     },

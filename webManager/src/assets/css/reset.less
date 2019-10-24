@@ -48,6 +48,9 @@
 .el-radio--mini.is-bordered:hover,.el-radio--small.is-bordered:hover{
     border-color: @color;
 }
+.el-tabs__item.is-active{
+    font-weight: bold;
+}
 /**
 .el-input__inner,.el-checkbox__inner:hover,
 .el-button--primary,
@@ -148,10 +151,17 @@
 .el-step.is-simple .el-step__arrow::after{
     transform: rotate(45deg) translateY(2px);
 }
+.el-notification__content,
+.el-alert .el-alert__description{
+    margin: 0;
+    font-size: 14px;
+}
 .el-steps--simple{
     padding: 10px;
 }
-
+.el-upload{
+    display: block;
+}
 .city{
     .el-radio.is-bordered{
         margin: 6px;

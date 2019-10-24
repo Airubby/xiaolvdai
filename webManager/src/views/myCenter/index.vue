@@ -3,16 +3,16 @@
 		<div class="main-center">
 			<el-tabs tab-position="left" style="height: 920px;" v-model="activeName" @tab-click="tabClick">
 				<el-tab-pane label="我的客户" name="first">
-					<apply></apply>
+					<customer></customer>
 				</el-tab-pane>
 				<el-tab-pane label="资质认证" name="second">
-					<realname></realname>
+					<qualification></qualification>
 				</el-tab-pane>
 				<el-tab-pane label="产品上传" name="third">
-					<mydata></mydata>
+					<productUpload v-on:backInfo="backInfo"></productUpload>
 				</el-tab-pane>
 				<el-tab-pane label="发布产品" name="fourth">
-					<psword></psword>
+					<publishProduct></publishProduct>
 				</el-tab-pane>
 				<el-tab-pane label="消费明细" name="five">
 					<expense></expense>
@@ -29,36 +29,37 @@
 <script>
 import psword from './psword.vue'
 import expense from './expense.vue'
-
-import apply from './apply.vue'
-import realname from './realname.vue'
-import mydata from './mydata.vue'
-import info from './info.vue'
+import customer from './customer.vue'
+import qualification from './qualification.vue'
+import productUpload from './productUpload.vue'
+import publishProduct from './publishProduct.vue'
 export default {
-	components:{apply,realname,mydata,psword,info,expense},
+	components:{customer,qualification,psword,productUpload,expense,publishProduct},
 	created () {
-	
+		if(sessionStorage.activeName){
+			this.activeName=sessionStorage.activeName;
+		}
 	},
 	computed:{
-        phone:{
-			get(){
-				if(this.$store.getters.token){
-					return this.$tool.Decrypt(this.$store.getters.token).split("_")[1];
-				}
-			}
-        }
+        
     }, 
 	mounted() {
         
-    },
+	},
 	data(){
 		return {
-			activeName:'five',
+			activeName:'first',
 		}
 	},
 	methods:{
 		tabClick:function(tab){
 			console.log(tab)
+			sessionStorage.activeName=tab.name;
+		},
+		backInfo:function(info){
+			console.log(info)
+			this.activeName=info;
+			sessionStorage.activeName=info;
 		}
 	},
 	watch:{
