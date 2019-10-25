@@ -66,7 +66,7 @@ export default {
     },
     methods:{
         pay:function(){
-
+            this.$router.push({path:'/myCenter/recharge'})
         },
         checkFn:function(){
             this.$message.info("功能正在完善中");

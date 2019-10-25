@@ -3,22 +3,22 @@
 		<div class="main-center">
 			<el-tabs tab-position="left" style="height: 930px;" v-model="activeName" @tab-click="tabClick">
 				<el-tab-pane label="我的客户" name="first">
-					<customer v-on:backInfo="backInfo"></customer>
+					<customer v-on:backInfo="backInfo" v-if="activeName=='first'"></customer>
 				</el-tab-pane>
 				<el-tab-pane label="资质认证" name="second">
-					<qualification></qualification>
+					<qualification v-if="activeName=='second'"></qualification>
 				</el-tab-pane>
 				<el-tab-pane label="产品上传" name="third">
-					<productUpload v-on:backInfo="backInfo"></productUpload>
+					<productUpload v-on:backInfo="backInfo" v-if="activeName=='third'"></productUpload>
 				</el-tab-pane>
 				<el-tab-pane label="发布产品" name="fourth">
-					<publishProduct></publishProduct>
+					<publishProduct v-if="activeName=='fourth'"></publishProduct>
 				</el-tab-pane>
 				<el-tab-pane label="消费明细" name="five">
-					<expense></expense>
+					<expense v-if="activeName=='five'"></expense>
 				</el-tab-pane>
 				<el-tab-pane label="修改密码" name="six">
-					<psword></psword>
+					<psword v-if="activeName=='six'"></psword>
 				</el-tab-pane>
 				
 			</el-tabs>
@@ -27,12 +27,12 @@
 </template>
 
 <script>
-import psword from './psword.vue'
-import expense from './expense.vue'
-import customer from './customer.vue'
-import qualification from './qualification.vue'
-import productUpload from './productUpload.vue'
-import publishProduct from './publishProduct.vue'
+import psword from './pages/psword.vue'
+import expense from './pages/expense.vue'
+import customer from './pages/customer.vue'
+import qualification from './pages/qualification.vue'
+import productUpload from './pages/productUpload.vue'
+import publishProduct from './pages/publishProduct.vue'
 export default {
 	components:{customer,qualification,psword,productUpload,expense,publishProduct},
 	created () {

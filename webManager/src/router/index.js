@@ -43,9 +43,15 @@ export const syncRouter=[
                     },
                     {
                         path: '/myCenter/preview',
-                        name: 'index',
+                        name: 'preview',
                         meta: { title: '小驴贷-产品预览'},
                         component: () => import('@/views/myCenter/preview.vue'),
+                    },
+                    {
+                        path: '/myCenter/recharge',
+                        name: 'recharge',
+                        meta: { title: '小驴贷-账户充值'},
+                        component: () => import('@/views/myCenter/recharge.vue'),
                     },
                 ],
             },

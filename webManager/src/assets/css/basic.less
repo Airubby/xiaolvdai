@@ -650,5 +650,19 @@ em{
     border-color: #6DB8BA;
     color: #fff;
 }
-
+.bigradio{
+    .el-radio.is-bordered + .el-radio.is-bordered{
+        margin-left: 20px;
+        margin-bottom: 15px; 
+    }
+    .imgradio{
+        height: 54px;
+        &.el-radio.is-bordered.is-checked{
+            background: transparent;
+        }
+        img{
+            width: 100px;
+        }
+    }
+}
 
