@@ -1,70 +1,127 @@
 <template>
 	<el-scrollbar class="scrollbar">
 		<div class="mycenter-pd">
-			<div class="index-detail-box info-border">
-				<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>设置的密码必须介于6到15个字符之间,包含字母和数字</p>
-				<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>修改密码需要短信验证,我们将发送短信至您注册的手机号{{initParams.phone}}上</p>
+			<div class="account-info flex">
+				<div class="account-info-box">
+					<div class="account-con account-con-border">
+						<p>账户余额<router-link to="/myCenter/recharge" class="color">充值</router-link></p>
+						<p><span class="color">125254.00</span>元</p>
+					</div>
+					<div class="account-con account-con-border">
+						<p>奖励金额</p>
+						<p><span class="ocolorp">125.00</span>元</p>
+					</div>
+					<div class="account-con">
+						<p>消费金额</p>
+						<p><span class="color">125.00</span>元</p>
+					</div>
+				</div>
+				<div class="account-info-box">
+					<div class="account-con">
+						<p>可开票金额<a class="color">申请开票</a></p>
+						<p><span class="ocolorp">125254.00</span>元</p>
+					</div>
+				</div>
 			</div>
-			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="65px">
-				<el-row :gutter="20">
-					<el-col :span="17">
-						<el-form-item prop="psword" label="新密码">
-							<el-input v-model="initParams.psword"></el-input>
+			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="0px" class="overhidden ValidateForm">
+				<el-row :gutter="10">
+					<el-col :span="10">
+						<el-form-item label="" prop="phone">
+							<el-input v-model="initParams.phone" placeholder="输入客户手机号"></el-input>
 						</el-form-item>
 					</el-col>
-					<el-col :span="17">
-						<el-form-item prop="code" label="验证码">
-							<el-input v-model="initParams.code" style="width:calc(100% - 130px)"></el-input>
-							<el-button type="primary" class="fr" @click="getCode">发送验证码</el-button>
+					<el-col :span="10">
+						<el-form-item label="" prop="code">
+							<el-button type="primary" class="fl" @click="search">查询</el-button>
 						</el-form-item>
-					</el-col>
-					<el-col :span="14" :offset="3" class="mb15">
-						<el-button type="primary" size="medium" style="width:200px;" @click="submitForm()" @keydown="keyLogin($event)">确认修改</el-button>
 					</el-col>
 				</el-row>
 			</el-form>
+			<div class="table">
+				<el-table :data="tableData" style="width: 100%">
+					<el-table-column prop="code" label="订单编号" width="160"></el-table-column>
+					<el-table-column prop="type" label="产品类型" minWidth="60"></el-table-column>
+					<el-table-column prop="time" label="发生时间" width="160"></el-table-column>
+					<el-table-column prop="money" label="消费金额" minWidth="40">
+						<template slot-scope="scope">
+							<span class="ocolorp" v-if="scope.row.status=='plus'">+{{ scope.row.money }}元</span>
+							<span class="color" v-if="scope.row.status=='minus'">-{{ scope.row.money }}元</span>
+						</template>
+					</el-table-column>
+				</el-table>
+			</div>
+			<el-pagination
+				background
+				:page-size="3"
+				@current-change="handleCurrentChange"
+				layout="total,prev, pager, next,jumper"
+				:total="520">
+			</el-pagination>
 		</div>
 	</el-scrollbar>
 </template>
+
+<style lang="less" scoped>
+	.account-info{
+		justify-content: space-between;
+		padding: 0 0 15px 0;
+		border-bottom: 1px solid #40A563;
+		margin-bottom: 30px;
+		.account-con{
+			padding-right: 15px;
+			float: left;
+			p{
+				margin-bottom: 3px; 
+			}
+			span{
+				font-size: 22px;
+				margin-right: 5px;
+			}
+			a{
+				border-left: 1px solid #DCDFE6;
+				padding-left: 10px;
+				margin-left: 10px; 
+			}
+			&.account-con-border{
+				border-right: 1px solid #DCDFE6;
+				margin-right: 15px;
+			}
+		}
+	}
+</style>
 
 <script>
 export default {
 	components:{},
 	created () {
-	
+		
   	},
 	mounted() {
         
     },
 	data(){
-		let checkpassword = (rules, value, callback) => {
-			this.$tool.checkPasspord({rules,value,callback});
-		};
+		
 		return {
+			flag:false,
 			loading:false,
 			initParams:{
-				phone:"15222222222",
-				code:"",
-				psword:""
+				card:'1',
+				marriage:"",
 			},
 			rules: {
-				code:[
-					{ required: true,  trigger: 'change',message: '验证码不能为空' },
-				],
-				psword:[
-					{ required: true,  trigger: 'blur' ,validator:checkpassword},
-				]
+				
 			},
+			tableData:[
+				{code:"YQJL0280003043001",type:"邀请奖励",time:"2019-12-12 12:12:12",money:'50',status:'plus'},
+				{code:"YQJL0280003043001",type:"邀请奖励",time:"2019-12-12 12:12:12",money:'50',status:'plus'},
+				{code:"YQJL0280003043001",type:"邀请奖励",time:"2019-12-12 12:12:12",money:'50',status:'minus'},
+				{code:"YQJL0280003043001",type:"邀请奖励",time:"2019-12-12 12:12:12",money:'50',status:'minus'},
+			]
 		}
 	},
 	methods:{
-		getCode:function(){
-			
-		},
-		keyLogin:function(ev){
-			if(ev.keyCode == 13){
-				this.submitForm();
-			}
+		search:function(){
+
 		},
 		submitForm:function(){
 			this.$refs['ValidateForm'].validate((valid) => {
@@ -75,6 +132,9 @@ export default {
 				}
 			});
 		},
+		handleCurrentChange:function(){
+
+		}
 	},
 	watch:{
 			

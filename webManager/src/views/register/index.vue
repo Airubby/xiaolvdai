@@ -14,14 +14,14 @@
 					</el-col>
 					<el-col :span="14" :offset="5">
 						<el-form-item prop="code" label="验证码">
-							<el-input v-model="initParams.code" style="width:calc(100% - 130px)"></el-input>
+							<el-input v-model="initParams.code" style="width:calc(100% - 105px)"></el-input>
 							<el-button type="warning" class="fr" @click="getCode">发送验证码</el-button>
 						</el-form-item>
 					</el-col>
 					<el-col :span="14" :offset="5">
 						<el-form-item prop="psword" label="设置密码">
 							<el-input v-model="initParams.psword" type="password"></el-input>
-							<p class="form-info">设置的密码必须介于6到15个字符之间,包含字母和数字</p>
+							<p class="form-info" style="width:calc(100% + 100px)">设置的密码必须介于6到15个字符之间,包含字母和数字</p>
 						</el-form-item>
 					</el-col>
 					<el-col :span="14" :offset="5">
@@ -30,8 +30,10 @@
 							<p class="form-info fr" style="width: 120px;text-align:left;">(非必填)</p>
 						</el-form-item>
 					</el-col>
-					<el-col :span="20" :offset="2" class="mb15">
+					<el-col :span="20" class="mb15 text-center">
 						<el-checkbox v-model="checked">我已阅读并同意遵守</el-checkbox>
+					</el-col>
+					<el-col :span="20" :offset="2" class="mb25">
 						<a class="color ml5" @click="agreementInfo.visible=true">《信贷经理用户注册协议》</a>
 						<a class="color ml5" @click="policyInfo.visible=true">《信贷经理隐私保护政策》</a>
 						<a class="color ml5" @click="collaborateInfo.visible=true">《信贷经理合作协议》</a>

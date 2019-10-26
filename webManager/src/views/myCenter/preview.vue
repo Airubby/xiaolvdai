@@ -1,9 +1,9 @@
 <template>
-    <div class="content">
+    <div class="content" style="padding:0px 40px 0 15px;">
         <div class="main-top color">
             <div class="main-top-info">
                 <span>产品详情</span>
-                <el-button type="primary" class="fr" @click="back">返回</el-button>
+                <el-button type="primary" class="fr mt10" @click="back">返回</el-button>
             </div>
         </div>
         <div class="index-detail">

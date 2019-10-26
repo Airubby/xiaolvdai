@@ -76,6 +76,9 @@ ul,li{
 .ml15{
     margin-left: 15px;
 }
+.mr25{
+    margin-right: 25px;
+}
 .mb25{
     margin-bottom: 25px;
 }
@@ -267,7 +270,6 @@ em{
     width: 100%;
     height: 1100px;
     padding:  25px 0px 50px 25px;
-    /*
     .main-top{
         font-weight: bold;
         border-bottom: 1px solid @color;
@@ -292,7 +294,6 @@ em{
             }
         }
     }
-    */
 }
 .index-form{
     border-bottom: 1px solid @color;
@@ -491,20 +492,23 @@ em{
 
 
 .login{
-    width: 800px;
+    width: 600px;
     background: #fff;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin: -360px auto auto -400px;
+    margin: -300px auto auto -300px;
     padding: 10px 0 40px 0;
     .login-top{
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
+        img{
+            width: 420px;
+        }
     }
 }
 .register{
-    margin-top:-400px;
+    margin-top:-350px;
     .register-title{
         height: 26px;
         line-height: 26px;
@@ -650,6 +654,17 @@ em{
     border-color: #6DB8BA;
     color: #fff;
 }
+.orange.el-button--primary{
+    background: transparent;
+    border-color: @ocolorp;
+    color: @ocolorp;
+}
+.orange.el-button--primary.is-active, .orange.el-button--primary:active, .orange.el-button--primary:hover, .orange.el-button--primary:focus{
+    background: @ocolor;
+    border-color: @ocolor;
+    color: #fff;
+}
+
 .bigradio{
     .el-radio.is-bordered + .el-radio.is-bordered{
         margin-left: 20px;
@@ -665,4 +680,9 @@ em{
         }
     }
 }
-
+.el-table th{
+    background: @color;
+}
+.el-table thead{
+    color: #fff;
+}

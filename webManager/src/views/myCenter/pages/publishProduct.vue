@@ -1,107 +1,94 @@
 <template>
 	<el-scrollbar class="scrollbar">
 		<div class="mycenter-pd">
-			<div class="info-box mb25">
-				<p>亲爱的用户，7天内仅可发起一次贷款产品申请！请随时关注产品申请进度！</p>
+			<el-alert type="info" :closable="false" class="mb15">
+				<div class="flex">
+					<strong class="mr25">发布日期：2019/02/14</strong>
+					<strong class="mr25">城市：成都</strong>
+					<strong class="ocolorp">今日获客服务费：35.50元/条</strong>
+				</div>
+			</el-alert>
+			<div class="index-detail-box info-border">
+				<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>由于每日推广成本不同，获客服务费每天会有所波动，将会在凌晨5点左右更新。</p>
+				<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>获客服务费将在客户成功发发起贷款申请后，从您的账户余额中扣除。</p>
+				<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>您可以在“我的客户”中查看已成功发起贷款申请的客户信息。</p>
 			</div>
 			<div class="info" v-if="show">
-				<span>您暂时还没有申请：</span>
-				<el-button type="primary" @click="select()">马上选择贷款产品</el-button>
+				<span>您暂时还没有上传产品，无法发布产品！</span>
+				<el-button type="primary" @click="uploadP()">上传产品</el-button>
 			</div>
 			<div v-if="!show">
 				<div class="box-card box-shadow-card">
 					<div class="box-card-title">
-						<span>申请订单：c363632563</span>
-						<span>申请时间：2019.10.16 19:10</span>
+						<span>产品编号：c363632563</span>
 					</div>
 					<div class="box-card-con">
-						<div class="card-center flex">
-							<div class="card-center-box">
-								<img src="images/cardLogo.png">
-								<div class="card-center-info">
-									<p>平安银行成都分行人民南路支行-工薪贷</p>
-									<p>信贷经理：陈小斌</p>
-									<p>联系电话：13999999999</p>
-								</div>
-							</div>
-							<div class="card-center-btn">
-								<p class="mb10"><el-button type="primary">服务好赞</el-button></p>
-								<p><el-button type="warning">发起投诉</el-button></p>
-							</div>
+						<div class="userinfo flex">
+							<div>平安银行成都分行-房屋抵押</div>
+							<div class="color999">人工审核中</div>
 						</div>
-						<div class="box-card-step">
-							<div class="title">办理进度：</div>
-							<el-steps :active="2" finish-status="success" simple class="steps">
-								<el-step title="首电联系" icon></el-step>
-								<el-step title="资料准备" ></el-step>
-								<el-step title="提交审核" ></el-step>
-								<el-step title="签订协议" ></el-step>
-								<el-step title="放款成功" ></el-step>
-							</el-steps>
+						<div class="box-card-conbtn flex">
+							<div>
+								<el-button type="primary" size="mini" @click="preview">查看产品</el-button>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="box-card box-shadow-card">
 					<div class="box-card-title">
-						<span>申请订单：c363632563</span>
-						<span>申请时间：2019.10.16 19:10</span>
+						<span>产品编号：c363632563</span>
+						<span><em>访问人数：213人</em><em class="ml15">申请人数：23人</em></span>
 					</div>
 					<div class="box-card-con">
-						<div class="card-center flex">
-							<div class="card-center-box">
-								<img src="images/cardLogo.png">
-								<div class="card-center-info">
-									<p>平安银行成都分行人民南路支行-工薪贷</p>
-									<p>信贷经理：陈小斌</p>
-									<p>联系电话：13999999999</p>
-								</div>
-							</div>
-							<div class="card-center-btn">
-								<p class="mb10"><el-button type="primary">服务好赞</el-button></p>
-								<p><el-button type="warning">发起投诉</el-button></p>
-							</div>
+						<div class="userinfo flex">
+							<div>平安银行成都分行-房屋抵押</div>
+							<div class="color">发布中</div>
 						</div>
-						<div class="box-card-step">
-							<div class="title">办理进度：</div>
-							<el-steps :active="6" finish-status="success" simple class="steps">
-								<el-step title="首电联系" icon></el-step>
-								<el-step title="资料准备" ></el-step>
-								<el-step title="提交审核" ></el-step>
-								<el-step title="签订协议" ></el-step>
-								<el-step title="放款成功" ></el-step>
-							</el-steps>
+						<div class="box-card-conbtn flex">
+							<div>
+								<el-button type="primary" size="mini" @click="preview">查看产品</el-button>
+								<el-button type="primary" size="mini" @click="down" class="violet">产品下架</el-button>
+								<el-button type="primary" size="mini" @click="remove" class="cyan">删除产品</el-button>
+							</div>
+							<div class="ocolorp">竞价金额：120元</div>
 						</div>
 					</div>
 				</div>
 				<div class="box-card box-shadow-card">
 					<div class="box-card-title">
-						<span>申请订单：c363632563</span>
-						<span>申请时间：2019.10.16 19:10</span>
+						<span>产品编号：c363632563</span>
 					</div>
 					<div class="box-card-con">
-						<div class="card-center flex">
-							<div class="card-center-box">
-								<img src="images/cardLogo.png">
-								<div class="card-center-info">
-									<p>平安银行成都分行人民南路支行-工薪贷</p>
-									<p>信贷经理：陈小斌</p>
-									<p>联系电话：13999999999</p>
-								</div>
-							</div>
-							<div class="card-center-btn">
-								<p class="mb10"><el-button type="primary">服务好赞</el-button></p>
-								<p><el-button type="warning">发起投诉</el-button></p>
+						<div class="userinfo flex">
+							<div>平安银行成都分行-房屋抵押</div>
+							<div class="color999">未发布</div>
+						</div>
+						<div class="box-card-conbtn flex">
+							<div>
+								<el-button type="primary" size="mini" @click="preview">查看产品</el-button>
+								<el-button type="primary" size="mini" @click="publish" class="violet">发布产品</el-button>
+								<el-button type="primary" size="mini" @click="remove" class="cyan">删除产品</el-button>
 							</div>
 						</div>
-						<div class="box-card-step">
-							<div class="title">办理进度：</div>
-							<el-steps :active="0" finish-status="success" simple class="steps">
-								<el-step title="首电联系"></el-step>
-								<el-step title="资料准备" ></el-step>
-								<el-step title="提交审核" ></el-step>
-								<el-step title="签订协议" ></el-step>
-								<el-step title="放款成功" ></el-step>
-							</el-steps>
+					</div>
+				</div>
+				<div class="box-card box-shadow-card">
+					<div class="box-card-title">
+						<span>产品编号：c363632563</span>
+						<span><em>访问人数：213人</em><em class="ml15">申请人数：23人</em></span>
+					</div>
+					<div class="box-card-con">
+						<div class="userinfo flex">
+							<div>平安银行成都分行-房屋抵押</div>
+							<div class="color">发布中</div>
+						</div>
+						<div class="box-card-conbtn flex">
+							<div>
+								<el-button type="primary" size="mini" @click="preview">查看产品</el-button>
+								<el-button type="primary" size="mini" @click="down" class="violet">产品下架</el-button>
+								<el-button type="primary" size="mini" @click="remove" class="cyan">删除产品</el-button>
+							</div>
+							<div class="ocolorp">竞价金额：120元</div>
 						</div>
 					</div>
 				</div>
@@ -113,13 +100,17 @@
 					:total="520">
 				</el-pagination>
 			</div>
+			<down v-if="downInfo.visible" :dialog-info="downInfo"></down>
+			<remove v-if="removeInfo.visible" :dialog-info="removeInfo"></remove>
 		</div>
 	</el-scrollbar>
 </template>
 
 <script>
+import down from '../components/down.vue'
+import remove from '../components/remove.vue'
 export default {
-	components:{},
+	components:{remove,down},
 	created () {
 	
   	},
@@ -131,11 +122,29 @@ export default {
 			loading:false,
 			show:false,
 			initParams:{},
+			removeInfo:{
+				visible:false
+			},
+			downInfo:{
+				visible:false
+			}
 		}
 	},
 	methods:{
-		select:function(){
-			this.$router.push({path:'/index'});
+		publish:function(){
+
+		},
+		down:function(){
+			this.downInfo.visible=true;
+		},
+		remove:function(){
+			this.removeInfo.visible=true;
+		},
+		preview:function(){
+			this.$router.push({path:'/myCenter/preview'})
+		},
+		uploadP:function(){
+			this.$emit("backInfo","third")
 		},
 		handleCurrentChange:function(val){
 			console.log(`当前页: ${val}`);

@@ -12,7 +12,7 @@
 					<productUpload v-on:backInfo="backInfo" v-if="activeName=='third'"></productUpload>
 				</el-tab-pane>
 				<el-tab-pane label="发布产品" name="fourth">
-					<publishProduct v-if="activeName=='fourth'"></publishProduct>
+					<publishProduct v-if="activeName=='fourth'" v-on:backInfo="backInfo"></publishProduct>
 				</el-tab-pane>
 				<el-tab-pane label="消费明细" name="five">
 					<expense v-if="activeName=='five'"></expense>
