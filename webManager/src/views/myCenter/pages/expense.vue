@@ -1,7 +1,7 @@
 <template>
 	<el-scrollbar class="scrollbar">
 		<div class="mycenter-pd">
-			<div class="account-info flex">
+			<!-- <div class="account-info flex">
 				<div class="account-info-box">
 					<div class="account-con account-con-border">
 						<p>账户余额<router-link to="/myCenter/recharge" class="color">充值</router-link></p>
@@ -22,12 +22,16 @@
 						<p><span class="ocolorp">125254.00</span>元</p>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="0px" class="overhidden ValidateForm">
 				<el-row :gutter="10">
 					<el-col :span="10">
-						<el-form-item label="" prop="phone">
-							<el-input v-model="initParams.phone" placeholder="输入客户手机号"></el-input>
+						<el-form-item label="">
+							<el-date-picker
+								v-model="initParams.date"
+								type="date"
+								placeholder="选择日期">
+							</el-date-picker>
 						</el-form-item>
 					</el-col>
 					<el-col :span="10">
@@ -42,10 +46,10 @@
 					<el-table-column prop="code" label="订单编号" width="160"></el-table-column>
 					<el-table-column prop="type" label="产品类型" minWidth="60"></el-table-column>
 					<el-table-column prop="time" label="发生时间" width="160"></el-table-column>
-					<el-table-column prop="money" label="消费金额" minWidth="40">
+					<el-table-column prop="money" label="积分变化" minWidth="40">
 						<template slot-scope="scope">
-							<span class="ocolorp" v-if="scope.row.status=='plus'">+{{ scope.row.money }}元</span>
-							<span class="color" v-if="scope.row.status=='minus'">-{{ scope.row.money }}元</span>
+							<span class="ocolorp" v-if="scope.row.status=='plus'">+{{ scope.row.money }}</span>
+							<span class="color" v-if="scope.row.status=='minus'">-{{ scope.row.money }}</span>
 						</template>
 					</el-table-column>
 				</el-table>
@@ -105,7 +109,7 @@ export default {
 			flag:false,
 			loading:false,
 			initParams:{
-				card:'1',
+				date:'',
 				marriage:"",
 			},
 			rules: {

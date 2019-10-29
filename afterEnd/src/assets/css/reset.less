@@ -1,0 +1,179 @@
+
+.scrollbar .el-scrollbar__wrap { //给外层class不然element组件自己的会有问题比如下拉选项
+    overflow-x: hidden !important;
+}
+.scrollbar .el-scrollbar__view{
+    height: 100%;
+    min-height: 100%;
+}
+//自定义滚动
+.el-table--scrollable-x .el-table__body-wrapper,
+.el-table--scrollable-y .el-table__body-wrapper{
+    overflow: hidden !important;
+}
+.el-table__body-wrapper:hover > .ps__rail-x,
+.el-table__body-wrapper:hover > .ps__rail-y {
+  opacity: 0.6;
+}
+.el-table--scrollable-x .el-table__body-wrapper > .ps__rail-x,
+.el-table--scrollable-y .el-table__body-wrapper > .ps__rail-y {
+    display: block !important;
+    background-color: transparent !important;
+}
+.el-button:focus, .el-button:hover{
+    color: @color;
+    border-color: @color;
+    background: transparent;
+}
+.el-button--primary:focus,.el-button--primary:hover{
+    color: #fff;
+}
+.el-button--warning:focus, .el-button--warning:hover{
+    color: #fff;
+    border-color: @ocolorp;
+    background: @ocolorp;
+}
+.el-button--primary,
+.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner,
+.el-radio.is-bordered.is-checked{
+    background: @color;
+    border-color: @color;
+}
+.el-checkbox__input.is-checked+.el-checkbox__label,
+.el-tabs__item:hover,.el-tabs__item.is-active,
+.el-pagination.is-background .el-pager li:not(.disabled):hover,
+.el-message-box__headerbtn:focus .el-message-box__close, .el-message-box__headerbtn:hover .el-message-box__close{
+    color: @color;
+}
+.el-radio--mini.is-bordered:hover,.el-radio--small.is-bordered:hover{
+    border-color: @color;
+}
+.el-tabs__item.is-active{
+    font-weight: bold;
+}
+/**
+.el-input__inner,.el-checkbox__inner:hover,
+.el-button--primary,
+.el-radio.is-bordered{
+    border-color: @color;
+}
+**/
+.el-tabs__active-bar{
+    background-color: @color;
+}
+.el-pagination{
+    font-weight: normal;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active{
+    background: @color;
+    color: #fff;
+}
+.el-button--primary.is-active, .el-button--primary:active, .el-button--primary:hover,.el-button--primary:focus{
+    background: @colors;
+    border-color: @colors;
+}
+.el-input__inner:hover,.el-input.is-active .el-input__inner, .el-input__inner:focus{
+    border-color: @colors;
+}
+.el-button--warning{
+    background-color: @ocolor;
+    border-color: @ocolor; 
+}
+.changebtn:focus, .changebtn:hover{
+    color: @color;
+    border-color: @color;
+    background-color: transparent;
+}
+.el-radio__input.is-checked+.el-radio__label{
+    color: #fff;
+}
+.primary:focus, .primary:hover{
+    color: #fff;
+    background-color: @colors;
+}
+
+/**
+.el-radio.is-bordered,
+.el-button--mini, .el-button--small,.el-button--medium,
+.el-input__inner{
+    border-radius: 0px;
+}*/
+.el-radio__input{
+    display: none;
+}
+.el-radio--mini.is-bordered{
+    padding:6px 10px 0 0px;
+}
+.el-radio{
+    margin-right: 0px;
+}
+.el-tabs--left .el-tabs__active-bar.is-left,
+.el-tabs--left .el-tabs__nav-wrap.is-left::after, .el-tabs--left .el-tabs__nav-wrap.is-right::after, .el-tabs--right .el-tabs__nav-wrap.is-left::after, .el-tabs--right .el-tabs__nav-wrap.is-right::after{
+    width: 1px;
+}
+.el-tabs__nav.is-left{
+    transform: translateY(40px) !important;
+}
+.el-tabs__content,.el-tab-pane{
+    height: 100%;
+}
+.el-radio.is-bordered+.el-radio.is-bordered{
+    margin-left: 5px;
+}
+.ValidateForm .el-form-item--mini.el-form-item, .ValidateForm .el-form-item--small.el-form-item{
+    margin-bottom: 10px;
+}
+.ValidateForm .el-form-item--mini.form-title, .ValidateForm .el-form-item--small.form-title{
+    margin-bottom: 0px;
+}
+.el-pagination{
+    text-align: right;
+    padding-top: 15px;
+}
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
+    margin: 0 2px;
+}
+.el-pagination__jump{
+    margin-left: 5px;
+}
+.el-step.is-simple .el-step__title{
+    font-size: 12px;
+}
+.el-step.is-simple .el-step__head{
+    padding-right: 5px;
+}
+.el-step.is-simple .el-step__arrow::after, .el-step.is-simple .el-step__arrow::before{
+    height: 8px;
+}
+.el-step.is-simple .el-step__arrow::before{
+    transform: rotate(-45deg) translateY(-2px);
+}
+.el-step.is-simple .el-step__arrow::after{
+    transform: rotate(45deg) translateY(2px);
+}
+.el-notification__content,
+.el-alert .el-alert__description{
+    margin: 0;
+    font-size: 14px;
+}
+.el-steps--simple{
+    padding: 10px;
+}
+.el-upload{
+    display: block;
+}
+.city{
+    .el-radio.is-bordered{
+        margin: 6px;
+    }
+}
+.el-alert__icon.is-big{
+    font-size: 18px;
+    width: 18px;
+}
+.el-dialog__headerbtn{
+    font-size: 20px;
+    .el-dialog__close{
+        color: @color;
+    }
+}

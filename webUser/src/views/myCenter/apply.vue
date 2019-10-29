@@ -30,7 +30,7 @@
 							</div>
 						</div>
 						<div class="box-card-step">
-							<div class="title">办理进度：</div>
+							
 							<el-steps :active="2" finish-status="success" simple class="steps">
 								<el-step title="首电联系" icon></el-step>
 								<el-step title="资料准备" ></el-step>
@@ -62,7 +62,7 @@
 							</div>
 						</div>
 						<div class="box-card-step">
-							<div class="title">办理进度：</div>
+							
 							<el-steps :active="6" finish-status="success" simple class="steps">
 								<el-step title="首电联系" icon></el-step>
 								<el-step title="资料准备" ></el-step>
@@ -94,7 +94,7 @@
 							</div>
 						</div>
 						<div class="box-card-step">
-							<div class="title">办理进度：</div>
+							
 							<el-steps :active="0" finish-status="success" simple class="steps">
 								<el-step title="首电联系"></el-step>
 								<el-step title="资料准备" ></el-step>

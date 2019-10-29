@@ -14,19 +14,22 @@
 				<el-tab-pane label="发布产品" name="fourth">
 					<publishProduct v-if="activeName=='fourth'" v-on:backInfo="backInfo"></publishProduct>
 				</el-tab-pane>
-				<el-tab-pane label="消费明细" name="five">
+				<el-tab-pane label="积分明细" name="five">
 					<expense v-if="activeName=='five'"></expense>
 				</el-tab-pane>
-				<el-tab-pane label="修改密码" name="six">
-					<psword v-if="activeName=='six'"></psword>
+				<el-tab-pane label="积分赚取" name="six">
+					<credits v-if="activeName=='six'"></credits>
 				</el-tab-pane>
-				
+				<el-tab-pane label="修改密码" name="seven">
+					<psword v-if="activeName=='seven'"></psword>
+				</el-tab-pane>
 			</el-tabs>
 		</div>
     </div>
 </template>
 
 <script>
+import credits from './pages/credits.vue'
 import psword from './pages/psword.vue'
 import expense from './pages/expense.vue'
 import customer from './pages/customer.vue'
@@ -34,7 +37,7 @@ import qualification from './pages/qualification.vue'
 import productUpload from './pages/productUpload.vue'
 import publishProduct from './pages/publishProduct.vue'
 export default {
-	components:{customer,qualification,psword,productUpload,expense,publishProduct},
+	components:{customer,qualification,psword,productUpload,expense,publishProduct,credits},
 	created () {
 		if(sessionStorage.activeName){
 			this.activeName=sessionStorage.activeName;
@@ -53,11 +56,9 @@ export default {
 	},
 	methods:{
 		tabClick:function(tab){
-			console.log(tab)
 			sessionStorage.activeName=tab.name;
 		},
 		backInfo:function(info){
-			console.log(info)
 			this.activeName=info;
 			sessionStorage.activeName=info;
 		}

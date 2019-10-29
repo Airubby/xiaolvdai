@@ -88,6 +88,9 @@ ul,li{
 .pd25{
     padding: 25px;
 }
+.none-radius{
+    border-radius: 0px;
+}
 .mycenter-pd{
     padding: 25px 50px 25px 15px;
 }
@@ -177,11 +180,11 @@ em{
                 margin-bottom: 10px;
             }
             .discuss{
-                color: @color;
+                color: #999;
                 font-size: 16px;
             }
             .number{
-                background: @ocolorp;
+                background: @color;
                 color: #fff;
                 padding: 1px 6px;
             }
@@ -191,7 +194,6 @@ em{
             p{
                 font-size: 12px;
                 span{
-                    color: @color;
                     font-size: 22px;
                     margin-right: 5px;
                 }
@@ -596,6 +598,12 @@ em{
     }
     
 }
+.account-border{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+    border-bottom: 1px solid #40A563;
+}
 .company-name{
     padding-top: 25px;
     padding-bottom: 15px;
@@ -670,13 +678,34 @@ em{
         margin-left: 20px;
         margin-bottom: 15px; 
     }
+    .textradio{
+        height: 52px;
+        text-align: center;
+        padding: 5px 0;
+        width: 115px;
+        .el-radio__label{
+            padding: 0;
+            .number{
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+            .credits{
+                color: #999;
+            }
+        }
+        &.is-checked{
+            .credits{
+                color: #fff;
+            }
+        }
+    }
     .imgradio{
-        height: 54px;
+        height: 56px;
         &.el-radio.is-bordered.is-checked{
             background: transparent;
         }
         img{
-            width: 100px;
+            width: 110px;
         }
     }
 }

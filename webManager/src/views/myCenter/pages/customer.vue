@@ -29,7 +29,7 @@
 				<div class="box-card box-shadow-card">
 					<div class="box-card-title">
 						<span>订单编号：0280123525245</span>
-						<span>申请时间：2019.10.16 19:10</span>
+						<span class="hcolor">申请时间：2019.10.16 19:10</span>
 					</div>
 					<div class="box-card-con">
 						<div class="userinfo flex">
@@ -40,7 +40,7 @@
 						<div class="box-card-conbtn flex">
 							<div>
 								<el-button type="primary" size="mini" @click="info">申请信息</el-button>
-								<el-button type="primary" size="mini" @click="progress" class="violet">进度反馈</el-button>
+								<el-button type="primary" size="mini" @click="progressFn" class="violet">进度反馈</el-button>
 								<el-button type="primary" size="mini" @click="brace" class="cyan">申请无效</el-button>
 							</div>
 							<div class="ocolorp">消费：-120元</div>
@@ -50,7 +50,7 @@
 				<div class="box-card box-shadow-card">
 					<div class="box-card-title">
 						<span>订单编号：0280123525245</span>
-						<span>申请时间：2019.10.16 19:10</span>
+						<span class="hcolor">申请时间：2019.10.16 19:10</span>
 					</div>
 					<div class="box-card-con">
 						<div class="userinfo flex">
@@ -61,7 +61,7 @@
 						<div class="box-card-conbtn flex">
 							<div>
 								<el-button type="primary" size="mini" @click="info">申请信息</el-button>
-								<el-button type="primary" size="mini" @click="progress" class="violet">进度反馈</el-button>
+								<el-button type="primary" size="mini" @click="progressFn" class="violet">进度反馈</el-button>
 								<el-button type="primary" size="mini" @click="brace" class="cyan">申请无效</el-button>
 							</div>
 							<div class="ocolorp">消费：-120元</div>
@@ -71,7 +71,7 @@
 				<div class="box-card box-shadow-card">
 					<div class="box-card-title">
 						<span>订单编号：0280123525245</span>
-						<span>申请时间：2019.10.16 19:10</span>
+						<span class="hcolor">申请时间：2019.10.16 19:10</span>
 					</div>
 					<div class="box-card-con">
 						<div class="userinfo flex">
@@ -82,7 +82,7 @@
 						<div class="box-card-conbtn flex">
 							<div>
 								<el-button type="primary" size="mini" @click="info">申请信息</el-button>
-								<el-button type="primary" size="mini" @click="progress" class="violet">进度反馈</el-button>
+								<el-button type="primary" size="mini" @click="progressFn" class="violet">进度反馈</el-button>
 								<el-button type="primary" size="mini" @click="brace" class="cyan">申请无效</el-button>
 							</div>
 							<div class="ocolorp">消费：-120元</div>
@@ -92,7 +92,7 @@
 				<div class="box-card box-shadow-card">
 					<div class="box-card-title">
 						<span>订单编号：0280123525245</span>
-						<span>申请时间：2019.10.16 19:10</span>
+						<span class="hcolor">申请时间：2019.10.16 19:10</span>
 					</div>
 					<div class="box-card-con">
 						<div class="userinfo flex">
@@ -103,7 +103,7 @@
 						<div class="box-card-conbtn flex">
 							<div>
 								<el-button type="primary" size="mini" @click="info">申请信息</el-button>
-								<el-button type="primary" size="mini" @click="progress" class="violet">进度反馈</el-button>
+								<el-button type="primary" size="mini" @click="progressFn" class="violet">进度反馈</el-button>
 								<el-button type="primary" size="mini" @click="brace" class="cyan">申请无效</el-button>
 							</div>
 							<div class="ocolorp">消费：-120元</div>
@@ -120,7 +120,7 @@
 			</div>
 			<info v-if="infoData.visible" :dialog-info="infoData"></info>
 			<brace v-if="braceData.visible" :dialog-info="braceData"></brace>
-			<progress v-if="progressData.visible" :dialog-info="progressData"></progress>
+			<progressview v-if="progressData.visible" :dialog-info="progressData"></progressview>
 		</div>
 	</el-scrollbar>
 </template>
@@ -128,9 +128,9 @@
 <script>
 import info from '../components/info.vue'
 import brace from '../components/brace.vue'
-import progress from '../components/progress.vue'
+import progressview from '../components/progress.vue'
 export default {
-	components:{info,progress,brace},
+	components:{info,progressview,brace},
 	created () {
 	
   	},
@@ -175,9 +175,9 @@ export default {
 			this.infoData.visible=true;
 			this.infoData.id=id;
 		},
-		progress:function(id){
+		progressFn:function(id){
 			this.progressData.visible=true;
-			this.progressData.id=id;
+			// this.progressData.id=id;
 		},
 		brace:function(id){
 			this.braceData.visible=true;

@@ -1,10 +1,10 @@
 <template>
 	<el-scrollbar class="scrollbar">
 		<div class="mycenter-pd">
-			<div class="account-border color">
+			<div class="account-border color mb25">
 				账户充值
 			</div>
-			<div class="account-info flex">
+			<!-- <div class="account-info flex">
 				<div class="account-info-box">
 					<div class="account-con account-con-border">
 						<p>账户余额</p>
@@ -21,7 +21,7 @@
 						<p><span class="ocolorp">125254.00</span>元</p>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="0px" class="overhidden ValidateForm">
 				<el-row :gutter="10" class="mb15">
 					<el-col :span="24" class="mb10">
@@ -31,15 +31,16 @@
 					<el-col :span="24">
 						<el-form-item class="bigradio">
 							<el-radio-group v-model="initParams.card" size="medium">
-								<el-radio label="1" border>200元</el-radio>
-								<el-radio label="2" border>400元</el-radio>
-								<el-radio label="3" border>600元</el-radio>
-								<el-radio label="4" border>800元</el-radio>
-								<el-radio label="6" border>1000元</el-radio>
-								<el-radio label="7" border>2000元</el-radio>
-								<el-radio label="8" border style="margin-left:0;">4000元</el-radio>
-								<el-radio label="9" border>5000元</el-radio>
-								<el-radio label="10" border>10000元</el-radio>
+								<el-radio label="1" border class="textradio"><p class="number">200元</p><p class="credits">获200积分</p></el-radio>
+								<el-radio label="2" border class="textradio"><p class="number">400元</p><p class="credits">获400积分</p></el-radio>
+								<el-radio label="3" border class="textradio"><p class="number">600元</p><p class="credits">获600积分</p></el-radio>
+								<el-radio label="4" border class="textradio"><p class="number">800元</p><p class="credits">获800积分</p></el-radio>
+								<el-radio label="6" border class="textradio"><p class="number">1000元</p><p class="credits">1000积分</p></el-radio>
+								<el-radio label="7" border class="textradio" style="margin-left:0;"><p class="number">2000元</p><p class="credits">获2000积分</p></el-radio>
+								<el-radio label="8" border class="textradio"><p class="number">4000元</p><p class="credits">获4000积分</p></el-radio>
+								<el-radio label="9" border class="textradio"><p class="number">5000元</p><p class="credits">获5000积分</p></el-radio>
+								<el-radio label="10" border class="textradio"><p class="number">10000元</p><p class="credits">获10000积分</p></el-radio>
+								<el-radio label="10" border class="textradio"><p class="number">20000元</p><p class="credits">获20000积分</p></el-radio>
 							</el-radio-group>
 						</el-form-item>
 					</el-col>
@@ -70,12 +71,7 @@
 </template>
 
 <style lang="less" scoped>
-	.account-border{
-		font-size: 16px;
-		font-weight: bold;
-		line-height: 40px;
-		border-bottom: 1px solid #40A563;
-	}
+	
 	.account-info{
 		justify-content: space-between;
 		padding: 25px 0 15px 0;
