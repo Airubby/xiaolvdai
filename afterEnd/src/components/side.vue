@@ -8,7 +8,7 @@
         <div class="side-nav">
             <el-scrollbar class="scrollbar">
                 <div class="side-navbox">
-                    <router-link to="/myCenter/index">数据概括</router-link>
+                    <router-link to="/myCenter/index">数据概况</router-link>
                     <router-link to="/myCenter/borrowingUser">借款用户</router-link>
                     <router-link to="/myCenter/ordRes">申请订单</router-link>
                     <router-link to="/myCenter/hannels">推广渠道</router-link>

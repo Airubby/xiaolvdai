@@ -10,6 +10,12 @@
 @hcolor:#5a5a5a;
 @lcolor:#e4e7ed;
 @bcolor:#000;
+@color1:#D7C99B;
+@color2:#C89FD2;
+@color3:#9AA0D8;
+@color4:#FFB973;
+@color5:#C4D885;
+@color9:#999;
 html,
 body,
 #app{
@@ -107,9 +113,24 @@ em{
     text-align: center;
 }
 .color999{
-    color: #999;
+    color: @color9;
 }
-.font12{
+.color1{
+    color: @color1;
+}
+.color2{
+    color: @color2;
+}
+.color3{
+    color: @color3;
+}
+.color4{
+    color: @color4;
+}
+.color5{
+    color: @color5;
+}
+.font1{
     font-size: 12px;
 }
 .bgfff{
@@ -266,16 +287,61 @@ em{
     text-align: left;
 }
 .box-card{
-    margin-bottom: 15px;
+    margin-bottom: 35px;
     .box-card-title{
-        color: @color;
+        background: @color;
+        color: #fff;
         display: flex;
         justify-content: space-between;
         padding: 10px 15px;
-        border-bottom: 1px solid @color;
+        & a{
+            color: #fff;
+        }
+        &.box-card-title1{
+            background: @color1;
+        }
+        &.box-card-title2{
+            background: @color2;
+        }
+        &.box-card-title3{
+            background: @color3;
+        }
+        &.box-card-title4{
+            background: @color4;
+        }
+        &.box-card-title5{
+            background: @color5;
+        }
     }
     .box-card-con{
-        padding: 20px 15px;
+        padding: 20px;
+        overflow: hidden;
+        .box-card-contop{
+            color: #47cecb;
+            border-bottom: 1px solid @lcolor;
+            padding-bottom: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            &.box-card-contop1{
+                color: @color1;
+            }
+            &.box-card-contop2{
+                color: @color2;
+            }
+            &.box-card-contop3{
+                color: @color3;
+            }
+            &.box-card-contop4{
+                color: @color4;
+            }
+            &.box-card-contop5{
+                color: @color5;
+            }
+        }
+        .box-card-conli{
+            height: 36px;
+            line-height: 36px;
+        }
     }
 }
 
