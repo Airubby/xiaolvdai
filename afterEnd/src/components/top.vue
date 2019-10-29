@@ -1,19 +1,11 @@
 <template>
-    <div class="top flex">
-        <a href="https://www.baidu.com" target="_blank">
-            <img src="images/managerLogin.png">
-        </a>
+    <div class="main-top flex">
+        <router-link to="/myCenter/index">
+            <img src="images/logo.png">
+        </router-link>
         <div class="top-info">
-            <template v-if="!login">
-                <span>游客,您好!</span>
-                <router-link to="/login" class="btn">登录</router-link>
-                <router-link to="/register" class="btn">注册</router-link>
-            </template>
-            <template v-if="login">
-                <span>用户{{phone}},您好!</span>
-                <span class="btn" @click="outLogin" v-loading.fullscreen.lock="loading">退出登录</span>
-                <router-link to="/myCenter" class="btn button box-shadow">个人中心</router-link>
-            </template>
+            <span>以事实为基础，用数据说话</span>
+            <a class="color" @click="outLogin">退出登录</a>
         </div>
     </div>
 </template>
@@ -53,7 +45,7 @@ export default {
             }).then(() => {
                 this.loading=true;
                 this.$r.post('/outLogin', {}, r => {
-                    this.$router.push({path:'/index'});
+                    this.$router.push({path:'/login'});
                     this.$message.success("退出成功");
                     sessionStorage.removeItem('token');
                     this.$store.dispatch('setToken',"");

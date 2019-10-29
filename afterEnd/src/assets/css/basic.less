@@ -99,6 +99,10 @@ em{
 .flex{
     display: flex;
 }
+.flex-bet{
+    display: flex;
+    justify-content: space-between;
+}
 .text-center{
     text-align: center;
 }
@@ -132,169 +136,82 @@ em{
 .overhidden{
     overflow: hidden;
 }
-.box-shadow{
-    box-shadow: 0 0 5px #61896E;
-}
 .box-shadow-card{
     box-shadow: 0 0 5px #e8e8e8;
 }
-.appcontent{
-    width: 1000px;
-    margin: 0 auto;
-}
-.info-box{
+.appcontent,.scrollbar{
     width: 100%;
-    height: auto;
-    color: @ocolor;
-    border: 1px solid @ocolor;
-    font-size: 12px;
-    padding: 5px 10px;
-    line-height: 16px;
-}
-.info-border{
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid @color;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    font-size: 12px;
-}
-.main{
-    width: 770px;
-    padding: 26px 5px 5px 5px;
+    height: 100%;
 }
 .side{
-    width: 230px;
-    padding: 5px 45px 5px 5px;
-    .side-center-info{
-        padding: 10px 20px 20px;
-        .side-center-img{
-            img{
-                width: 50px;
-            }
+    width: 150px;
+    height: 100%;
+    background: #585858;
+    text-align: center;
+    color: #fff;
+    .side-top{
+        padding: 30px 30px 0;
+        height: 155px;
+        img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
         }
-        .side-center-user{
-            font-weight: bold;
-            p{
-                margin-bottom: 10px;
-            }
-            .discuss{
-                color: #999;
-                font-size: 16px;
-            }
-            .number{
-                background: @color;
+        .side-top-info{
+            padding: 7px 0 15px 0;
+            border-bottom: 1px solid #fff;
+        }
+    }
+    .side-nav{
+        width: 100%;
+        height: calc(100% - 155px);
+        .side-navbox{
+            width: 100%;
+            height: 100%;
+            padding: 25px 42px 0;
+            a{
                 color: #fff;
-                padding: 1px 6px;
-            }
-        }
-        .pay{
-            margin: 30px 0 16px 0;
-            p{
-                font-size: 12px;
-                span{
-                    font-size: 22px;
-                    margin-right: 5px;
+                height: 30px;
+                line-height: 30px;
+                display: block;
+                margin-bottom: 10px;
+                &.router-link-active{
+                    border-bottom: 1px solid @color;
+                    color: @color;
+                }
+                &:hover{
+                    text-decoration: none;
+                    color: @color;
+                    border-bottom: 1px solid @color;
                 }
             }
-            .content{
-                font-size: 14px;
-            }
-        }
-        .product{
-            line-height: 22px;
-            color: @hcolor;
-        }
-
-    }
-    .side-policy{
-        padding: 10px 0;
-        font-size: 14px;
-        line-height: 22px;
-        a{
-            display: block;
-        }
-    }
-    .side-info{
-        padding: 15px;
-        p{
-            width: 100%;
-            padding: 8px 0;
-            color: #fff;
-            text-align: center;
-            cursor: pointer;
-        }
-        .jr{
-            background: #3a8ee8;
-        }
-        .jr:hover{
-            background: #5298E3;
-        }
-        .xd{
-            background: @color;
-        }
-        .xd:hover{
-            background: @colors;
         }
     }
 }
-.top{
+.main{
+    width: calc(100% - 150px);
+    height: 100%;
+}
+.main-top{
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    line-height: 52px;
+    box-shadow: 0 0 5px #777;
     justify-content: space-between;
-    color: #fff;
-    font-weight: bold;
-    font-style: italic;
     .top-info{
-        height: 55px;
-        line-height: 65px;
-        .btn{
-            cursor: pointer;
-            margin-left: 15px;
-            display: inline-block;
-            color: #fff;
-        }
-        .btn:hover{
-            text-decoration: underline;
-        }
-        .button{
-            background: #fff;
-            width: 66px;
-            height: 20px;
-            color: @color;
-            border-radius: 5px;
-            line-height: 20px;
-            text-align: center;
-            font-style: normal;
+        font-weight: bold;
+        span{
+            font-style: italic;
+            margin-right: 40px;
         }
     }
 }
 .main-box{
     width: 100%;
-    height: 1100px;
-    padding:  25px 0px 50px 25px;
-    .main-top{
-        font-weight: bold;
-        border-bottom: 1px solid @color;
-        .main-top-info{
-            height: 45px;
-            line-height: 60px;
-            text-indent: 10px;
-            font-size: 16px;
-            .separate{
-                margin: 0 5px;
-            }
-            
-        }
-        .main-top-moreinfo{
-            height: 68px;
-            .img-info span{
-                height: 68px;
-                line-height: 80px;
-                margin-left: 10px;
-                font-style: italic;
-                color: @hcolor;
-            }
-        }
-    }
+    height: calc(100% - 50px);
+    padding:  20px 20px 0;
 }
 .index-form{
     border-bottom: 1px solid @color;
@@ -359,40 +276,6 @@ em{
     }
     .box-card-con{
         padding: 20px 15px;
-        .userinfo{
-            border-color: #E4E7ED;
-            margin-bottom: 15px;
-        }
-        .box-card-conbtn{
-            justify-content: space-between;
-            line-height: 28px;
-        }
-    }
-    .box-card-step{
-        padding-top: 10px;
-        display: flex;
-        .title{
-            color: #666;
-            width: 72px;
-            line-height: 60px;
-        }
-        .steps{
-            width: calc(100% - 72px);
-        }
-    }
-}
-.card-center{
-    justify-content: space-between;
-    border-bottom: 1px solid @lcolor;
-    padding-bottom: 10px;
-    .card-center-box{
-        width: calc(100% - 90px);
-        color: #666;
-        line-height: 24px;
-        img{
-            float: left;
-            margin-right: 15px;
-        }
     }
 }
 

@@ -32,14 +32,12 @@
 				</el-row>
 			</el-form>
 		</div>
-		<bottom class="login-bottom"></bottom>
     </div>
 </template>
 
 <script>
-import bottom from "@/components/bottom.vue"
 export default {
-	components:{bottom},
+	components:{},
 	created () {
 	
   	},
