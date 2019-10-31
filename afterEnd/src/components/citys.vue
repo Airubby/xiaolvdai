@@ -1,8 +1,9 @@
 <template>
-    <el-dialog title="城市选择" :visible.sync="dialogInfo.visible" width="650px" v-dialogDrag>
+    <el-dialog title="城市选择" :visible.sync="dialogInfo.visible" width="650px" v-dialogDrag append-to-body :close-on-click-modal="false">
         <el-scrollbar style="height:340px;" class="scrollbar">
             <div v-loading="loading" style="padding: 0 15px;">
                 <el-radio-group v-model="city" class="city">
+                    <el-radio label="全国" border style="margin-top:10px;">全国</el-radio>
                     <el-tabs  tab-position="top" style="height: 280px;">
                         <el-tab-pane label="A B C">
                             <el-radio label="鞍山" border>鞍山</el-radio>
