@@ -1,27 +1,24 @@
 <template>
-    <el-dialog title="新增渠道" :visible.sync="dialogInfo.visible" width="450px" v-dialogDrag :close-on-click-modal="false">
-        <el-scrollbar style="height:250px;" class="scrollbar">
-            <div v-loading="loading" class="dialog-box">
+    <el-dialog title="顾问重配" :visible.sync="dialogInfo.visible" width="450px" v-dialogDrag :close-on-click-modal="false">
+        <el-scrollbar style="height:160px;" class="scrollbar">
+            <div v-loading="loading" class="dialog-box pdt30">
                 <el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="82px" class="overhidden">
-                    <el-row :gutter="10">
+                    <el-row :gutter="25">
                         <el-col :span="24">
-                            <el-form-item label="渠道名称:" prop="name">
-                                <el-input v-model="initParams.name" size="mini"></el-input>
+                            <el-form-item label="选择部门:" prop="name">
+                                <el-select v-model="value" placeholder="请选择">
+                                    <el-option
+                                        v-for="item in options"
+                                        :key="item.value"
+                                        :label="item.label"
+                                        :value="item.value">
+                                    </el-option>
+                                </el-select>
                             </el-form-item>
                         </el-col>
                         <el-col :span="24">
-                            <el-form-item label="推广城市:">
-                                <el-input v-model="initParams.city" readonly="" size="mini" style="width:180px;margin-right:5px;"></el-input><a class="color" @click="selectCity">选择推广城市</a>
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="24">
-                            <el-form-item label="推广频道:">
-                                <el-input v-model="initParams.salary" size="mini"></el-input>
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="24">
-                            <el-form-item label="落地链接:">
-                                <el-input v-model="initParams.monthlySalary" size="mini"></el-input>
+                            <el-form-item label="设定岗位:" prop="name">
+                                <el-input v-model="initParams.name"></el-input>
                             </el-form-item>
                         </el-col>
                     </el-row>
@@ -43,6 +40,10 @@ export default {
     data() {
         return {
             loading:false,
+            options:[
+                {value:"1",label:"商务一部"},
+                {value:"2",label:"商务二部"},
+            ],
             initParams:{
 				phone:"152222222222",
                 name:'',
@@ -85,12 +86,6 @@ export default {
                 }
             })
         },
-        selectCity:function(){
-            this.cityInfo.visible=true;
-        },
-        backInfo:function(info){
-            this.initParams.city=info;
-        }
     },
     props:["dialogInfo"]
 }

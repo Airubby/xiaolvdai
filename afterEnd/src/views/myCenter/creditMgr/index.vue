@@ -31,13 +31,15 @@
             </el-search-table-pagination>
         </el-scrollbar>
         <info v-if="infoData.visible" :dialog-info="infoData"></info>
+        <config v-if="configInfo.visible" :dialog-info="configInfo"></config>
     </div>
 </template>
 
 <script>
 import info from './components/info.vue'
+import config from './components/config.vue'
 export default {
-    components: {info},
+    components: {info,config},
     created() {
         
     },
@@ -68,6 +70,9 @@ export default {
             ],
             infoData:{
                 visible:false,
+            },
+            configInfo:{
+                visible:false,
             }
         }
     },
@@ -78,11 +83,8 @@ export default {
         searchFN:function(){
 
         },
-        add:function(){
-
-        },
         config:function(){
-
+            this.configInfo.visible=true;
         },
         infoFn:function(){
             this.infoData.visible=true;

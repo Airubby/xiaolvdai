@@ -1,185 +1,100 @@
 <template>
-    <el-dialog title="用户详情" :visible.sync="dialogInfo.visible" width="650px" v-dialogDrag>
+    <el-dialog title="信贷经理详情" :visible.sync="dialogInfo.visible" width="850px" v-dialogDrag :close-on-click-modal="false">
         <el-scrollbar style="height:500px;" class="scrollbar">
             <div v-loading="loading" class="dialog-box">
-                <el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="75px" class="overhidden ValidateForm">
-                    <el-row :gutter="10" class="mb15">
-                        <el-col :span="24">
-                            <el-form-item label="基础资料" class="form-title" label-width="300px">
+                <el-form :model="initParams" ref="ValidateForm" label-width="75px" class="overhidden ValidateForm">
+                    <el-row :gutter="25">
+                        <el-col :span="12">
+                            <el-form-item label="姓名:">
+                                {{initParams.name}}张小小
                             </el-form-item>
                         </el-col>
-                        <el-col :span="24">
-                            <el-form-item label="手机号码:" style="margin-bottom:0;">
+                        <el-col :span="12">
+                            <el-form-item label="手机号码:">
                                 {{initParams.phone}}
                             </el-form-item>
                         </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="您的姓名:" style="width:200px;">
-                                <el-input v-model="initParams.name" size="mini"></el-input>
-                            </el-form-item>
-                            <el-form-item label="性别:">
-                                <el-radio-group v-model="initParams.sex" size="mini">
-                                    <el-radio label="1" border>先生</el-radio>
-                                    <el-radio label="2" border>女士</el-radio>
-                                </el-radio-group>
+                        <el-col :span="12">
+                            <el-form-item label="信用积分:">
+                                {{initParams.sex}}120赞
                             </el-form-item>
                         </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="婚姻状况:">
-                                <el-radio-group v-model="initParams.marriage" size="mini">
-                                    <el-radio label="1" border>无配偶</el-radio>
-                                    <el-radio label="2" border>有配偶</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="子女状况:" class="ml15">
-                                <el-radio-group v-model="initParams.child" size="mini">
-                                    <el-radio label="1" border>无子女</el-radio>
-                                    <el-radio label="2" border>有子女</el-radio>
-                                </el-radio-group>
+                        <el-col :span="12">
+                            <el-form-item label="经理编号:">
+                                {{initParams.marriage}}0100001
                             </el-form-item>
                         </el-col>
-                        <el-col :span="24">
-                            <el-form-item label="教育学历:">
-                                <el-radio-group v-model="initParams.education" size="mini">
-                                    <el-radio label="1" border>本科以下</el-radio>
-                                    <el-radio label="2" border>大学本科</el-radio>
-                                    <el-radio label="3" border>本科以上</el-radio>
-                                </el-radio-group>
+                        <el-col :span="12">
+                            <el-form-item label="所属机构:">
+                                {{initParams.child}}四川金融有限公司
                             </el-form-item>
                         </el-col>
-                    </el-row>
-                    <el-row :gutter="10" class="mb15">
-                        <el-col :span="24">
-                            <el-form-item label="工作情况" class="form-title" label-width="300px">
+                        <el-col :span="12">
+                            <el-form-item label="服务城市:">
+                                {{initParams.education}}成都
                             </el-form-item>
                         </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="工资发放:">
-                                <el-radio-group v-model="initParams.salary" size="mini">
-                                    <el-radio label="1" border>打卡发放</el-radio>
-                                    <el-radio label="2" border>现金发放</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="月薪收入:" class="ml15">
-                                <el-radio-group v-model="initParams.monthlySalary" size="mini">
-                                    <el-radio label="1" border>3千以下</el-radio>
-                                    <el-radio label="2" border>3-5千</el-radio>
-                                    <el-radio label="3" border>5千以上</el-radio>
-                                </el-radio-group>
+                        <el-col :span="12">
+                            <el-form-item label="下架产品:">
+                                {{initParams.education}}3个
                             </el-form-item>
                         </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="社保交纳:">
-                                <el-radio-group v-model="initParams.social" size="mini">
-                                    <el-radio label="1" border>已交纳</el-radio>
-                                    <el-radio label="2" border>未交纳</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="公积金:" class="ml15">
-                                <el-radio-group v-model="initParams.accumulation" size="mini">
-                                    <el-radio label="1" border>已交纳</el-radio>
-                                    <el-radio label="2" border>未交纳</el-radio>
-                                </el-radio-group>
+                        <el-col :span="12">
+                            <el-form-item label="发布产品:">
+                                {{initParams.salary}}5个
                             </el-form-item>
                         </el-col>
-                    </el-row>
-                    <el-row :gutter="10" class="mb15">
-                        <el-col :span="24">
-                            <el-form-item label="经营状况" class="form-title" label-width="300px">
+                        <el-col :span="12">
+                            <el-form-item label="获客条数:">
+                                {{initParams.monthlySalary}}32条
                             </el-form-item>
                         </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="主体性质:">
-                                <el-radio-group v-model="initParams.nature" size="mini">
-                                    <el-radio label="1" border>有限公司</el-radio>
-                                    <el-radio label="2" border>个体工商</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="经营年限:" class="ml15">
-                                <el-radio-group v-model="initParams.agelimit" size="mini">
-                                    <el-radio label="1" border>1年以内</el-radio>
-                                    <el-radio label="2" border>1-2年</el-radio>
-                                    <el-radio label="3" border>2年以上</el-radio>
-                                </el-radio-group>
+                        <el-col :span="12">
+                            <el-form-item label="充值金额:">
+                                {{initParams.education}}3400元
                             </el-form-item>
                         </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="纳税类型:">
-                                <el-radio-group v-model="initParams.ratepaying" size="mini">
-                                    <el-radio label="1" border>小规模纳税</el-radio>
-                                    <el-radio label="2" border>一般纳税</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="法人代表:" class="ml15">
-                                <el-radio-group v-model="initParams.person" size="mini">
-                                    <el-radio label="1" border>本人</el-radio>
-                                    <el-radio label="2" border>非本人</el-radio>
-                                </el-radio-group>
+                        <el-col :span="12">
+                            <el-form-item label="已开票额:">
+                                {{initParams.education}}3400元
                             </el-form-item>
                         </el-col>
-                    </el-row>
-                    <el-row :gutter="10" class="mb15">
-                        <el-col :span="24">
-                            <el-form-item label="资产佐证" class="form-title" label-width="300px">
+                        <el-col :span="12">
+                            <el-form-item label="积分余额:">
+                                {{initParams.education}}3400
                             </el-form-item>
                         </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="房屋资产:">
-                                <el-radio-group v-model="initParams.house" size="mini">
-                                    <el-radio label="1" border>已购买</el-radio>
-                                    <el-radio label="2" border>未购买</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="房产按揭:" class="ml15">
-                                <el-radio-group v-model="initParams.housetype" size="mini">
-                                    <el-radio label="1" border>全款房</el-radio>
-                                    <el-radio label="2" border>按揭房</el-radio>
-                                </el-radio-group>
+                        <el-col :span="12">
+                            <el-form-item label="推荐经理:">
+                                {{initParams.education}}0200021
                             </el-form-item>
                         </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="车辆资产:">
-                                <el-radio-group v-model="initParams.car" size="mini">
-                                    <el-radio label="1" border>已购买</el-radio>
-                                    <el-radio label="2" border>未购买</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="车辆按揭:" class="ml15">
-                                <el-radio-group v-model="initParams.cartype" size="mini">
-                                    <el-radio label="1" border>全款房</el-radio>
-                                    <el-radio label="2" border>按揭房</el-radio>
-                                </el-radio-group>
+                        <el-col :span="12">
+                            <el-form-item label="被诉成功:">
+                                {{initParams.education}}2次
                             </el-form-item>
                         </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="商业保险:">
-                                <el-radio-group v-model="initParams.insurance" size="mini">
-                                    <el-radio label="1" border>已购买</el-radio>
-                                    <el-radio label="2" border>未购买</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="保险角色:" class="ml15">
-                                <el-radio-group v-model="initParams.insurancetype" size="mini">
-                                    <el-radio label="1" border>投保人</el-radio>
-                                    <el-radio label="2" border>受益人</el-radio>
-                                </el-radio-group>
+                        <el-col :span="12">
+                            <el-form-item label="恶意无效:">
+                                {{initParams.education}}1次
                             </el-form-item>
                         </el-col>
                     </el-row>
                 </el-form>
+                <div class="index-detail-box info-border mt10">
+                    <p class="index-detail-box-con color"><i><img src="images/jiantou.png"></i>可开票金额=消费金额-奖励金额-已开票金额</p>
+                </div>
             </div>
         </el-scrollbar>
     </el-dialog>
 </template>
 <style lang="less" scoped>
-    .uinfo{
-        color: #fff;
-        height: 36px;
-        line-height: 36px;
-        text-align: center;
+    .el-col-12{
+        border-bottom: 1px solid #EBEEF5;
+        margin-bottom: 10px;
     }
-    .cbg{
-        background: #86A3C6;
+    .ValidateForm .el-form-item--small.el-form-item{
+        margin-bottom: 5px;
     }
 </style>
 
