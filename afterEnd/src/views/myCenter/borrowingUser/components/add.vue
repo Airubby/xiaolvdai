@@ -1,6 +1,6 @@
 <template>
     <el-dialog title="新增用户" :visible.sync="dialogInfo.visible" width="650px" v-dialogDrag>
-        <el-scrollbar style="height:500px;" class="scrollbar">
+        <el-scrollbar style="height:460px;" class="scrollbar">
             <div v-loading="loading" class="dialog-box">
                 <el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="75px" class="overhidden ValidateForm">
                     <el-row :gutter="10" class="mb15">

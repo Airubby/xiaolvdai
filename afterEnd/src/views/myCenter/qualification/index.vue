@@ -24,8 +24,8 @@
                 <el-table-column slot="prepend" type="index" label="序号"></el-table-column>
                 <template slot-scope="scope" slot="preview-handle">
                     <div class="table-span">
-                        <a @click="infoFn(scope.row,scope.$index)" v-if="scope.row.source=='B'">审核</a>
-                        <a @click="infoFn(scope.row,scope.$index)" v-if="scope.row.source=='A'||scope.row.source=='C'">查看</a>
+                        <a @click="infoFn(scope.row,'资料审核')" v-if="scope.row.source=='B'">审核</a>
+                        <a @click="infoFn(scope.row,'资料查看')" v-else>查看</a>
                     </div>
                 </template>
                 <template slot-scope="scope" slot="preview-source">

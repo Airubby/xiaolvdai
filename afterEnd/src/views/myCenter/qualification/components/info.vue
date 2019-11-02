@@ -1,6 +1,6 @@
 <template>
     <el-dialog title="资料审核" :visible.sync="dialogInfo.visible" width="650px" v-dialogDrag :close-on-click-modal="false">
-        <el-scrollbar style="height:500px;" class="scrollbar">
+        <el-scrollbar style="height:460px;" class="scrollbar">
             <div v-loading="loading" class="dialog-box">
                 <div class="userinfo flex">
                     <div>姓名：陈小龙</div>
