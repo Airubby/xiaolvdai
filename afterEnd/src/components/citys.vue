@@ -3,8 +3,8 @@
         <el-scrollbar style="height:340px;" class="scrollbar">
             <div v-loading="loading" style="padding: 0 15px;">
                 <el-radio-group v-model="city" class="city">
-                    <el-radio label="全国" border style="margin-top:10px;">全国</el-radio>
-                    <el-tabs  tab-position="top" style="height: 280px;">
+                    <el-radio label="全国" border style="margin-top:10px;" v-if="!dialogInfo.hideall">全国</el-radio>
+                    <el-tabs  tab-position="top" style="height: 280px;" :class="{'mt25':!dialogInfo.hideall}">
                         <el-tab-pane label="A B C">
                             <el-radio label="鞍山" border>鞍山</el-radio>
                             <el-radio label="安庆" border>安庆</el-radio>

@@ -6,10 +6,10 @@
                     <el-row :gutter="10" class="mb15">
                         <el-col :span="24" class="flex">
                             <el-form-item label="客户姓名:" style="width:200px;">
-                                <el-input v-model="initParams.name" size="mini"></el-input>
+                                <el-input v-model="initParams.name"></el-input>
                             </el-form-item>
                             <el-form-item label="性别:">
-                                <el-radio-group v-model="initParams.sex" size="mini">
+                                <el-radio-group v-model="initParams.sex">
                                     <el-radio label="1" border>先生</el-radio>
                                     <el-radio label="2" border>女士</el-radio>
                                 </el-radio-group>
@@ -23,13 +23,13 @@
                         </el-col>
                         <el-col :span="24" class="flex">
                             <el-form-item label="工资发放:">
-                                <el-radio-group v-model="initParams.salary" size="mini">
+                                <el-radio-group v-model="initParams.salary">
                                     <el-radio label="1" border>打卡发放</el-radio>
                                     <el-radio label="2" border>现金发放</el-radio>
                                 </el-radio-group>
                             </el-form-item>
                             <el-form-item label="月薪收入:" class="ml15">
-                                <el-radio-group v-model="initParams.monthlySalary" size="mini">
+                                <el-radio-group v-model="initParams.monthlySalary">
                                     <el-radio label="1" border>3千以下</el-radio>
                                     <el-radio label="2" border>3-5千</el-radio>
                                     <el-radio label="3" border>5千以上</el-radio>
@@ -38,13 +38,13 @@
                         </el-col>
                         <el-col :span="24" class="flex">
                             <el-form-item label="社保交纳:">
-                                <el-radio-group v-model="initParams.social" size="mini">
+                                <el-radio-group v-model="initParams.social">
                                     <el-radio label="1" border>已交纳</el-radio>
                                     <el-radio label="2" border>未交纳</el-radio>
                                 </el-radio-group>
                             </el-form-item>
                             <el-form-item label="公积金:" class="ml15">
-                                <el-radio-group v-model="initParams.accumulation" size="mini">
+                                <el-radio-group v-model="initParams.accumulation">
                                     <el-radio label="1" border>已交纳</el-radio>
                                     <el-radio label="2" border>未交纳</el-radio>
                                 </el-radio-group>
@@ -58,13 +58,13 @@
                         </el-col>
                         <el-col :span="24" class="flex">
                             <el-form-item label="主体性质:">
-                                <el-radio-group v-model="initParams.nature" size="mini">
+                                <el-radio-group v-model="initParams.nature">
                                     <el-radio label="1" border>有限公司</el-radio>
                                     <el-radio label="2" border>个体工商</el-radio>
                                 </el-radio-group>
                             </el-form-item>
                             <el-form-item label="经营年限:" class="ml15">
-                                <el-radio-group v-model="initParams.agelimit" size="mini">
+                                <el-radio-group v-model="initParams.agelimit">
                                     <el-radio label="1" border>1年以内</el-radio>
                                     <el-radio label="2" border>1-2年</el-radio>
                                     <el-radio label="3" border>2年以上</el-radio>
@@ -73,13 +73,13 @@
                         </el-col>
                         <el-col :span="24" class="flex">
                             <el-form-item label="纳税类型:">
-                                <el-radio-group v-model="initParams.ratepaying" size="mini">
+                                <el-radio-group v-model="initParams.ratepaying">
                                     <el-radio label="1" border>小规模纳税</el-radio>
                                     <el-radio label="2" border>一般纳税</el-radio>
                                 </el-radio-group>
                             </el-form-item>
                             <el-form-item label="法人代表:" class="ml15">
-                                <el-radio-group v-model="initParams.person" size="mini">
+                                <el-radio-group v-model="initParams.person">
                                     <el-radio label="1" border>本人</el-radio>
                                     <el-radio label="2" border>非本人</el-radio>
                                 </el-radio-group>
@@ -93,13 +93,13 @@
                         </el-col>
                         <el-col :span="24" class="flex">
                             <el-form-item label="房屋资产:">
-                                <el-radio-group v-model="initParams.house" size="mini">
+                                <el-radio-group v-model="initParams.house">
                                     <el-radio label="1" border>已购买</el-radio>
                                     <el-radio label="2" border>未购买</el-radio>
                                 </el-radio-group>
                             </el-form-item>
                             <el-form-item label="房产按揭:" class="ml15">
-                                <el-radio-group v-model="initParams.housetype" size="mini">
+                                <el-radio-group v-model="initParams.housetype">
                                     <el-radio label="1" border>全款房</el-radio>
                                     <el-radio label="2" border>按揭房</el-radio>
                                 </el-radio-group>
@@ -107,13 +107,13 @@
                         </el-col>
                         <el-col :span="24" class="flex">
                             <el-form-item label="车辆资产:">
-                                <el-radio-group v-model="initParams.car" size="mini">
+                                <el-radio-group v-model="initParams.car">
                                     <el-radio label="1" border>已购买</el-radio>
                                     <el-radio label="2" border>未购买</el-radio>
                                 </el-radio-group>
                             </el-form-item>
                             <el-form-item label="车辆按揭:" class="ml15">
-                                <el-radio-group v-model="initParams.cartype" size="mini">
+                                <el-radio-group v-model="initParams.cartype">
                                     <el-radio label="1" border>全款房</el-radio>
                                     <el-radio label="2" border>按揭房</el-radio>
                                 </el-radio-group>
@@ -121,13 +121,13 @@
                         </el-col>
                         <el-col :span="24" class="flex">
                             <el-form-item label="商业保险:">
-                                <el-radio-group v-model="initParams.insurance" size="mini">
+                                <el-radio-group v-model="initParams.insurance">
                                     <el-radio label="1" border>已购买</el-radio>
                                     <el-radio label="2" border>未购买</el-radio>
                                 </el-radio-group>
                             </el-form-item>
                             <el-form-item label="保险角色:" class="ml15">
-                                <el-radio-group v-model="initParams.insurancetype" size="mini">
+                                <el-radio-group v-model="initParams.insurancetype">
                                     <el-radio label="1" border>投保人</el-radio>
                                     <el-radio label="2" border>受益人</el-radio>
                                 </el-radio-group>
