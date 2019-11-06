@@ -12,9 +12,6 @@
                     <el-col :span="8">
                         <el-button type="primary" @click="searchFN">搜索</el-button>
                     </el-col>
-                    <el-col :span="11" class="text-right">
-                        <el-button type="primary" @click="add">新增用户</el-button>
-                    </el-col>
                 </el-row>
             </el-form>
             <el-search-table-pagination

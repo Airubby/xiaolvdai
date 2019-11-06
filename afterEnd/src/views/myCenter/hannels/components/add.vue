@@ -6,22 +6,22 @@
                     <el-row :gutter="10">
                         <el-col :span="24">
                             <el-form-item label="渠道名称:" prop="name">
-                                <el-input v-model="initParams.name" size="mini"></el-input>
+                                <el-input v-model="initParams.name"></el-input>
                             </el-form-item>
                         </el-col>
                         <el-col :span="24">
                             <el-form-item label="推广城市:">
-                                <el-input v-model="initParams.city" readonly="" size="mini" style="width:180px;margin-right:5px;"></el-input><a class="color" @click="selectCity">选择推广城市</a>
+                                <el-input v-model="initParams.city" readonly="" style="width:180px;margin-right:5px;"></el-input><a class="color" @click="selectCity">选择推广城市</a>
                             </el-form-item>
                         </el-col>
                         <el-col :span="24">
                             <el-form-item label="推广频道:">
-                                <el-input v-model="initParams.salary" size="mini"></el-input>
+                                <el-input v-model="initParams.salary"></el-input>
                             </el-form-item>
                         </el-col>
                         <el-col :span="24">
                             <el-form-item label="落地链接:">
-                                <el-input v-model="initParams.monthlySalary" size="mini"></el-input>
+                                <el-input v-model="initParams.monthlySalary"></el-input>
                             </el-form-item>
                         </el-col>
                     </el-row>

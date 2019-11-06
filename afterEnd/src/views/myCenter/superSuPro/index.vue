@@ -13,8 +13,8 @@
                         <el-button type="primary" @click="searchFN">搜索</el-button>
                     </el-col>
                     <el-col :span="11" class="text-right">
-                        <el-button type="primary" @click="addBranch">新增部门</el-button>
-                        <el-button @click="addStation">新增岗位</el-button>
+                        <el-button type="primary" @click="BranchInfo.visible=true">新增部门</el-button>
+                        <el-button @click="infoFn">新增岗位权限</el-button>
                     </el-col>
                 </el-row>
             </el-form>
@@ -26,15 +26,10 @@
                 :show-select-all="true"
                 :columns="table_columns" ref="thisRef">   
                 <el-table-column slot="prepend" type="index" label="序号"></el-table-column>
-                <template slot-scope="scope" slot="preview-source">
-                    <span v-if="scope.row.source=='B'" class="ocolorp">投诉中</span>
-                    <span v-if="scope.row.source=='A'" class="color">投诉成功</span>
-                    <span v-if="scope.row.source=='C'" class="color999">投诉撤销</span>
-                </template>
                 <template slot-scope="scope" slot="preview-handle">
                     <div class="table-span">
-                        <a @click="infoFn(scope.row,'投诉审核')" v-if="scope.row.source=='B'">审核</a>
-                        <a @click="infoFn(scope.row,'投诉查看')" v-else>查看</a>
+                        <a @click="infoFn(scope.row)">编辑</a> /
+                        <a @click="remove(scope.row)">删除</a>
                     </div>
                 </template>
             </el-search-table-pagination>
@@ -61,26 +56,23 @@ export default {
                 code:'',
             },
             table_columns:[
-                { prop: 'code', label: '订单编号',align:'center',minWidth:15},
-                { prop: 'name', label: '投诉人',align:'center',minWidth:10},
-                { prop: 'phone', label: '投诉原因',align:'center',minWidth:30},
-                { prop: 'sex', label: '被投诉经理编号',align:'center',minWidth:12},
-                { prop: 'time', label: '投诉时间',align:'center',minWidth:15},
-                { prop: 'source', label: '状态',align:'center',slotName:'preview-source',minWidth:8},
-                { prop: 'config', label: '客服人员',align:'center',minWidth:15},
-                { prop: 'handle', label: '操作',align:'center',slotName:'preview-handle',width:100},
+                { prop: 'code', label: '编号',align:'center',minWidth:15},
+                { prop: 'name', label: '部门名称',align:'center',minWidth:10},
+                { prop: 'phone', label: '岗位名称',align:'center',minWidth:30},
+                { prop: 'handle', label: '操作',align:'center',slotName:'preview-handle',width:120},
             ],
             table_data:[
-                {code:"000001",name:"张三",phone:"产品有问题，多次协商无效",sex:"0234234234",city:"成都",source:"A",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员A"},
-                {code:"000001",name:"张三",phone:"产品有问题，多次协商无效",sex:"0234234234",city:"上海",source:"B",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员B"},
-                {code:"000001",name:"张三",phone:"产品有问题，多次协商无效",sex:"0234234234",city:"成都",source:"C",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员C"},
-                {code:"000001",name:"张三",phone:"产品有问题，多次协商无效",sex:"0234234234",city:"成都",source:"B",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员D"},
+                {code:"000001",name:"总经办",phone:"总经理",sex:"0234234234",city:"成都",source:"A",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员A"},
+                {code:"000001",name:"推广一部",phone:"推广经理",sex:"0234234234",city:"上海",source:"B",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员B"},
+                {code:"000001",name:"商务一部",phone:"商务专员",sex:"0234234234",city:"成都",source:"C",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员C"},
+                {code:"000001",name:"技术研发部",phone:"工程师",sex:"0234234234",city:"成都",source:"B",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员D"},
             ],
             BranchInfo:{
                 visible:false,
             },
             StationInfo:{
                 visible:false,
+                title:""
             },
         }
     },
@@ -91,12 +83,23 @@ export default {
         searchFN:function(){
 
         },
-        addBranch:function(){
-
+        infoFn:function(row){
+            if(row){
+                this.StationInfo.title="编辑岗位权限";
+            }else{
+                this.StationInfo.title="新增岗位权限";
+            }
+            this.StationInfo.visible=true;
         },
-        addStation:function(){
-
-        },
+        remove:function(row){
+            this.$confirm('确定删除, 是否继续?', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+            }).then(() => {
+                this.$notify.success("删除成功");
+            });
+        }
 
 	},
     

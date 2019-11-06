@@ -101,13 +101,15 @@
 .el-input__inner{
     border-radius: 0px;
 }*/
-.el-radio__input{
+.el-radio__input,
+.el-checkbox__inner{
     display: none;
 }
 .el-radio--mini.is-bordered{
     padding:6px 10px 0 0px;
 }
-.el-radio{
+.el-radio,
+.el-checkbox{
     margin-right: 0px;
 }
 .el-tabs--left .el-tabs__active-bar.is-left,
@@ -122,6 +124,25 @@
 }
 .el-radio.is-bordered+.el-radio.is-bordered{
     margin-left: 5px;
+}
+.el-checkbox__label{
+    padding-left: 5px;
+}
+.el-checkbox.is-bordered{
+    margin-bottom: 10px;
+}
+.el-checkbox.is-bordered.is-checked{
+    border-color: @color;
+    background: @color;
+}
+.el-checkbox.is-bordered:hover{
+    border-color: @color;
+    .el-checkbox__label{
+        color: @color;
+    }
+}
+.el-checkbox.is-bordered.is-checked .el-checkbox__label{
+    color: #fff;
 }
 .ValidateForm .el-form-item--mini.el-form-item, .ValidateForm .el-form-item--small.el-form-item{
     margin-bottom: 10px;

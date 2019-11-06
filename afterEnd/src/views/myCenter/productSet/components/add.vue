@@ -6,7 +6,7 @@
                     <el-row :gutter="25">
                         <el-col :span="24" v-if="dialogInfo.id==''">
                             <el-form-item label="选择大类:" prop="name">
-                                <el-radio-group v-model="initParams.marriage" size="mini">
+                                <el-radio-group v-model="initParams.marriage">
                                     <el-radio label="1" border>信贷产品</el-radio>
                                     <el-radio label="2" border>抵押产品</el-radio>
                                 </el-radio-group>

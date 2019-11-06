@@ -1,55 +1,35 @@
 <template>
-    <el-dialog :title="dialogInfo.title" :visible.sync="dialogInfo.visible" width="650px" v-dialogDrag :close-on-click-modal="false">
-        <el-scrollbar style="height:380px;" class="scrollbar">
-            <div v-loading="loading" class="dialog-box">
-                <el-form :model="initParams" ref="ValidateForm" label-width="75px" class="overhidden ValidateForm">
-                    <el-row :gutter="25">
-                        <el-col :span="24" class="border-col">
-                            <el-form-item label="订单编号:">
-                                <span class="color">{{initParams.name}}0125254122</span>
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="12" class="border-col">
-                            <el-form-item label="借款用户:">
-                                {{initParams.marriage}}张三
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="12" class="border-col">
-                            <el-form-item label="联系电话:">
-                                {{initParams.child}}15252525252
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="12" class="border-col">
-                            <el-form-item label="信贷经理:">
-                                {{initParams.education}}里斯
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="12" class="border-col">
-                            <el-form-item label="联系电话:">
-                                {{initParams.salary}}15245454545
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="24" class="mt10">
-                            <el-form-item label="投诉原因:">
-                                <el-input v-model="initParams.insurancetype" type="textarea" style="height:100px;"></el-input>
-                            </el-form-item>
-                        </el-col>
-                    </el-row>
-                </el-form>
-                <div class="index-detail-box info-border mt10">
-                    <p class="index-detail-box-con ocolorp"><i><img src="images/jiantou.png"></i>投诉成功，扣100赞，记录被投诉一次！</p>
-                    <p class="index-detail-box-con ocolorp"><i><img src="images/jiantou.png"></i>投诉撤销，客户谅解，投诉撤销！</p>
+    <el-dialog title="新增部门" :visible.sync="dialogInfo.visible" width="850px" v-dialogDrag :close-on-click-modal="false">
+        <div style="height:460px;" class="dialog-box">
+            <el-button type="primary" @click="infoFn" class="mb10 fr">新增</el-button>
+            <el-scrollbar style="height:380px;" class="scrollbar">
+                <div v-loading="loading">
+                    <el-search-table-pagination
+                        type="local" 
+                        :params="initParams"
+                        :data="table_data"
+                        :showPagination="true"
+                        :show-select-all="true"
+                        :columns="table_columns" ref="thisRef">   
+                        <el-table-column slot="prepend" type="index" label="序号"></el-table-column>
+                        <template slot-scope="scope" slot="preview-handle">
+                            <div class="table-span">
+                                <a @click="infoFn(scope.row)">编辑</a>
+                            </div>
+                        </template>
+                    </el-search-table-pagination>
                 </div>
-            </div>
-        </el-scrollbar>
-        <div class="dialog-footer">
-            <el-button type="primary"  @click="submitForm()">投诉成功</el-button>
-            <el-button type="warning"  @click="cancelForm()">投诉撤销</el-button>
-            <el-button @click="cancel">退出</el-button>
+            </el-scrollbar>
         </div>
+        <div class="dialog-footer">
+            <el-button type="primary"  @click="submitForm()">确定</el-button>
+            <el-button @click="dialogInfo.visible=false">退出</el-button>
+        </div>
+        <addbranch v-if="BranchInfo.visible" :dialog-info="BranchInfo" @backInfo="backInfo"></addbranch>
     </el-dialog>
 </template>
 <script>
+import addbranch from './addbranch.vue'
 export default {
     created () {
     },
@@ -59,42 +39,44 @@ export default {
     data() {
         return {
             loading:false,
-            top:'1',
-            initParams:{
-                currentCity:"成都",
-				phone:"152222222222",
-				name:'',
-				sex:'',
-				card:'',
-				marriage:"",
-				child:"",
-				education:"",
-				salary:"",
-				monthlySalary:"",
-				social:"",
-				accumulation:"",
-				nature:"",
-				agelimit:"",
-				ratepaying:"",
-				person:"",
-				house:"",
-				housetype:"",
-				car:"",
-				cartype:"",
-				insurance:"",
-				insurancetype:"产品有问题，多次协商无效"
-			},
+            initParams:{},
+            table_columns:[
+                { prop: 'code', label: '编号',align:'center',minWidth:10},
+                { prop: 'name', label: '部门名称',align:'center',minWidth:10},
+                { prop: 'handle', label: '操作',align:'center',slotName:'preview-handle',width:100},
+            ],
+            table_data:[
+                {code:"000001",name:"总经办",phone:"总经理",sex:"0234234234",city:"成都",source:"A",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员A"},
+                {code:"000001",name:"推广一部",phone:"推广经理",sex:"0234234234",city:"上海",source:"B",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员B"},
+            ],
+            BranchInfo:{
+                visible:false,
+                id:"",
+                name:"",
+            }
         }
     },
     methods:{
         submitForm:function(){
 
         },
-        cancelForm:function(){
-            this.dialogInfo.visible=false;
+        infoFn:function(row){
+            if(row){
+                this.BranchInfo.id=row.id;
+                this.BranchInfo.name=row.name;
+                this.BranchInfo.title="编辑部门名称";
+            }else{
+                this.BranchInfo.id="";
+                this.BranchInfo.name="";
+                this.BranchInfo.title="新增部门名称";
+            }
+            this.BranchInfo.visible=true;
+        },
+        backInfo:function(){
+
         },
     },
-    components:{},
+    components:{addbranch},
     props:["dialogInfo"]
 }
 </script>

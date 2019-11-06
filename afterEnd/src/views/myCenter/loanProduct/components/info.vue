@@ -5,7 +5,7 @@
                 <div class="index-detail">
                     <div class="color index-detail-top">
                         <span class="mr10">平安银行成都分公司</span>
-                        <el-radio-group v-model="top" size="mini">
+                        <el-radio-group v-model="top">
                             <el-radio label="1" border>工薪贷款</el-radio>
                         </el-radio-group>
                     </div>

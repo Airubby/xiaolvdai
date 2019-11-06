@@ -1,7 +1,7 @@
 <template>
     <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogCancel" size="small">取 消</el-button>
         <el-button type="primary" size="small" @click="dialogSure">确 定</el-button>
+        <el-button @click="dialogCancel" size="small">取 消</el-button>
     </div>
 </template>
 
