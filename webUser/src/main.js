@@ -7,7 +7,7 @@ import axios from 'axios'
 import request from './utils/request'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import ElSearchTablePagination from 'el-table-pagination'
+// import ElSearchTablePagination from 'el-table-pagination'
 import './utils/filters' // 自定义过滤器
 import tool from './utils/tool'  //工具函数
 import 'promise-polyfill'  //兼容低版本浏览器  
@@ -37,7 +37,7 @@ Vue.use(BaiduMap, {
   ak: 'fGPfT9cGkLHcbE4DpCGXuZzaDsnwfdLe'
 })
 
-Vue.use(ElSearchTablePagination)
+// Vue.use(ElSearchTablePagination)
 
 Vue.config.productionTip = false
 // function getServerConfig() {

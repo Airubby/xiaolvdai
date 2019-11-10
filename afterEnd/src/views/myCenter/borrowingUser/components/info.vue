@@ -2,7 +2,7 @@
     <el-dialog title="用户详情" :visible.sync="dialogInfo.visible" width="650px" v-dialogDrag>
         <el-scrollbar style="height:460px;" class="scrollbar">
             <div v-loading="loading" class="dialog-box">
-                <el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="75px" class="overhidden ValidateForm">
+                <el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="85px" class="overhidden ValidateForm">
                     <el-row :gutter="10" class="mb15">
                         <el-col :span="24">
                             <el-form-item label="基础资料" class="form-title" label-width="300px">

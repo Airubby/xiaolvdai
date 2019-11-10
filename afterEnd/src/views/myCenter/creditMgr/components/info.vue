@@ -2,7 +2,7 @@
     <el-dialog title="信贷经理详情" :visible.sync="dialogInfo.visible" width="850px" v-dialogDrag :close-on-click-modal="false">
         <el-scrollbar style="height:460px;" class="scrollbar">
             <div v-loading="loading" class="dialog-box">
-                <el-form :model="initParams" ref="ValidateForm" label-width="75px" class="overhidden">
+                <el-form :model="initParams" ref="ValidateForm" label-width="85px" class="overhidden">
                     <el-row :gutter="25">
                         <el-col :span="12" class="border-col">
                             <el-form-item label="姓名:">

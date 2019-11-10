@@ -36,7 +36,9 @@
 </template>
 
 <script>
+import routerLoading from "@/views/mixin/routerLoading"
 export default {
+	mixins:[routerLoading],
 	components:{},
 	created () {
 	

@@ -51,9 +51,10 @@ export default {
             table_columns:[
               { prop: 'code', label: '订单编号',align:'center',minWidth:15},
               { prop: 'name', label: '申请人',align:'center',minWidth:10},
+              { prop: 'name1', label: '性别',align:'center',minWidth:10},
               { prop: 'phone', label: '手机号码',align:'center',minWidth:15},
-              { prop: 'sex', label: '需求金额',align:'center',minWidth:10},
-              { prop: 'city', label: '产品类型',align:'center',minWidth:15},
+              { prop: 'city', label: '所在城市',align:'center',minWidth:15},
+              { prop: 'city1', label: '产品类型',align:'center',minWidth:15},
               { prop: 'source', label: '产品机构',align:'center',minWidth:20},
               { prop: 'order', label: '信贷经理',align:'center',minWidth:10},
               { prop: 'dingdan', label: '订单管理',align:'center',minWidth:25},
@@ -61,10 +62,10 @@ export default {
               { prop: 'time', label: '申请时间',align:'center',minWidth:20},
             ],
             table_data:[
-                {code:"000001",name:"张小凡",phone:"15225252525",sex:"30万",city:"工薪贷款",source:"四川金融信息服务有限公司",order:"3333",time:"2019-12-12 12:12:12",config:"小驴推广专员A",dingdan:"首电联系"},
-                {code:"000001",name:"张小凡",phone:"15225252525",sex:"30万",city:"房屋抵押",source:"四川金融信息服务有限公司",order:"1",time:"2019-12-12 12:12:12",config:"小驴推广专员B",dingdan:"首电联系"},
-                {code:"000001",name:"张小凡",phone:"15225252525",sex:"30万",city:"房屋抵押",source:"四川金融信息服务有限公司",order:"3",time:"2019-12-12 12:12:12",config:"小驴推广专员C",dingdan:"首电联系"},
-                {code:"000001",name:"张小凡",phone:"15225252525",sex:"30万",city:"工薪贷款",source:"四川金融信息服务有限公司",order:"4",time:"2019-12-12 12:12:12",config:"小驴推广专员D",dingdan:"提交资料"},
+                {code:"000001",name:"张小凡",name1:"先生",phone:"15********25",sex:"30万",city:"成都",city1:"工薪贷款",source:"四川金融信息服务有限公司",order:"3333",time:"2019-12-12 12:12:12",config:"小驴推广专员A",dingdan:"首电联系"},
+                {code:"000001",name:"张小凡",name1:"先生",phone:"15********25",sex:"30万",city:"成都",city1:"房屋抵押",source:"四川金融信息服务有限公司",order:"1",time:"2019-12-12 12:12:12",config:"小驴推广专员B",dingdan:"首电联系"},
+                {code:"000001",name:"张小凡",name1:"先生",phone:"15********25",sex:"30万",city:"成都",city1:"房屋抵押",source:"四川金融信息服务有限公司",order:"3",time:"2019-12-12 12:12:12",config:"小驴推广专员C",dingdan:"首电联系"},
+                {code:"000001",name:"张小凡",name1:"先生",phone:"15********25",sex:"30万",city:"成都",city1:"工薪贷款",source:"四川金融信息服务有限公司",order:"4",time:"2019-12-12 12:12:12",config:"小驴推广专员D",dingdan:"提交资料"},
             ],
             infoData:{
                 visible:false,

@@ -4,7 +4,9 @@
         <div class="main">
             <top></top>
             <div class="main-box">
-                <router-view />
+                <el-scrollbar class="scrollbar">
+                    <div class="main-boxcon"><router-view /></div>
+                </el-scrollbar>
             </div>
         </div>
     </div>

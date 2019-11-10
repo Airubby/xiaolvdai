@@ -8,11 +8,6 @@
 					<strong class="ocolorp">今日获客服务费：35积分/条</strong>
 				</div>
 			</el-alert>
-			<div class="index-detail-box info-border">
-				<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>由于每日推广成本不同，获客服务费每天会有所波动，将会在凌晨5点左右更新。</p>
-				<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>获客服务费将在客户成功发发起贷款申请后，从您的账户余额中扣除相应积分。</p>
-				<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>您可以在“我的客户”中查看已成功发起贷款申请的客户信息。</p>
-			</div>
 			<div class="info" v-if="show">
 				<span>您暂时还没有上传产品，无法发布产品！</span>
 				<el-button type="primary" @click="uploadP()">上传产品</el-button>
@@ -48,7 +43,7 @@
 							<div>
 								<el-button type="primary" size="mini" @click="preview">查看产品</el-button>
 								<el-button type="primary" size="mini" @click="down" class="violet">产品下架</el-button>
-								<el-button type="primary" size="mini" @click="remove" class="cyan">删除产品</el-button>
+								<el-button type="primary" size="mini" @click="remove" class="cyan">修改产品</el-button>
 							</div>
 							<div class="ocolorp">竞价积分：120积分</div>
 						</div>
@@ -67,7 +62,7 @@
 							<div>
 								<el-button type="primary" size="mini" @click="preview">查看产品</el-button>
 								<el-button type="primary" size="mini" @click="publish" class="orange">发布产品</el-button>
-								<el-button type="primary" size="mini" @click="remove" class="cyan">删除产品</el-button>
+								<el-button type="primary" size="mini" @click="remove" class="cyan">修改产品</el-button>
 							</div>
 						</div>
 					</div>
@@ -86,7 +81,7 @@
 							<div>
 								<el-button type="primary" size="mini" @click="preview">查看产品</el-button>
 								<el-button type="primary" size="mini" @click="down" class="violet">产品下架</el-button>
-								<el-button type="primary" size="mini" @click="remove" class="cyan">删除产品</el-button>
+								<el-button type="primary" size="mini" @click="remove" class="cyan">修改产品</el-button>
 							</div>
 							<div class="ocolorp">竞价积分：120积分</div>
 						</div>

@@ -2,6 +2,9 @@
 .scrollbar .el-scrollbar__wrap { //给外层class不然element组件自己的会有问题比如下拉选项
     overflow-x: hidden !important;
 }
+.scrollbar .el-scrollbar__bar.is-horizontal{
+    display: none;
+}
 .scrollbar .el-scrollbar__view{
     height: 100%;
     min-height: 100%;
@@ -102,7 +105,7 @@
     border-radius: 0px;
 }*/
 .el-radio__input,
-.el-checkbox__inner{
+.checkbox-btn .el-checkbox__inner{
     display: none;
 }
 .el-radio--mini.is-bordered{
@@ -152,7 +155,7 @@
 }
 .el-pagination{
     text-align: right;
-    padding-top: 15px;
+    padding: 15px 0 10px 0;
 }
 .el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
     margin: 0 2px;

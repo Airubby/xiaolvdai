@@ -2,7 +2,7 @@
     <el-dialog :title="dialogInfo.title" :visible.sync="dialogInfo.visible" width="650px" v-dialogDrag :close-on-click-modal="false">
         <el-scrollbar style="height:300px;" class="scrollbar">
             <div v-loading="loading" class="dialog-box">
-                <el-form :model="initParams" ref="ValidateForm" label-width="75px" class="overhidden ValidateForm">
+                <el-form :model="initParams" ref="ValidateForm" label-width="85px" class="overhidden ValidateForm">
                     <el-row :gutter="25">
                         <el-col :span="12" class="border-col">
                             <el-form-item label="订单编号:">

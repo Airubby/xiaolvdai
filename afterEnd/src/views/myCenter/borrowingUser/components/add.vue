@@ -1,13 +1,21 @@
 <template>
-    <el-dialog title="新增用户" :visible.sync="dialogInfo.visible" width="650px" v-dialogDrag>
-        <el-scrollbar style="height:460px;" class="scrollbar">
+    <el-dialog title="新增用户" :visible.sync="dialogInfo.visible" width="450px" v-dialogDrag>
+        <el-scrollbar style="height:260px;" class="scrollbar">
             <div v-loading="loading" class="dialog-box">
-                <el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="75px" class="overhidden ValidateForm">
+                <el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="85px" class="overhidden ValidateForm">
                     <el-row :gutter="10" class="mb15">
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="客户姓名:" style="width:200px;">
+                        <el-col :span="24">
+                            <el-form-item label="选择城市:">
+                                <el-input v-model="initParams.city" readonly="" style="width:180px;margin-right:5px;"></el-input><a class="color" @click="cityInfo.visible=true">切换城市</a>
+                                <baidu-map @ready="handler"></baidu-map>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :span="24">
+                            <el-form-item label="客户姓名:">
                                 <el-input v-model="initParams.name"></el-input>
                             </el-form-item>
+                        </el-col>
+                        <el-col :span="24">
                             <el-form-item label="性别:">
                                 <el-radio-group v-model="initParams.sex">
                                     <el-radio label="1" border>先生</el-radio>
@@ -15,145 +23,37 @@
                                 </el-radio-group>
                             </el-form-item>
                         </el-col>
-                    </el-row>
-                    <el-row :gutter="10" class="mb15">
                         <el-col :span="24">
-                            <el-form-item label="工作情况" class="form-title" label-width="300px">
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="工资发放:">
-                                <el-radio-group v-model="initParams.salary">
-                                    <el-radio label="1" border>打卡发放</el-radio>
-                                    <el-radio label="2" border>现金发放</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="月薪收入:" class="ml15">
-                                <el-radio-group v-model="initParams.monthlySalary">
-                                    <el-radio label="1" border>3千以下</el-radio>
-                                    <el-radio label="2" border>3-5千</el-radio>
-                                    <el-radio label="3" border>5千以上</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="社保交纳:">
-                                <el-radio-group v-model="initParams.social">
-                                    <el-radio label="1" border>已交纳</el-radio>
-                                    <el-radio label="2" border>未交纳</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="公积金:" class="ml15">
-                                <el-radio-group v-model="initParams.accumulation">
-                                    <el-radio label="1" border>已交纳</el-radio>
-                                    <el-radio label="2" border>未交纳</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                        </el-col>
-                    </el-row>
-                    <el-row :gutter="10" class="mb15">
-                        <el-col :span="24">
-                            <el-form-item label="经营状况" class="form-title" label-width="300px">
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="主体性质:">
-                                <el-radio-group v-model="initParams.nature">
-                                    <el-radio label="1" border>有限公司</el-radio>
-                                    <el-radio label="2" border>个体工商</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="经营年限:" class="ml15">
-                                <el-radio-group v-model="initParams.agelimit">
-                                    <el-radio label="1" border>1年以内</el-radio>
-                                    <el-radio label="2" border>1-2年</el-radio>
-                                    <el-radio label="3" border>2年以上</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="纳税类型:">
-                                <el-radio-group v-model="initParams.ratepaying">
-                                    <el-radio label="1" border>小规模纳税</el-radio>
-                                    <el-radio label="2" border>一般纳税</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="法人代表:" class="ml15">
-                                <el-radio-group v-model="initParams.person">
-                                    <el-radio label="1" border>本人</el-radio>
-                                    <el-radio label="2" border>非本人</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                        </el-col>
-                    </el-row>
-                    <el-row :gutter="10" class="mb15">
-                        <el-col :span="24">
-                            <el-form-item label="资产佐证" class="form-title" label-width="300px">
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="房屋资产:">
-                                <el-radio-group v-model="initParams.house">
-                                    <el-radio label="1" border>已购买</el-radio>
-                                    <el-radio label="2" border>未购买</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="房产按揭:" class="ml15">
-                                <el-radio-group v-model="initParams.housetype">
-                                    <el-radio label="1" border>全款房</el-radio>
-                                    <el-radio label="2" border>按揭房</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="车辆资产:">
-                                <el-radio-group v-model="initParams.car">
-                                    <el-radio label="1" border>已购买</el-radio>
-                                    <el-radio label="2" border>未购买</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="车辆按揭:" class="ml15">
-                                <el-radio-group v-model="initParams.cartype">
-                                    <el-radio label="1" border>全款房</el-radio>
-                                    <el-radio label="2" border>按揭房</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                        </el-col>
-                        <el-col :span="24" class="flex">
-                            <el-form-item label="商业保险:">
-                                <el-radio-group v-model="initParams.insurance">
-                                    <el-radio label="1" border>已购买</el-radio>
-                                    <el-radio label="2" border>未购买</el-radio>
-                                </el-radio-group>
-                            </el-form-item>
-                            <el-form-item label="保险角色:" class="ml15">
-                                <el-radio-group v-model="initParams.insurancetype">
-                                    <el-radio label="1" border>投保人</el-radio>
-                                    <el-radio label="2" border>受益人</el-radio>
-                                </el-radio-group>
+                            <el-form-item label="客户电话:">
+                                <el-input v-model="initParams.phone"></el-input>
                             </el-form-item>
                         </el-col>
                     </el-row>
                 </el-form>
+                <city v-if="cityInfo.visible" :dialog-info="cityInfo" v-on:backInfo="selectCity"></city>
             </div>
         </el-scrollbar>
+        <dialog-btn-info :dialogInfobtn="dialogInfo" @dialogSure="dialogSure"></dialog-btn-info>
     </el-dialog>
 </template>
-<style lang="less" scoped>
-    .uinfo{
-        color: #fff;
-        height: 36px;
-        line-height: 36px;
-        text-align: center;
-    }
-    .cbg{
-        background: #86A3C6;
-    }
-</style>
 
 <script>
+import city from '@/components/citys.vue'
+import { mapState,mapGetters,mapMutations } from 'vuex'
+import dialogBtnInfo from '@/components/dialogBtnInfo.vue'
 export default {
+    computed:{
+        ...mapGetters({
+            currentCity:"LocalCity"
+        }),
+        // currentCity:{
+        //     get(){
+        //         return this.initParams.city=this.$store.getters.LocalCity;
+        //     }
+        // }
+    },
     created () {
+        this.initParams.city=this.$store.getters.LocalCity;
     },
     mounted() {
 
@@ -161,8 +61,13 @@ export default {
     data() {
         return {
             loading:false,
+            cityInfo:{
+                visible:false,
+                hideall:true,
+            },
             initParams:{
-				phone:"152222222222",
+                phone:'',
+				city:"",
 				name:'',
 				sex:'',
 				card:'',
@@ -183,13 +88,55 @@ export default {
 				cartype:"",
 				insurance:"",
 				insurancetype:""
-			},
+            },
+            rules:{
+                
+            }
         }
     },
     methods:{
-        
+        dialogSure:function(){
+
+        },
+        handler ({BMap, map}) {
+            if(this.$store.getters.map){
+                let _this = this;
+                //地理定位
+                // const geolocation = new BMap.Geolocation();
+                // geolocation.getCurrentPosition(function getInfo(position){
+                //     let city = position.address.city;             //获取城市信息
+                //     let province = position.address.province;    //获取省份信息
+                //     _this.LocalCity =sessionStorage.city?sessionStorage.city:city;
+                // }, function(e) {
+                //     _this.LocalCity = "定位失败"
+                // }, {provider: 'baidu'});
+
+                //用户ip定位
+                let myCity = new BMap.LocalCity();
+                myCity.get(function getInfo(result){
+                    let cityName = result.name;
+                    map.setCenter(cityName);   //关于setCenter()可参考API文档---”传送门“
+                    _this.$store.dispatch('setCity',cityName);
+                    // _this.initParams.city=cityName;
+                    console.log("map")
+                },function(e){
+                    _this.$store.dispatch('setCity',"定位失败");
+                    // _this.initParams.city="定位失败";
+                },{provider: 'baidu'})
+                this.$store.dispatch('setMap',false);
+            }
+        },
+        selectCity:function(info){
+            this.$store.dispatch('setCity',info);
+            // this.initParams.city=info;
+        },
     },
-    components:{},
+    watch:{
+        currentCity:function(val){
+            this.initParams.city=val;
+        }
+    },
+    components:{city,dialogBtnInfo},
     props:["dialogInfo"]
 }
 </script>

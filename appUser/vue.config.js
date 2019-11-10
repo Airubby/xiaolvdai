@@ -3,6 +3,8 @@ const isProduction = process.env.NODE_ENV === 'production';
 module.exports = {
     // 基本路径
     publicPath: './',
+    // 输出主文件名称
+    indexPath: './index.html',
     //baseUrl: process.env.NODE_ENV === "production" ? "./" : "/"
     // 输出文件目录
     outputDir: 'dist',
@@ -119,12 +121,12 @@ module.exports = {
         hotOnly: false,
         // 设置代理
         proxy: {
-            '/api': {
+            '/ISmac/ismacsite': {
             target: 'http://192.168.16.6:8090', // 你接口的域名
                 secure: false, // 如果是https接口，需要配置这个参数
                 changeOrigin: true, // 如果接口跨域，需要进行这个参数配置
                 pathRewrite:{
-                '^/api':'/api'
+                '^/ISmac/ismacsite':'/ISmac/ismacsite'
                 }
 		    }
         },

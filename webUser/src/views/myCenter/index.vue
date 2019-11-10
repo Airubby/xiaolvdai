@@ -13,10 +13,10 @@
 				<el-tab-pane label="我的申请" name="first">
 					<apply></apply>
 				</el-tab-pane>
-				<el-tab-pane label="实名认证" name="second" disabled>
+				<el-tab-pane label="实名认证" name="second">
 					<realname></realname>
 				</el-tab-pane>
-				<el-tab-pane label="我的资料" name="third">
+				<el-tab-pane label="我的资料" name="third" disabled>
 					<mydata></mydata>
 				</el-tab-pane>
 				<el-tab-pane label="修改密码" name="fourth">

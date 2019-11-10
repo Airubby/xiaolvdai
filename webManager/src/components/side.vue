@@ -15,13 +15,9 @@
                     <div class="pay">
                         <p>我的积分</p>
                         <p><span class="ocolorp">50</span></p>
-                        <el-button type="primary" @click="pay()" class="content mt10">积分充值</el-button>
+                        <div><el-button type="primary" @click="pay()" class="content mt10">积分充值</el-button></div>
+                        <div><el-button type="warning" @click="Earn()" class="content mt10">赚取积分</el-button></div>
                     </div>
-                </div>
-                
-                <div class="product">
-                    <p>发布产品：2个</p>
-                    <p>订单获取：34单</p>
                 </div>
             </div>
             <div class="bgfff box-shadow mb10 text-center side-policy">
@@ -29,10 +25,10 @@
                 <a class="color" @click="policyInfo.visible=true">《信贷经理隐私保护政策》</a>
                 <a class="color" @click="collaborateInfo.visible=true">《信贷经理合作协议》</a>
             </div>
-            <div class="side-info ide-center-info bgfff box-shadow">
+            <!-- <div class="side-info ide-center-info bgfff box-shadow">
                 <p class="jr mb10" @click="checkFn">金融机构排名榜</p>
                 <p class="xd" @click="checkFn">信贷经理排名榜</p>
-            </div>
+            </div> -->
         </div>
         <policy v-if="policyInfo.visible" :dialogInfo="policyInfo"></policy>
         <agreement v-if="agreementInfo.visible" :dialogInfo="agreementInfo"></agreement>
@@ -67,7 +63,12 @@ export default {
     },
     methods:{
         pay:function(){
-            this.$router.push({path:'/myCenter/recharge'})
+            sessionStorage.activeName="five";
+            this.$router.push({path:'/myCenter/index'})
+        },
+        Earn:function(){
+            sessionStorage.activeName="six";
+            this.$router.push({path:'/myCenter/index'})
         },
         checkFn:function(){
             this.$message.info("功能正在完善中");

@@ -61,7 +61,7 @@ export default {
                 { prop: 'time', label: '提交时间',align:'center',minWidth:15},
                 { prop: 'source', label: '状态',align:'center',slotName:'preview-source',minWidth:8},
                 { prop: 'config', label: '审核人员',align:'center',minWidth:8},
-                { prop: 'handle', label: '操作',align:'center',slotName:'preview-handle',width:100},
+                { prop: 'handle', label: '操作',align:'center',slotName:'preview-handle',width:80},
             ],
             table_data:[
                 {code:"000001",name:"手机号为空",phone:"公积金贷款",sex:"0234234234",city:"成都",source:"A",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员A"},

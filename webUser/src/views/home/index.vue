@@ -11,11 +11,6 @@
         <div class="index-form">
             <el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="75px" class="overhidden ValidateForm">
 				<el-row :gutter="10">
-					<el-col :span="12">
-						<el-form-item label="申请金额:">
-							<el-input v-model="initParams.money" size="mini" style="width:calc(100% - 50px);margin-right:5px;"></el-input>元
-						</el-form-item>
-					</el-col>
 					<el-col :span="24" class="flex">
 						<el-form-item label="产品类型:" class="more">
 							<el-radio-group v-model="initParams.type" size="mini">

@@ -21,7 +21,11 @@
                     <router-link to="/myCenter/orders">充值订单</router-link>
                     <router-link to="/myCenter/sdBIL">发票管理</router-link>
                     <router-link to="/myCenter/userComplain">用户投诉</router-link>
-                    <router-link to="/myCenter/superSuPro">权限管理</router-link>
+                    <router-link to="/myCenter/article">文章管理</router-link>
+                    <router-link to="/myCenter/prize">奖品管理</router-link>
+                    <router-link to="/myCenter/prizeCash">奖品兑换</router-link>
+                    <router-link to="/myCenter/superSuPro">部门权限</router-link>
+                    <router-link to="/myCenter/station">岗位管理</router-link>
                     <router-link to="/myCenter/userSuPro">人事管理</router-link>
                 </div>
             </el-scrollbar>

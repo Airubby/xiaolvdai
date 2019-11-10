@@ -12,6 +12,9 @@
                     <el-col :span="8">
                         <el-button type="primary" @click="searchFN">搜索</el-button>
                     </el-col>
+                    <el-col :span="11" class="text-right">
+                        <el-button type="primary" @click="add">新增用户</el-button>
+                    </el-col>
                 </el-row>
             </el-form>
             <el-search-table-pagination
@@ -21,25 +24,26 @@
                 :showPagination="true"
                 :show-select-all="true"
                 :columns="table_columns" ref="thisRef">   
-                <el-table-column slot="prepend" type="selection"></el-table-column>
                 <el-table-column slot="prepend" type="index" label="序号"></el-table-column>
                 <template slot-scope="scope" slot="preview-handle">
                     <div class="table-span">
                         <a @click="config(scope.row,scope.$index)">专员重配</a> /
                         <a @click="config(scope.row,scope.$index)">新增订单</a> /
-                        <a @click="infoFn(scope.row,scope.$index)">查看</a>
+                        <a @click="infoFn(scope.row,scope.$index)">去电</a>
                     </div>
                 </template>
             </el-search-table-pagination>
         </el-scrollbar>
         <info v-if="infoData.visible" :dialog-info="infoData"></info>
+        <add v-if="addInfo.visible" :dialog-info="addInfo"></add>
     </div>
 </template>
 
 <script>
 import info from './components/info.vue'
+import add from './components/add.vue'
 export default {
-    components: {info},
+    components: {info,add},
     created() {
         
     },
@@ -71,6 +75,9 @@ export default {
             ],
             infoData:{
                 visible:false,
+            },
+            addInfo:{
+                visible:false,
             }
         }
     },
@@ -82,7 +89,7 @@ export default {
 
         },
         add:function(){
-
+            this.addInfo.visible=true;
         },
         config:function(){
 

@@ -64,7 +64,7 @@
                     </div>
                     <div class="card-center-btn">
                         <p class="mb10"><el-button type="primary">赞一个</el-button></p>
-                        <p>介绍详细,打赏一个赞</p>
+                        <p>介绍详细</p>
                     </div>
                 </div>
             </div>

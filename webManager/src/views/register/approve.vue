@@ -35,8 +35,10 @@
 
 <script>
 import bottom from "@/components/bottom.vue"
+import routerLoading from "@/views/mixin/routerLoading"
 export default {
 	components:{bottom},
+	mixins:[routerLoading],
 	created () {
 	
   	},

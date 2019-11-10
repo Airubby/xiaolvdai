@@ -56,8 +56,10 @@ import policy from "@/components/policy.vue"
 import agreement from "@/components/agreement.vue"
 import collaborate from "@/components/collaborate.vue"
 import bottom from "@/components/bottom.vue"
+import routerLoading from "@/views/mixin/routerLoading"
 export default {
 	components:{agreement,policy,collaborate,bottom},
+	mixins:[routerLoading],
 	created () {
 	
   	},

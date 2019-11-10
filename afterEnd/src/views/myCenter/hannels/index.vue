@@ -58,13 +58,14 @@ export default {
               { prop: 'city', label: '推广城市',align:'center',minWidth:10},
               { prop: 'source', label: '推广频道',align:'center',minWidth:20},
               { prop: 'order', label: '落地联接',align:'center',minWidth:20},
+              { prop: 'sex', label: '资源数量',align:'center',minWidth:20},
               { prop: 'handle', label: '操作',align:'center',slotName:'preview-handle',width:120},
             ],
             table_data:[
-                {code:"000001",name:"假期推广",phone:"15225252525",sex:"30万",city:"成都",source:"四川金融信息服务有限公司",order:"www.baidu.com",time:"2019-12-12 12:12:12",config:"小驴推广专员A",dingdan:"首电联系"},
-                {code:"000001",name:"假期推广",phone:"15225252525",sex:"30万",city:"成都",source:"四川金融信息服务有限公司",order:"www.baidu.com",time:"2019-12-12 12:12:12",config:"小驴推广专员B",dingdan:"首电联系"},
-                {code:"000001",name:"假期推广",phone:"15225252525",sex:"30万",city:"成都",source:"四川金融信息服务有限公司",order:"www.baidu.com",time:"2019-12-12 12:12:12",config:"小驴推广专员C",dingdan:"首电联系"},
-                {code:"000001",name:"假期推广",phone:"15225252525",sex:"30万",city:"全国",source:"四川金融信息服务有限公司",order:"www.baidu.com",time:"2019-12-12 12:12:12",config:"小驴推广专员D",dingdan:"提交资料"},
+                {code:"000001",name:"假期推广",phone:"15225252525",sex:"30",city:"成都",source:"百度",order:"www.baidu.com",time:"2019-12-12 12:12:12",config:"小驴推广专员A",dingdan:"首电联系"},
+                {code:"000001",name:"假期推广",phone:"15225252525",sex:"30",city:"成都",source:"百度",order:"www.baidu.com",time:"2019-12-12 12:12:12",config:"小驴推广专员B",dingdan:"首电联系"},
+                {code:"000001",name:"假期推广",phone:"15225252525",sex:"30",city:"成都",source:"百度",order:"www.baidu.com",time:"2019-12-12 12:12:12",config:"小驴推广专员C",dingdan:"首电联系"},
+                {code:"000001",name:"假期推广",phone:"15225252525",sex:"30",city:"全国",source:"百度",order:"www.baidu.com",time:"2019-12-12 12:12:12",config:"小驴推广专员D",dingdan:"提交资料"},
             ],
             addInfo:{
                 visible:false,

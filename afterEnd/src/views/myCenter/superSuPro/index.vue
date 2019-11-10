@@ -1,6 +1,6 @@
 <template>
     <div class="appcontent">
-        <!-- 权限管理 -->
+        <!-- 部门权限管理 -->
         <el-scrollbar class="scrollbar">
             <el-form ref="form" :model="initParams" label-width="0px" class="overhidden">
                 <el-row :gutter="10">
@@ -13,8 +13,7 @@
                         <el-button type="primary" @click="searchFN">搜索</el-button>
                     </el-col>
                     <el-col :span="11" class="text-right">
-                        <el-button type="primary" @click="BranchInfo.visible=true">新增部门</el-button>
-                        <el-button @click="infoFn">新增岗位权限</el-button>
+                        <el-button type="primary" @click="infoFn">新增部门权限</el-button>
                     </el-col>
                 </el-row>
             </el-form>
@@ -34,16 +33,14 @@
                 </template>
             </el-search-table-pagination>
         </el-scrollbar>
-        <station v-if="StationInfo.visible" :dialog-info="StationInfo"></station>
-        <branch v-if="BranchInfo.visible" :dialog-info="BranchInfo"></branch>
+        <add v-if="BranchInfo.visible" :dialog-info="BranchInfo"></add>
     </div>
 </template>
 
 <script>
-import station from './components/station.vue'
-import branch from './components/branch.vue'
+import add from './components/add.vue'
 export default {
-    components: {station,branch},
+    components: {add},
     created() {
         
     },
@@ -56,16 +53,14 @@ export default {
                 code:'',
             },
             table_columns:[
-                { prop: 'code', label: '编号',align:'center',minWidth:15},
+                { prop: 'code', label: '编号',align:'center',minWidth:10},
                 { prop: 'name', label: '部门名称',align:'center',minWidth:10},
-                { prop: 'phone', label: '岗位名称',align:'center',minWidth:30},
+                { prop: 'city', label: '操作权限',align:'center',minWidth:40},
                 { prop: 'handle', label: '操作',align:'center',slotName:'preview-handle',width:120},
             ],
             table_data:[
-                {code:"000001",name:"总经办",phone:"总经理",sex:"0234234234",city:"成都",source:"A",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员A"},
-                {code:"000001",name:"推广一部",phone:"推广经理",sex:"0234234234",city:"上海",source:"B",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员B"},
-                {code:"000001",name:"商务一部",phone:"商务专员",sex:"0234234234",city:"成都",source:"C",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员C"},
-                {code:"000001",name:"技术研发部",phone:"工程师",sex:"0234234234",city:"成都",source:"B",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员D"},
+                {code:"000001",name:"总经办",phone:"总经理",sex:"0234234234",city:"数据概况,借款用户,申请订单",source:"A",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员A"},
+                {code:"000001",name:"推广一部",phone:"推广经理",sex:"0234234234",city:"数据概况,借款用户,申请订单",source:"B",order:"23.23元",time:"2019-12-12 12:12:12",config:"小驴审核专员B"},
             ],
             BranchInfo:{
                 visible:false,
@@ -85,11 +80,11 @@ export default {
         },
         infoFn:function(row){
             if(row){
-                this.StationInfo.title="编辑岗位权限";
+                this.BranchInfo.title="编辑部门权限";
             }else{
-                this.StationInfo.title="新增岗位权限";
+                this.BranchInfo.title="新增部门权限";
             }
-            this.StationInfo.visible=true;
+            this.BranchInfo.visible=true;
         },
         remove:function(row){
             this.$confirm('确定删除, 是否继续?', '提示', {

@@ -62,7 +62,7 @@ export default {
               { prop: 'city', label: '审核服务城市',align:'center',minWidth:15},
               { prop: 'config', label: '审核人员',align:'center',minWidth:25},
               { prop: 'source', label: '审核状态',align:'center',slotName:'preview-source',minWidth:15},
-              { prop: 'handle', label: '操作',align:'center',slotName:'preview-handle',width:160},
+              { prop: 'handle', label: '操作',align:'center',slotName:'preview-handle',width:80},
             ],
             table_data:[
                 {code:"000001",name:"张小凡",phone:"15225252525",sex:"四川金融信息服务有限公司",city:"成都",source:"A",order:"无",time:"2019-12-12 12:12:12",config:"小驴审核专员A"},

@@ -53,11 +53,9 @@ export default {
         return {
             loading:false,
             options:[
-                {value:'1',label:"手机号码为空"},
-                {value:'2',label:"手机号码错号"},
-                {value:'3',label:"手机号码无法接通"},
-                {value:'4',label:"连续拨打2天，客户未接听"},
-                {value:'5',label:"每天早中晚3次，客户未接听"},
+                {value:'1',label:"手机号码为空,错号,无法接通"},
+                {value:'4',label:"连续拨打2天，每天早中晚3次，客户未接听"},
+                {value:'5',label:"同行恶意植入"},
             ],
             initParams:{
 				phone:"152222222222",

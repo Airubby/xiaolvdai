@@ -14,7 +14,7 @@
 				<el-tab-pane label="发布产品" name="fourth">
 					<publishProduct v-if="activeName=='fourth'" v-on:backInfo="backInfo"></publishProduct>
 				</el-tab-pane>
-				<el-tab-pane label="积分明细" name="five">
+				<el-tab-pane label="积分充值" name="five">
 					<expense v-if="activeName=='five'"></expense>
 				</el-tab-pane>
 				<el-tab-pane label="积分赚取" name="six">
