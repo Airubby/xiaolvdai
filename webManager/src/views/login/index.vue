@@ -109,7 +109,7 @@ export default {
 						this.$message.success("登录成功");
 						let token=this.$tool.Encrypt(r.token+"_"+this.initParams.phone);
 						sessionStorage.token=token
-						this.$store.dispatch('setToken',token);
+						// this.$store.dispatch('setToken',token);
 						this.$router.push({path:'/myCenter'})
 					});
 				}

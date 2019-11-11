@@ -1,6 +1,6 @@
 <template>
 	<div class="content flex">
-		
+		<left-nav></left-nav>
 		<div class="right-box">
 			<el-scrollbar class="scrollbar">
 				<div class="mycenter-pd">
@@ -125,15 +125,13 @@
 </template>
 
 <script>
-import credits from './pages/credits.vue'
-import psword from './pages/psword.vue'
-import expense from './pages/expense.vue'
-import customer from './pages/customer.vue'
-import qualification from './pages/qualification.vue'
-import productUpload from './pages/productUpload.vue'
-import publishProduct from './pages/publishProduct.vue'
+import info from './components/info.vue'
+import brace from './components/brace.vue'
+import progressview from './components/progress.vue'
+import leftNav from '../mixin/leftNav'
 export default {
-	components:{customer,qualification,psword,productUpload,expense,publishProduct,credits},
+	mixins:[leftNav],
+	components:{info,progressview,brace},
 	created () {
 		if(sessionStorage.activeName){
 			this.activeName=sessionStorage.activeName;
@@ -146,18 +144,60 @@ export default {
         
 	},
 	data(){
+		let checkPhone = (rules, value, callback) => {
+			this.$tool.checkPHONE({rules,value,callback});
+		};
 		return {
-			activeName:'first',
+			loading:false,
+			show:false,
+			initParams:{
+				phone:"",
+			},
+			rules: {
+				phone:[
+					{ required: false, trigger: 'blur',validator:checkPhone },
+				],
+			},
+			infoData:{
+				visible:false,
+				id:'',
+			},
+			progressData:{
+				visible:false,
+				id:''
+			},
+			braceData:{
+				visible:false,
+				id:"",
+			},
+
 		}
 	},
 	methods:{
-		tabClick:function(tab){
-			sessionStorage.activeName=tab.name;
+		search:function(id){
+			
 		},
-		backInfo:function(info){
-			this.activeName=info;
-			sessionStorage.activeName=info;
-		}
+		info:function(id){
+			this.infoData.visible=true;
+			this.infoData.id=id;
+		},
+		progressFn:function(id){
+			this.progressData.visible=true;
+			// this.progressData.id=id;
+		},
+		brace:function(id){
+			this.braceData.visible=true;
+			this.braceData.id=id;
+		},
+		qualification:function(){
+			this.$emit("backInfo","second")
+		},
+		publishProduct:function(){
+			this.$emit("backInfo","fourth")
+		},
+		handleCurrentChange:function(val){
+			console.log(`当前页: ${val}`);
+		},
 	},
 	watch:{
 			

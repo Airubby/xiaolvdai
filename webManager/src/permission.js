@@ -19,9 +19,9 @@ function getInfo(){  //刷新页面重新获取权限
     })
 }
 async function routerGo(){
-    if(sessionStorage.token){
-        await getInfo();
-    }
+    // if(sessionStorage.token){
+    //     await getInfo();
+    // }
     router.beforeEach((to, from, next) => {
         let token=store.getters.token;
         NProgress.start()

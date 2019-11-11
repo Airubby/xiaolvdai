@@ -33,13 +33,49 @@ export const syncRouter=[
         name: 'myCenter',
         meta: { title: '小驴贷-个人中心'},
         component: () => import('@/views/myCenter.vue'),
-        redirect:'/myCenter/index',
+        redirect:'/myCenter/customer',
         children:[
             {
-                path: '/myCenter/index',
+                path: '/myCenter/customer',
                 name: 'index',
-                meta: { title: '小驴贷-个人中心首页'},
-                component: () => import('@/views/myCenter/index.vue'),
+                meta: { title: '小驴贷-个人中心-我的客户'},
+                component: () => import('@/views/myCenter/customer/index.vue'),
+            },
+            {
+                path: '/myCenter/qualification',
+                name: 'index',
+                meta: { title: '小驴贷-个人中心-资质认证'},
+                component: () => import('@/views/myCenter/qualification/index.vue'),
+            },
+            {
+                path: '/myCenter/productUpload',
+                name: 'index',
+                meta: { title: '小驴贷-个人中心-产品上传'},
+                component: () => import('@/views/myCenter/productUpload/index.vue'),
+            },
+            {
+                path: '/myCenter/publishProduct',
+                name: 'index',
+                meta: { title: '小驴贷-个人中心-发布产品'},
+                component: () => import('@/views/myCenter/publishProduct/index.vue'),
+            },
+            {
+                path: '/myCenter/expense',
+                name: 'index',
+                meta: { title: '小驴贷-个人中心-积分充值'},
+                component: () => import('@/views/myCenter/expense/index.vue'),
+            },
+            {
+                path: '/myCenter/credits',
+                name: 'index',
+                meta: { title: '小驴贷-个人中心-积分赚取'},
+                component: () => import('@/views/myCenter/credits/index.vue'),
+            },
+            {
+                path: '/myCenter/psword',
+                name: 'index',
+                meta: { title: '小驴贷-个人中心-修改密码'},
+                component: () => import('@/views/myCenter/psword/index.vue'),
             },
             {
                 path: '/myCenter/preview',

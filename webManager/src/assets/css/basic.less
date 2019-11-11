@@ -92,7 +92,7 @@ ul,li{
     border-radius: 0px;
 }
 .mycenter-pd{
-    padding: 25px 50px 25px 15px;
+    padding: 25px 50px 25px 25px;
 }
 em{
     font-style: normal;
@@ -271,7 +271,35 @@ em{
 .main-box{
     width: 100%;
     height: 1100px;
-    padding:  25px 0px 50px 25px;
+    padding:  25px 0px 50px;
+    display: flex;
+    .left-nav{
+        width: 120px;
+        height: calc(100% - 100px);
+        padding-top: 30px;
+        border-right: 1px solid #E4E7ED;
+        a{
+            height: 40px;
+            line-height: 40px;
+            border-right: 1px solid #E4E7ED;
+            width: 100%;
+            display: block;
+            text-align: right;
+            padding-right: 15px;
+            position: relative;
+            right: -1px;
+            color: #303133;
+            &.router-link-active{
+                border-color: @color;
+                color: @color;
+                font-weight: bold;
+            }
+        }
+    }
+    .right-box{
+        width: calc(100% - 121px);
+        height:100%;
+    }
     .main-top{
         font-weight: bold;
         border-bottom: 1px solid @color;
@@ -566,17 +594,15 @@ em{
 .userinfo{
     justify-content: space-between;
     color: @bcolor;
-    border-bottom: 1px solid @color;
+    border-bottom: 1px solid #e4e7ed;
     height: 30px;
     padding-right: 15px;
     margin-bottom: 10px;
 }
 .select-city{
-    height: 45px;
-    line-height: 45px;
-    border-top: 1px solid #e4e7ed;
+    height: 35px;
     border-bottom: 1px solid #e4e7ed;
-    margin-top: 15px;
+    margin-bottom: 15px;
     .addr{
         font-size: 14px;
         margin-left: 10px;
