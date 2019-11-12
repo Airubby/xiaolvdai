@@ -4,6 +4,7 @@
 		<div class="right-box">
 			<el-scrollbar class="scrollbar">
 				<div class="mycenter-pd">
+					<swiper class="mb15"></swiper>
 					<div class="index-detail-box info-border">
 						<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>请在24小时内拨打首电，并在进度反馈中更新进度，未按规定执行，将无法申请无效退款！</p>
 						<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>切记不要以小驴贷工作人员身份与客户联系，查实后会进行封号处理，进入黑名单永不合作！</p>
@@ -43,7 +44,7 @@
 										<el-button type="primary" size="mini" @click="progressFn" class="violet">进度反馈</el-button>
 										<el-button type="primary" size="mini" @click="brace" class="cyan">申请无效</el-button>
 									</div>
-									<div class="ocolorp">积分：-120</div>
+									<div class="color">积分：-120</div>
 								</div>
 							</div>
 						</div>
@@ -63,7 +64,7 @@
 										<el-button type="primary" size="mini" @click="progressFn" class="violet">进度反馈</el-button>
 										<el-button type="primary" size="mini" @click="brace" class="cyan">申请无效</el-button>
 									</div>
-									<div class="ocolorp">积分：-120</div>
+									<div class="color">积分：-120</div>
 								</div>
 							</div>
 						</div>
@@ -83,7 +84,7 @@
 										<el-button type="primary" size="mini" @click="progressFn" class="violet">进度反馈</el-button>
 										<el-button type="primary" size="mini" @click="brace" class="cyan">申请无效</el-button>
 									</div>
-									<div class="ocolorp">积分：-120</div>
+									<div class="color">积分：-120</div>
 								</div>
 							</div>
 						</div>
@@ -103,7 +104,7 @@
 										<el-button type="primary" size="mini" @click="progressFn" class="violet">进度反馈</el-button>
 										<el-button type="primary" size="mini" @click="brace" class="cyan">申请无效</el-button>
 									</div>
-									<div class="ocolorp">积分：-120</div>
+									<div class="color">积分：-120</div>
 								</div>
 							</div>
 						</div>

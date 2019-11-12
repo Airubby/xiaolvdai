@@ -4,6 +4,7 @@
 		<div class="right-box">
 			<el-scrollbar class="scrollbar">
 				<div class="mycenter-pd">
+					<swiper class="mb15"></swiper>
 					<div class="index-detail-box info-border">
 						<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>资质认证是为了核实信贷经理的身份真实性，保证产品的有效性通过后，才允许发布相关产品。</p>
 						<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>审核通过后，可获得小驴贷30个基础“赞”！</p>

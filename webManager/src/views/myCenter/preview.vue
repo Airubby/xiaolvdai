@@ -1,5 +1,5 @@
 <template>
-    <div class="content" style="padding:0px 40px 0 15px;">
+    <div class="content" style="padding:0px 40px 0 40px;">
         <div class="main-top color">
             <div class="main-top-info">
                 <span>产品详情</span>
@@ -9,9 +9,7 @@
         <div class="index-detail">
             <div class="color index-detail-top">
                 <span class="mr10">平安银行成都分公司</span>
-                <el-radio-group v-model="top" size="mini">
-                    <el-radio label="1" border>工薪贷款</el-radio>
-                </el-radio-group>
+                <span class="bg" style="color:#fff;padding:5px 8px;font-size:14px;">工薪贷款</span>
             </div>
             <div class="index-detail-box">
                 <p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>申请额度：30000-200000元</p>
@@ -65,7 +63,7 @@
                     </div>
                     <div class="card-center-btn">
                         <p class="mb10"><el-button type="primary">赞一个</el-button></p>
-                        <p>介绍详细,打赏一个赞</p>
+                        <p>介绍详细</p>
                     </div>
                 </div>
             </div>

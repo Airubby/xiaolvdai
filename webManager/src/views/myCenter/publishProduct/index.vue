@@ -4,13 +4,14 @@
 		<div class="right-box">
 			<el-scrollbar class="scrollbar">
 				<div class="mycenter-pd">
-					<el-alert type="info" :closable="false" class="mb15">
+					<swiper class="mb15"></swiper>
+					<!-- <el-alert type="info" :closable="false" class="mb15">
 						<div class="flex">
 							<strong class="mr25">发布日期：2019/02/14</strong>
 							<strong class="mr25">城市：成都</strong>
-							<strong class="ocolorp">今日获客服务费：35积分/条</strong>
+							<strong class="color">今日获客服务费：35积分/条</strong>
 						</div>
-					</el-alert>
+					</el-alert> -->
 					<div class="info" v-if="show">
 						<span>您暂时还没有上传产品，无法发布产品！</span>
 						<el-button type="primary" @click="uploadP()">上传产品</el-button>
@@ -48,7 +49,7 @@
 										<el-button type="primary" size="mini" @click="down" class="violet">产品下架</el-button>
 										<el-button type="primary" size="mini" @click="remove" class="cyan">修改产品</el-button>
 									</div>
-									<div class="ocolorp">竞价积分：120积分</div>
+									<div class="color">竞价积分：120积分</div>
 								</div>
 							</div>
 						</div>
@@ -86,7 +87,7 @@
 										<el-button type="primary" size="mini" @click="down" class="violet">产品下架</el-button>
 										<el-button type="primary" size="mini" @click="remove" class="cyan">修改产品</el-button>
 									</div>
-									<div class="ocolorp">竞价积分：120积分</div>
+									<div class="color">竞价积分：120积分</div>
 								</div>
 							</div>
 						</div>
@@ -112,25 +113,23 @@ import down from './components/down.vue'
 import remove from './components/remove.vue'
 import publish from './components/publish.vue'
 import leftNav from '../mixin/leftNav'
+
 export default {
 	mixins:[leftNav],
 	components:{remove,down,publish},
 	created () {
-		this.instance = this.$notify({
-			title: '重要通知',
-			message: this.alertInfo,
-			type: 'warning',
-			duration: 0,
-			onClick:function(){
-				this.close();
-			}
-        });
-	},
-	destroyed(){
-		this.instance.close();
+		// this.instance = this.$notify({
+		// 	title: '重要通知',
+		// 	message: this.alertInfo,
+		// 	type: 'warning',
+		// 	duration: 0,
+		// 	onClick:function(){
+		// 		this.close();
+		// 	}
+        // });
 	},
 	mounted() {
-        
+		
     },
 	data(){
 		return {

@@ -4,9 +4,10 @@
 		<div class="right-box">
 			<el-scrollbar class="scrollbar">
 				<div class="mycenter-pd">
-					<el-alert type="warning" show-icon class="mb15">
+					<swiper class="mb15"></swiper>
+					<!-- <el-alert type="warning" show-icon class="mb15">
 						<strong>您还未进行资质认证，无法上传产品！<a @click="infoBtn()" class="color">资质认证</a></strong>
-					</el-alert>
+					</el-alert> -->
 					<div class="index-detail-box info-border">
 						<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>良好的产品描述有利于客户解读，从而提升获客质量，同时有机会获得客户点“赞”！</p>
 						<p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>产品上传会由专业人员进行人工审核，不符合国家法律规定的利率、条件和内容，系统将不允许通过！</p>
@@ -174,8 +175,26 @@ export default {
 	mixins:[leftNav],
 	components:{},
 	created () {
-		
-  	},
+		// this.instance = this.$notify({
+		// 	title: '重要通知',
+		// 	message: this.alertInfo,
+		// 	type: 'warning',
+		// 	duration: 0,
+		// 	onClick:function(){
+		// 		this.close();
+		// 	}
+		// });
+		this.instance=this.$notify({
+			title: '提示',
+			type: 'warning',
+			duration: 0,
+			dangerouslyUseHTMLString: true,
+			message: '<span class="color">您还未进行资质认证，无法上传产品！</span>',
+        });
+	},
+	destroyed(){
+		this.instance.close();
+	},
 	mounted() {
         
     },
@@ -186,6 +205,7 @@ export default {
 		return {
 			flag:false,
 			loading:false,
+			instance:'',
 			initParams:{
 				phone:"152222222222",
 				name:'',
@@ -253,7 +273,7 @@ export default {
 			this.$router.push({path:'/myCenter/preview'})
 		},
 		infoBtn:function(){
-			this.$emit("backInfo","second")
+			this.$router.push({path:'/myCenter/qualification'})
 		}
 	},
 	watch:{

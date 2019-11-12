@@ -3,10 +3,10 @@
 		<left-nav></left-nav>
 		<div class="right-box">
 			<el-scrollbar class="scrollbar">
-				<div class="mycenter-pd">
+				<div class="mycenter-pd">																																												
 					<div class="account-border color mb25">
 						积分充值
-						<el-button type="primary" @click="detail()" class="fr">积分明细</el-button>
+						<el-button type="primary" @click="detailFn()" class="fr">积分明细</el-button>
 					</div>
 					<!-- <div class="account-info flex">
 						<div class="account-info-box">
@@ -65,6 +65,7 @@
 				</div>
 			</el-scrollbar>
 		</div>
+		<detail v-if="detailInfo.visible" :dialogInfo="detailInfo"></detail>
 	</div>
 </template>
 
@@ -99,9 +100,10 @@
 
 <script>
 import leftNav from '../mixin/leftNav'
+import detail from './components/detail.vue'
 export default {
 	mixins:[leftNav],
-	components:{},
+	components:{detail},
 	created () {
 		
   	},
@@ -122,12 +124,9 @@ export default {
 			rules: {
 				
 			},
-			policyInfo:{
+			detailInfo:{
 				visible:false,
 			},
-			agreementInfo:{
-				visible:false
-			}
 		}
 	},
 	methods:{
@@ -159,8 +158,8 @@ export default {
 				}
 			});
 		},
-		detail:function(){
-
+		detailFn:function(){
+			this.detailInfo.visible=true;
 		}
 	},
 	watch:{

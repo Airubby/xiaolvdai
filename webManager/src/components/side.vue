@@ -63,12 +63,10 @@ export default {
     },
     methods:{
         pay:function(){
-            sessionStorage.activeName="five";
-            this.$router.push({path:'/myCenter/index'})
+            this.$router.push({path:'/myCenter/recharge'})
         },
         Earn:function(){
-            sessionStorage.activeName="six";
-            this.$router.push({path:'/myCenter/index'})
+            this.$router.push({path:'/myCenter/credits'})
         },
         checkFn:function(){
             this.$message.info("功能正在完善中");

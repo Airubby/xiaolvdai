@@ -91,9 +91,7 @@ export default {
 
 		}
 	},
-	watch:{
-			
-	},
+	props:["dialogInfo"]
 }
 </script>
 

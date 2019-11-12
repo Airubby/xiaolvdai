@@ -13,6 +13,7 @@ import tool from './utils/tool'  //工具函数
 import 'promise-polyfill'  //兼容低版本浏览器  
 import 'babel-polyfill'
 
+
 import './utils/directive'  //自定义指令
 import BaiduMap from 'vue-baidu-map'
 // import './utils/mock.js'  //测试接口
@@ -23,6 +24,7 @@ import './assets/css/index.less'
 
 // // 将API方法绑定到全局
 Vue.prototype.$r=request
+
 
 //绑定工具函数到全局
 Vue.prototype.$tool = tool

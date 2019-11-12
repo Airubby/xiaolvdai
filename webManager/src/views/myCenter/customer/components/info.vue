@@ -1,6 +1,6 @@
 <template>
     <el-dialog title="" :visible.sync="dialogInfo.visible" width="650px" v-dialogDrag>
-        <el-scrollbar style="height:400px;" class="scrollbar">
+        <el-scrollbar style="height:250px;" class="scrollbar">
             <div v-loading="loading" style="padding:0 15px;">
                 <div class="mb10">申请产品：平安银行成都分行人民南路支行-工薪贷</div>
                 <el-row :gutter="0">
@@ -14,7 +14,7 @@
 						<div class="obg uinfo">手机号码：15225252525</div>
 					</el-col>
 				</el-row>
-                <div style="height:40px;line-height:40px;border-bottom:1px solid #E4E7ED;font-size:12px;" class="mb10">
+                <div class="mb15">
                     
                 </div>
                 <div class="index-detail-box info-border" style="border:none;">
