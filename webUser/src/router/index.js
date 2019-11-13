@@ -8,32 +8,66 @@ export const syncRouter=[
         name: 'home',
         meta: { title: 'index'},
         component: () => import('@/views/index.vue'),
-        redirect:'/index',
+        redirect:'/page'
+    },
+    {
+        path:'/page',
+        name:'page',
+        meata:{title:'page'},
+        component:()=>import('@/views/public.vue'),
+        redirect:'/page/index',
         children:[
             {
-                path: '/index',
+                path: '/page/index',
                 name: 'index',
                 meta: { title: '小驴贷-首页'},
                 component: () => import('@/views/home/index.vue'),
             },
             {
-                path: '/detail',
+                path: '/page/detail',
                 name: 'detail',
                 meta: { title: '小驴贷-详情'},
                 component: () => import('@/views/home/detail.vue'),
             },
             {
-                path: '/login',
+                path: '/page/login',
                 name: 'login',
                 meta: { title: '小驴贷-登录'},
                 component: () => import('@/views/login/index.vue'),
             },
             {
-                path: '/register',
+                path: '/page/register',
                 name: 'register',
                 meta: { title: '小驴贷-注册'},
                 component: () => import('@/views/register/index.vue'),
             },
+        ]
+    },
+    {
+        path: '/myCenter',
+        name: 'myCenter',
+        meta: { title: '小驴贷-个人中心'},
+        component: () => import('@/views/myCenter/index.vue'),
+        redirect:'/myCenter/apply',
+        children:[
+            {
+                path: '/myCenter/apply',
+                name: 'apply',
+                meta: { title: '小驴贷-个人中心-我的申请'},
+                component: () => import('@/views/myCenter/apply/index.vue'),
+            },
+            {
+                path: '/myCenter/realname',
+                name: 'realname',
+                meta: { title: '小驴贷-个人中心-实名认证'},
+                component: () => import('@/views/myCenter/realname/index.vue'),
+            },
+            {
+                path: '/myCenter/psword',
+                name: 'psword',
+                meta: { title: '小驴贷-个人中心-修改密码'},
+                component: () => import('@/views/myCenter/psword/index.vue'),
+            }
         ]
     },
     { path: '/404',name:'404',meta: { title: '404'}, component: () => import('@/views/errorPage/404') },

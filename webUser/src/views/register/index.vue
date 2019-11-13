@@ -1,7 +1,7 @@
 <template>
 	<div class="content">
-		<div class="main-top color">
-			<div class="main-top-info"><span>首页</span><em class="separate">/</em><span>用户注册</span></div>
+		<div class="main-top">
+			<div class="main-top-info"><router-link to="/page/index">产品搜索</router-link><em class="separate">/</em><span>用户注册</span></div>
 		</div>
 		<div class="main-center" style="margin-top:100px;">
 			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="100px">
@@ -28,10 +28,10 @@
 						<a class="color ml5" @click="agreementInfo.visible=true">《小驴贷用户注册协议》</a>
 						<a class="color ml5" @click="policyInfo.visible=true">《用户隐私保护政策》</a>
 					</el-col>
-					<el-col :span="14" :offset="6" class="mb15">
+					<el-col :span="14" :offset="5" class="mb15">
 						<el-button type="primary" size="medium" class="form-submit" @click="submitForm()" @keydown="keyLogin($event)">注 册</el-button>
 					</el-col>
-					<el-col :span="14" :offset="6">
+					<el-col :span="14" :offset="5">
 						<div class="text-center color999 font12">小驴科技 人人享融</div>
 					</el-col>
 				</el-row>

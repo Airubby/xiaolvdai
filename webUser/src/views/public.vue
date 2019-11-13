@@ -4,14 +4,7 @@
         <div class="main">
             <top></top>
             <div class="main-box box-shadow bgfff">
-				<div class="left-nav">
-					<router-link to="/myCenter/apply">我的申请</router-link>
-					<router-link to="/myCenter/realname">实名认证</router-link>
-					<router-link to="/myCenter/psword">修改密码</router-link>
-				</div>
-				<div class="right-box">
-                	<el-scrollbar class="scrollbar"><router-view /></el-scrollbar>
-				</div>
+                <router-view />
             </div>
             <bottom></bottom>
         </div>

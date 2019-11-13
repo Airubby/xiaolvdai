@@ -1,5 +1,6 @@
 <template>
 	<el-scrollbar class="scrollbar">
+		<!-- 我的资料 -->
 		<div class="mycenter-pd">
 			<div class="info-box mb15">
 				<p>通过您的资料，我们会定期通过数据库为您匹配推荐融资成本更低的产品，资料越完善，越能保证精准，使您的利益最大化，我们也会通过技术手段和严格的内部管理制度，保证您的隐私！</p>

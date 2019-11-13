@@ -6,8 +6,8 @@
         <div class="top-info">
             <template v-if="!login">
                 <span>游客,您好!</span>
-                <router-link to="/login" class="btn">登录</router-link>
-                <router-link to="/register" class="btn">注册</router-link>
+                <router-link to="/page/login" class="btn">登录</router-link>
+                <router-link to="/page/register" class="btn">注册</router-link>
             </template>
             <template v-if="login">
                 <span>用户{{phone}},您好!</span>

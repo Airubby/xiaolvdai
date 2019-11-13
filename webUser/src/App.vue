@@ -14,10 +14,15 @@
 <script>
   export default {
     name: 'app',
+    provide(){
+      return{
+        routerLoading:this.routerLoading
+      }
+    },
     created () {
-        if(sessionStorage.token){
-            this.$store.dispatch('setToken',sessionStorage.token);
-        }
+        // if(sessionStorage.token){
+        //     this.$store.dispatch('setToken',sessionStorage.token);
+        // }
     },
     computed:{
         

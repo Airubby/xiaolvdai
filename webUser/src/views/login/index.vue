@@ -1,12 +1,12 @@
 <template>
 	<div class="content">
-		<div class="main-top color">
-			<div class="main-top-info"><span>首页</span><em class="separate">/</em><span>用户登录</span></div>
+		<div class="main-top">
+			<div class="main-top-info"><router-link to="/page/index">产品搜索</router-link><em class="separate">/</em><span>用户登录</span></div>
 		</div>
 		<div class="main-center" style="margin-top:100px;" v-loading="loading">
 			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="100px">
 				<el-row :gutter="20">
-					<el-col :span="14" :offset="6" style="margin-bottom:35px;">
+					<el-col :span="14" :offset="5" style="margin-bottom:35px;">
 						<el-button-group style="width:100%;">
 							<el-button :type="flag?'primary':''" :class="{'primary':flag}" class="changebtn" size="medium" style="width:50%;" @click="change('true')">密码登录</el-button>
 							<el-button :type="!flag?'primary':''" :class="{'primary':!flag}" class="changebtn" size="medium" style="width:50%;" @click="change('false')">验证码登录</el-button>
@@ -28,10 +28,10 @@
 							<el-input v-model="initParams.psword"></el-input>
 						</el-form-item>
 					</el-col>
-					<el-col :span="14" :offset="6" class="mb15">
+					<el-col :span="14" :offset="5" class="mb15">
 						<el-button type="primary" size="medium" class="form-submit" @click="submitForm()" @keydown="keyLogin($event)">登 录</el-button>
 					</el-col>
-					<el-col :span="14" :offset="6">
+					<el-col :span="14" :offset="5">
 						<div class="text-center color999 font12">小驴科技 人人享融</div>
 					</el-col>
 				</el-row>
@@ -113,8 +113,8 @@ export default {
 						this.$message.success("登录成功");
 						let token=this.$tool.Encrypt(r.token+"_"+this.initParams.phone);
 						sessionStorage.token=token
-						this.$store.dispatch('setToken',token);
-						this.$router.push({path:'/index'})
+						// this.$store.dispatch('setToken',token);
+						this.$router.push({path:'/page/index'})
 					});
 				}
 			});

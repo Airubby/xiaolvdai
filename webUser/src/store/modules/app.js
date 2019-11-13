@@ -2,7 +2,7 @@ import {router,addRouter,resetRouter,asyncRouter } from '@/router/index'
 const app = {
   state: {
     AjaxUrl:'',
-    token:sessionStorage.token||'',
+    token:sessionStorage.token||'token',
     map:true,
     LocalCity:'正在定位...',
   },

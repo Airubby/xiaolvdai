@@ -10,56 +10,56 @@
         </div>
         <div class="index-form">
             <el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="75px" class="overhidden ValidateForm">
-				<el-row :gutter="10">
-					<el-col :span="24" class="flex">
-						<el-form-item label="产品类型:" class="more">
-							<el-radio-group v-model="initParams.type" size="mini">
-								<el-radio label="1" border>所有</el-radio>
-								<el-radio label="2" border>工薪贷款</el-radio>
-								<el-radio label="3" border>公积金贷</el-radio>
-								<el-radio label="4" border>保单贷款</el-radio>
-								<el-radio label="5" border>经营贷款</el-radio>
-								<el-radio label="6" border>房屋抵押</el-radio>
-								<el-radio label="7" border>房屋二抵</el-radio>
-								<el-radio label="8" border>新房按揭</el-radio>
-								<el-radio label="9" border>车辆抵押</el-radio>
-								<el-radio label="10" border>新车按揭</el-radio>
-							</el-radio-group>
-						</el-form-item>
-					</el-col>
-                    <el-col :span="24">
-						<el-form-item label="还款方式:">
-							<el-radio-group v-model="initParams.style" size="mini">
-								<el-radio label="1" border>所有</el-radio>
-								<el-radio label="2" border>先息后本</el-radio>
-								<el-radio label="3" border>等额本息</el-radio>
-								<el-radio label="4" border>等额本金</el-radio>
-								<el-radio label="5" border>随借随还</el-radio>
-							</el-radio-group>
-						</el-form-item>
+                <el-row :gutter="10">
+                    <el-col :span="24" class="flex">
+                        <el-form-item label="产品类型:" class="more">
+                            <el-radio-group v-model="initParams.type" size="mini">
+                                <el-radio label="1" border>所有</el-radio>
+                                <el-radio label="2" border>工薪贷款</el-radio>
+                                <el-radio label="3" border>公积金贷</el-radio>
+                                <el-radio label="4" border>保单贷款</el-radio>
+                                <el-radio label="5" border>经营贷款</el-radio>
+                                <el-radio label="6" border>房屋抵押</el-radio>
+                                <el-radio label="7" border>房屋二抵</el-radio>
+                                <el-radio label="8" border>新房按揭</el-radio>
+                                <el-radio label="9" border>车辆抵押</el-radio>
+                                <el-radio label="10" border>新车按揭</el-radio>
+                            </el-radio-group>
+                        </el-form-item>
                     </el-col>
-					<el-col :span="24">
-						<el-form-item label="借款期限:">
-							<el-radio-group v-model="initParams.deadline" size="mini">
-								<el-radio label="1" border>所有</el-radio>
-								<el-radio label="2" border>1</el-radio>
-								<el-radio label="3" border>3</el-radio>
-								<el-radio label="4" border>6</el-radio>
-								<el-radio label="5" border>12</el-radio>
-								<el-radio label="6" border>24</el-radio>
-								<el-radio label="7" border>36</el-radio>
-								<el-radio label="8" border>48</el-radio>
-								<el-radio label="9" border>60</el-radio>
-								<el-radio label="10" border>120</el-radio>
-								<el-radio label="11" border>180</el-radio>
-								<el-radio label="12" border>240</el-radio>
-								<el-radio label="13" border>360</el-radio>
-							</el-radio-group>
+                    <el-col :span="24">
+                        <el-form-item label="还款方式:">
+                            <el-radio-group v-model="initParams.style" size="mini">
+                                <el-radio label="1" border>所有</el-radio>
+                                <el-radio label="2" border>先息后本</el-radio>
+                                <el-radio label="3" border>等额本息</el-radio>
+                                <el-radio label="4" border>等额本金</el-radio>
+                                <el-radio label="5" border>随借随还</el-radio>
+                            </el-radio-group>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="24">
+                        <el-form-item label="借款期限:">
+                            <el-radio-group v-model="initParams.deadline" size="mini">
+                                <el-radio label="1" border>所有</el-radio>
+                                <el-radio label="2" border>1</el-radio>
+                                <el-radio label="3" border>3</el-radio>
+                                <el-radio label="4" border>6</el-radio>
+                                <el-radio label="5" border>12</el-radio>
+                                <el-radio label="6" border>24</el-radio>
+                                <el-radio label="7" border>36</el-radio>
+                                <el-radio label="8" border>48</el-radio>
+                                <el-radio label="9" border>60</el-radio>
+                                <el-radio label="10" border>120</el-radio>
+                                <el-radio label="11" border>180</el-radio>
+                                <el-radio label="12" border>240</el-radio>
+                                <el-radio label="13" border>360</el-radio>
+                            </el-radio-group>
                             <span class="ml5 color">期</span>
-						</el-form-item>
-					</el-col>
-				</el-row>
-			</el-form>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+            </el-form>
         </div>
         <div class="index-con">
             <div class="index-con-box">
@@ -189,6 +189,7 @@
 </template>
 
 <script>
+
 import city from './components/citys.vue'
 import { mapState,mapGetters,mapMutations } from 'vuex'
 export default {
