@@ -49,6 +49,9 @@ ul,li{
 .fl{
     float: left;
 }
+.mt10{
+    margin-top: 10px;
+}
 .mb15{
     margin-bottom: 15px;
 }
@@ -74,7 +77,7 @@ ul,li{
     padding: 25px;
 }
 .mycenter-pd{
-    padding: 25px 50px 25px 25px; 
+    padding: 25px 5px 25px 25px; 
 }
 em{
     font-style: normal;
@@ -123,7 +126,7 @@ em{
     box-shadow: 0 0 5px #e8e8e8;
 }
 .appcontent{
-    width: 1000px;
+    width: 1175px;
     margin: 0 auto;
 }
 .info-box{
@@ -137,24 +140,20 @@ em{
 }
 .main{
     width: 770px;
-    padding: 26px 5px 5px 5px;
+    padding: 35px 5px 5px 5px;
 }
 .side{
-    width: 230px;
-    padding: 5px 45px 5px 5px;
+    width: 205px;
+    padding: 20px 30px 5px 5px;
+    &.sidetwo{
+        padding: 90px 5px 5px 30px;
+    }
     .side-center-info{
-        padding: 15px 12px;
+        padding: 20px 12px;
         .side-center-infobox{
             width: 100%;
             p{
-                font-size: 16px;
                 font-weight: bold;
-                color: @hcolor;
-                margin-bottom: 10px;
-                span{
-                    font-size: 12px;
-                    margin-left: 5px;
-                }
             }
             .info{
                 width: 100%;
@@ -204,8 +203,7 @@ em{
 .main-box{
     width: 100%;
     height: 1100px;
-    padding: 25px 0px 50px;
-    display: flex;
+    padding: 25px 40px 50px;
     .main-top{
         border-bottom: 1px solid @color;
         .main-top-info{
@@ -250,34 +248,52 @@ em{
             }
         }
     }
+    .main-center{
+        height: calc(100% - 46px);
+    }
     .left-nav{
         width: 120px;
         height: calc(100% - 100px);
-        padding-top: 30px;
+        padding-top: 20px;
         border-right: 1px solid #E4E7ED;
-        a{
-            height: 40px;
-            line-height: 40px;
-            border-right: 1px solid #E4E7ED;
-            width: 100%;
-            display: block;
-            text-align: right;
-            padding-right: 15px;
-            position: relative;
-            right: -1px;
-            color: #303133;
-            text-decoration: none;
-            &:hover,
-            &.router-link-active{
-                border-color: @color;
-                color: @color;
-                font-weight: bold;
+        .mycenter-info{
+            font-size: 12px;
+        }
+        .left-nav-ul{
+            li{
+                height: 40px;
+                line-height: 40px;
+                width: 100%;
+                display: block;
+                text-align: center;
+                color: #303133;
+                a{
+                    text-decoration: none;
+                    &:hover,
+                    &.router-link-active{
+                        color: #fff;
+                        padding: 5px 10px;
+                        background: @color;
+                    }
+                }
             }
         }
+       
     }
     .right-box{
         width: calc(100% - 121px);
         height:100%;
+    }
+}
+.conversion{
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 0 5px;
+}
+.conversion-btn{
+    padding: 10px 5px;
+    .el-button{
+        width: 100%;
     }
 }
 .index-form{

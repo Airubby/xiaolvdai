@@ -67,6 +67,18 @@ export const syncRouter=[
                 name: 'psword',
                 meta: { title: '小驴贷-个人中心-修改密码'},
                 component: () => import('@/views/myCenter/psword/index.vue'),
+            },
+            {
+                path: '/myCenter/integral',
+                name: 'integral',
+                meta: { title: '小驴贷-个人中心-赚取积分'},
+                component: () => import('@/views/myCenter/integral/index.vue'),
+            },
+            {
+                path: '/myCenter/conversion',
+                name: 'conversion',
+                meta: { title: '小驴贷-个人中心-积分兑换'},
+                component: () => import('@/views/myCenter/conversion/index.vue'),
             }
         ]
     },

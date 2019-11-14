@@ -8,11 +8,13 @@
             </div>
             <bottom></bottom>
         </div>
+        <side-two></side-two>
     </div>
 </template>
 
 <script>
 import side from "@/components/side.vue"
+import sideTwo from "@/components/side-two.vue"
 import top from "@/components/top.vue"
 import bottom from "@/components/bottom.vue"
 import routerLoading from "@/views/mixin/routerLoading"
@@ -36,7 +38,7 @@ export default {
 
 	},
     components: {
-        side,top,bottom
+        side,top,bottom,sideTwo
     }
 }
 </script>

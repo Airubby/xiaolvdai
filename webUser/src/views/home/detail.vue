@@ -3,14 +3,13 @@
         <div class="main-top color">
             <div class="main-top-info">
                 <span>产品详情</span>
+                <el-button type="primary" class="fr mt10" @click="back">返回</el-button>
             </div>
         </div>
         <div class="index-detail">
             <div class="color index-detail-top">
                 <span class="mr10">平安银行成都分公司</span>
-                <el-radio-group v-model="top" size="mini">
-                    <el-radio label="1" border>工薪贷款</el-radio>
-                </el-radio-group>
+                <span class="bg" style="color:#fff;padding:5px 8px;font-size:14px;">工薪贷款</span>
             </div>
             <div class="index-detail-box">
                 <p class="index-detail-box-con"><i><img src="images/jiantou.png"></i>申请额度：30000-200000元</p>
@@ -101,6 +100,9 @@ export default {
 	methods: {
         apply:function(){
             
+        },
+        back:function(){
+            this.$router.go(-1);  
         }
 	},
     components: {

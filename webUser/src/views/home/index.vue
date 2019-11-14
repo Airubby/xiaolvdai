@@ -226,7 +226,7 @@ export default {
 			console.log(`当前页: ${val}`);
 		},
         enterDetail:function(){
-            this.$router.push({path:'/detail',query:{
+            this.$router.push({path:'/page/detail',query:{
                 params:JSON.stringify({id:"123"})
             }});
         },
