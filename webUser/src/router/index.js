@@ -41,6 +41,18 @@ export const syncRouter=[
                 meta: { title: '小驴贷-注册'},
                 component: () => import('@/views/register/index.vue'),
             },
+            {
+                path: '/page/info',
+                name: 'info',
+                meta: { title: '小驴贷-了解贷款行业'},
+                component: () => import('@/views/info/index.vue'),
+            },
+            {
+                path: '/page/infoDetail',
+                name: 'infoDetail',
+                meta: { title: '小驴贷-了解贷款行业'},
+                component: () => import('@/views/info/detail.vue'),
+            },
         ]
     },
     {

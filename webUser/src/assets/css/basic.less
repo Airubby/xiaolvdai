@@ -37,6 +37,9 @@ a{
     color: #666;
     cursor: pointer;
 }
+.pointer{
+    cursor: pointer;
+}
 a:hover{
     text-decoration: underline; 
 }
@@ -72,6 +75,9 @@ ul,li{
 }
 .mb25{
     margin-bottom: 25px;
+}
+.pd10{
+    padding: 10px;
 }
 .pd25{
     padding: 25px;
@@ -298,40 +304,81 @@ em{
 }
 .index-form{
     border-bottom: 1px solid @color;
-    padding: 30px 15px 10px;
+    padding: 30px 10px 10px;
     .more .el-radio:nth-of-type(9){
         margin: 8px 0 0 0 !important;
     }
 }
 .index-con{
     .index-con-box{
-        padding: 20px 15px;
+        padding: 35px 15px 15px;
         display: flex;
         border-bottom: 1px solid @lcolor;
         justify-content: space-between;
+        .index-con-box-img{
+            width: 55px;
+            height: 77px;
+            position: relative;
+            text-align: center;
+            span{
+                background: @color;
+                color: #fff;
+                font-size: 12px;
+                width: 45px;
+                position: absolute;
+                bottom: 0;
+                left: 5px;
+            }
+        }
         .index-con-box-info{
-            width: calc(100% - 120px);
+            width: calc(100% - 210px);
             em{
                 margin: 0 10px;
             }
-            .index-con-box-infotop{
+            .index-con-box-infocen{
                 background: @color;
                 color: #fff;
-                padding: 6px 15px;
-                border-radius: 5px;
+                padding: 6px 12px;
                 display: inline-block;
-                margin-bottom: 11px;
+                margin: 5px 0;
             }
             .index-con-box-infobottom{
-                .text{
-                    margin: 0 5px 0 0;
-                }
+                font-size: 12px;
             }
-            
 
         }
         .index-con-box-btn{
             text-align: right;
+            font-size: 14px;
+            padding-top: 10px;
+        }
+        &.list{
+            padding: 15px 5px 8px 5px;
+            .title{
+                width: 400px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: @color;
+            }
+            .listinfo{
+                width: calc(100% - 415px);
+                justify-content: space-between;
+            }
+        }
+        
+    }
+    .info-detail{
+        font-size: 12px;
+        margin-bottom: 30px;
+        span{
+            margin-right: 25px;
+        }
+    }
+    .info-detail-box{
+        padding:0px 15px 15px;
+        img{
+            max-width: 100%;
         }
     }
 }

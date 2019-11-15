@@ -19,10 +19,10 @@
                     <div class="info obg">利息低 额度高 期限长</div>
                 </div>
             </div>
-            <div class="bgfff box-shadow text-center mb5" style="padding:5px 0 16px 0;">
+            <div class="bgfff box-shadow text-center mb5 pointer" style="padding:5px 0 16px 0;" @click="enterNews">
                 <img src="images/sideInfo.png">
             </div>
-            <div class="bgfff box-shadow text-center">
+            <div class="bgfff box-shadow text-center pointer" @click="enterIntegral">
                 <img src="images/sideInfo1.png">
             </div>
         </div>
@@ -44,7 +44,16 @@ export default {
         }
     },
     methods:{
-      
+        enterIntegral:function(){
+            if(true){ //登录
+                this.$router.push({path:'/myCenter/integral'})
+            }else{
+
+            }
+        },
+        enterNews:function(){
+            this.$router.push({path:'/page/info'})
+        }
     },
     props:[]  
 }

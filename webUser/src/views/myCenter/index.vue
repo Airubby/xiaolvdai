@@ -14,7 +14,7 @@
                         </div>
                         <div class="text-center mycenter-info">
                             <p class="mb5 hcolor">150****3615</p>
-                            <p class="mb15 hcolor">积分：34344</p>
+                            <p class="mb15 hcolor">积分：<em class="color">34344</em></p>
                         </div>
                         <ul class="left-nav-ul">
                             <li><router-link to="/myCenter/apply">我的申请</router-link></li>

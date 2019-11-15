@@ -63,15 +63,23 @@
         </div>
         <div class="index-con">
             <div class="index-con-box">
+                <div class="index-con-box-img">
+                    <img src="images/manager.png">
+                    <span>已实名</span>
+                </div>
                 <div class="index-con-box-info">
-                    <div class="index-con-box-infotop">
-                        <span>工薪贷</span><em>|</em>
-                        <span>上海大数金融服务外包有限公司</span><em>|</em>
-                        <span>信贷经理:010101</span>
+                    <div class="color">
+                        <span>最低月利率0.55%</span><em>|</em>
+                        <span>12、24、36期</span><em>|</em>
+                        <span>等额本息</span>
+                    </div>
+                    <div class="index-con-box-infocen">
+                        <span>信贷经理:010101</span><em>|</em>
+                        <span>四川多维外包服务有限公司</span><em>|</em>
+                        <span>获赞次数252</span>
                     </div>
                     <div class="index-con-box-infobottom">
-                        <span class="color mr10"><em class="text">月利率</em>0.55-0.99%</span>
-                        <span><em class="text">额度</em>30000-200000元</span><em>|</em>
+                        <span>最低月利率0.55%</span><em>|</em>
                         <span>12、24、36期</span><em>|</em>
                         <span>等额本息</span>
                     </div>
@@ -82,15 +90,23 @@
                 </div>
             </div>
             <div class="index-con-box">
+                <div class="index-con-box-img">
+                    <img src="images/manager.png">
+                    <span>已实名</span>
+                </div>
                 <div class="index-con-box-info">
-                    <div class="index-con-box-infotop">
-                        <span>工薪贷</span><em>|</em>
-                        <span>依米康科技集团</span><em>|</em>
-                        <span>信贷经理:010101</span>
+                    <div class="color">
+                        <span>最低月利率0.55%</span><em>|</em>
+                        <span>12、24、36期</span><em>|</em>
+                        <span>等额本息</span>
+                    </div>
+                    <div class="index-con-box-infocen">
+                        <span>信贷经理:010101</span><em>|</em>
+                        <span>四川多维外包服务有限公司</span><em>|</em>
+                        <span>获赞次数252</span>
                     </div>
                     <div class="index-con-box-infobottom">
-                        <span class="color mr10"><em class="text">月利率</em>0.55-0.99%</span>
-                        <span><em class="text">额度</em>30000-200000元</span><em>|</em>
+                        <span>最低月利率0.55%</span><em>|</em>
                         <span>12、24、36期</span><em>|</em>
                         <span>等额本息</span>
                     </div>
@@ -101,15 +117,23 @@
                 </div>
             </div>
             <div class="index-con-box">
+                <div class="index-con-box-img">
+                    <img src="images/manager.png">
+                    <span>已实名</span>
+                </div>
                 <div class="index-con-box-info">
-                    <div class="index-con-box-infotop">
-                        <span>工薪贷</span><em>|</em>
-                        <span>小米科技</span><em>|</em>
-                        <span>信贷经理:010101</span>
+                    <div class="color">
+                        <span>最低月利率0.55%</span><em>|</em>
+                        <span>12、24、36期</span><em>|</em>
+                        <span>等额本息</span>
+                    </div>
+                    <div class="index-con-box-infocen">
+                        <span>信贷经理:010101</span><em>|</em>
+                        <span>四川多维外包服务有限公司</span><em>|</em>
+                        <span>获赞次数252</span>
                     </div>
                     <div class="index-con-box-infobottom">
-                        <span class="color mr10"><em class="text">月利率</em>0.55-0.99%</span>
-                        <span><em class="text">额度</em>30000-200000元</span><em>|</em>
+                        <span>最低月利率0.55%</span><em>|</em>
                         <span>12、24、36期</span><em>|</em>
                         <span>等额本息</span>
                     </div>
@@ -120,15 +144,23 @@
                 </div>
             </div>
             <div class="index-con-box">
+                <div class="index-con-box-img">
+                    <img src="images/manager.png">
+                    <span>已实名</span>
+                </div>
                 <div class="index-con-box-info">
-                    <div class="index-con-box-infotop">
-                        <span>工薪贷</span><em>|</em>
-                        <span>上海大数金融服务外包有限公司</span><em>|</em>
-                        <span>信贷经理:010101</span>
+                    <div class="color">
+                        <span>最低月利率0.55%</span><em>|</em>
+                        <span>12、24、36期</span><em>|</em>
+                        <span>等额本息</span>
+                    </div>
+                    <div class="index-con-box-infocen">
+                        <span>信贷经理:010101</span><em>|</em>
+                        <span>四川多维外包服务有限公司</span><em>|</em>
+                        <span>获赞次数252</span>
                     </div>
                     <div class="index-con-box-infobottom">
-                        <span class="color mr10"><em class="text">月利率</em>0.55-0.99%</span>
-                        <span><em class="text">额度</em>30000-200000元</span><em>|</em>
+                        <span>最低月利率0.55%</span><em>|</em>
                         <span>12、24、36期</span><em>|</em>
                         <span>等额本息</span>
                     </div>
@@ -139,34 +171,23 @@
                 </div>
             </div>
             <div class="index-con-box">
+                <div class="index-con-box-img">
+                    <img src="images/manager.png">
+                    <span>已实名</span>
+                </div>
                 <div class="index-con-box-info">
-                    <div class="index-con-box-infotop">
-                        <span>工薪贷</span><em>|</em>
-                        <span>依米康科技集团</span><em>|</em>
-                        <span>信贷经理:010101</span>
-                    </div>
-                    <div class="index-con-box-infobottom">
-                        <span class="color mr10"><em class="text">月利率</em>0.55-0.99%</span>
-                        <span><em class="text">额度</em>30000-200000元</span><em>|</em>
+                    <div class="color">
+                        <span>最低月利率0.55%</span><em>|</em>
                         <span>12、24、36期</span><em>|</em>
                         <span>等额本息</span>
                     </div>
-                </div>
-                <div class="index-con-box-btn">
-                    <p class="mb10"><el-button type="warning" @click="enterDetail">查看详情</el-button></p>
-                    <p><span class="color">1232341</span>人申请</p>
-                </div>
-            </div>
-            <div class="index-con-box">
-                <div class="index-con-box-info">
-                    <div class="index-con-box-infotop">
-                        <span>工薪贷</span><em>|</em>
-                        <span>小米科技</span><em>|</em>
-                        <span>信贷经理:010101</span>
+                    <div class="index-con-box-infocen">
+                        <span>信贷经理:010101</span><em>|</em>
+                        <span>四川多维外包服务有限公司</span><em>|</em>
+                        <span>获赞次数252</span>
                     </div>
                     <div class="index-con-box-infobottom">
-                        <span class="color mr10"><em class="text">月利率</em>0.55-0.99%</span>
-                        <span><em class="text">额度</em>30000-200000元</span><em>|</em>
+                        <span>最低月利率0.55%</span><em>|</em>
                         <span>12、24、36期</span><em>|</em>
                         <span>等额本息</span>
                     </div>

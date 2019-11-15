@@ -1,7 +1,7 @@
 <template>
     <div class="side">
         <div class="text-center mb5">
-            <router-link to="/index"><img src="images/sideLogo.png"></router-link>
+            <router-link to="/myCenter/customer"><img src="images/sideLogo.png"></router-link>
         </div>
         <div class="side-center">
             <div class="side-center-info bgfff box-shadow mb10">

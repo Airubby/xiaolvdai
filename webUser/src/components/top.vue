@@ -53,7 +53,7 @@ export default {
             }).then(() => {
                 this.loading=true;
                 this.$r.post('/outLogin', {}, r => {
-                    this.$router.push({path:'/index'});
+                    this.$router.push({path:'/page/index'});
                     this.$message.success("退出成功");
                     sessionStorage.removeItem('token');
                     this.$store.dispatch('setToken',"");

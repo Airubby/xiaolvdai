@@ -11,7 +11,7 @@
 						<span>99积分</span>
 					</div>
 					<div class="conversion-btn">
-						<el-button type="warning" @click="submitForm()">马上兑换</el-button>
+						<el-button type="warning" @click="submitForm(1)">马上兑换</el-button>
 					</div>
 				</div>
 			</el-col>
@@ -72,12 +72,16 @@
 				</div>
 			</el-col>
 		</el-row>
+		<send v-if="send.visible" :dialogInfo="send"></send>
+		<info v-if="info.visible" :dialogInfo="info"></info>
 	</div>
 </template>
 
 <script>
+import send from './components/send.vue'
+import info from './components/info.vue'
 export default {
-	components:{},
+	components:{send,info},
 	created () {
 	
   	},
@@ -86,11 +90,23 @@ export default {
     },
 	data(){
 		return {
-			
+			send:{
+				visible:false,
+			},
+			info:{
+				visible:false,
+			}
 		}
 	},
 	methods:{
-		
+		submitForm:function(type){
+			if(type=='1'){
+				this.info.visible=true;
+			}else{
+				this.send.visible=true;
+			}
+			
+		}
 	},
 	watch:{
 			
