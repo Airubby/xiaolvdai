@@ -1,12 +1,17 @@
+/* #ifdef APP-PLUS */
+.top-nav{
+	height: 75px;
+	padding-top: 25px;
+}
+/* #endif */
 
-body{
-	background: #EFF1F6;
-}
-.bgwhite{
-	background: #ffffff;
-}
-.heightFull{
-	height: 100%;
+/*每个页面公共css */
+page {
+	min-height: 100%;
+	display: flex;
+	font-size: 14px;
+	background: #EFEFEF;
+	color: #666;
 }
 .fl{
 	float: left;
@@ -14,160 +19,66 @@ body{
 .fr{
 	float: right;
 }
-.pd60{
-	padding-top: 60px;
+.text-center{
+	text-align: center;
 }
-.mb20{
-	margin-bottom: 20px;
+a{
+	text-decoration: none;
+	cursor: pointer;
+}
+.color{
+	color: #40a563;
+}
+.ml15{
+	margin-left: 15px;
+}
+.mt15{
+	margin-top: 15px;
+}
+.pd15{
+	padding: 15px;
+}
+.mb5{
+	margin-bottom: 5px;
 }
 .mb10{
 	margin-bottom: 10px;
 }
-uni-page-body, uni-page-refresh{
-	height: 100%;
+.bgfff{
+	background: #fff;
+}
+.flex{
+	display: flex;
+	justify-content: space-between;
 }
 .content{
-	padding: 0 20px;
+	width: 100%;
+	height: 100%;
 }
-.fontcolor999{
-	color: #999;
+.nav-placeholder{
+	width: 100%;
+	height: 50px;
 }
-.mr10{
-	margin-right: 10px;
+.bottomnav-placeholder{
+	width: 100%;
+	height: 45px;
 }
-.fontbg{
-	color:#50C984;
-	background: #DBFBE9;
+.content-app{
+	width: 100%;
+	height: calc(100% - 50px);
 }
-.fontbg1{
-	color:#FB9535;
-	background: #FFF6EC;
+.content-navapp{
+	width: 100%;
+	height: calc(100% - 100px);
 }
-.bg1{
-	background: #D30703;
+.top-nav{
+	padding-top: 0px;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	position: fixed;
+	background: #fff;
+	z-index: 9;
+	color: #40a563;
+	font-weight: bold;
 }
-.bg2{
-	background: #FE5700;
-}
-.bg3{
-	background: #FE9803;
-}
-
-
-/****/
-
-	/*每个页面公共css */
-	page {
-		min-height: 100%;
-		display: flex;
-		font-size: 16px;
-	}
-
-	/* #ifdef MP-BAIDU */
-	page {
-		width: 100%;
-		height: 100%;
-		display: block;
-	}
-
-	swan-template {
-		width: 100%;
-		min-height: 100%;
-		display: flex;
-	}
-
-	/* 原生组件模式下需要注意组件外部样式 */
-	custom-component {
-		width: 100%;
-		min-height: 100%;
-		display: flex;
-	}
-
-	/* #endif */
-
-	/* #ifdef MP-ALIPAY */
-	page {
-		min-height: 100vh;
-	}
-
-	/* #endif */
-
-	/* 原生组件模式下需要注意组件外部样式 */
-	m-input {
-		width: 100%;
-		/* min-height: 100%; */
-		display: flex;
-		flex: 1;
-	}
-
-	.content {
-		display: flex;
-		flex: 1;
-		flex-direction: column;
-		background-color: #efeff4;
-		padding: 10px;
-	}
-
-	.input-group {
-		background-color: #ffffff;
-		margin-top: 20px;
-		position: relative;
-	}
-
-	.input-group::before {
-		position: absolute;
-		right: 0;
-		top: 0;
-		left: 0;
-		height: 1px;
-		content: '';
-		-webkit-transform: scaleY(.5);
-		transform: scaleY(.5);
-		background-color: #c8c7cc;
-	}
-
-	.input-group::after {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		height: 1px;
-		content: '';
-		-webkit-transform: scaleY(.5);
-		transform: scaleY(.5);
-		background-color: #c8c7cc;
-	}
-
-	.input-row {
-		display: flex;
-		flex-direction: row;
-		position: relative;
-		font-size: 18px;
-		line-height: 40px;
-	}
-
-	.input-row .title {
-		width: 72px;
-		padding-left: 15px;
-	}
-
-	.input-row.border::after {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		left: 8px;
-		height: 1px;
-		content: '';
-		-webkit-transform: scaleY(.5);
-		transform: scaleY(.5);
-		background-color: #c8c7cc;
-	}
-
-	.btn-row {
-		margin-top: 25px;
-		padding: 10px;
-	}
-
-	button.primary {
-		background-color: #0faeff;
-	}

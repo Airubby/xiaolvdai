@@ -17,5 +17,7 @@
 	@import "./common/uni.css";
 	/*每个页面公共css */
 	@import "./common/basic.css";
+	/*每个页面公共css */
+	@import "./common/reset.css";
 
 </style>

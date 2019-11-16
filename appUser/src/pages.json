@@ -1,13 +1,27 @@
 {
   "pages": [
     {
-      "path": "pages/index/index",
+      "path": "pages/home/index",
       "style": {
         "app-plus": {
             "titleNView": false
         },
-        "navigationBarTitleText": "首页",
+        "navigationBarTitleText": "小驴贷-首页",
         "enablePullDownRefresh":true   
+      }
+    },
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/register/index",
+      "style": {
+        "navigationBarTitleText": "注册",
+        "navigationStyle":"default"
       }
     }
   ],
@@ -15,10 +29,10 @@
     
   },
   "globalStyle": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8",
+    "navigationBarTextStyle": "#ffffff",
+    "navigationBarTitleText": "小驴贷",
+    "navigationBarBackgroundColor": "#40a563",
+    "backgroundColor": "#40a563",
     "navigationStyle":"custom"
   },
 	"condition" : { 

@@ -1,0 +1,13 @@
+	/* #ifdef APP-PLUS */
+	uni-button{
+		font-size: 16px;
+	}
+	uni-button[type=warn]{
+		background: #FF8000;
+	}
+	uni-page-head .uni-page-head~.uni-placeholder{
+		height: 50px;
+	}
+	/* #endif */
+	
+	
