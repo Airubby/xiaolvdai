@@ -30,6 +30,15 @@
         "navigationBarTitleText": "注册",
         "navigationStyle":"default"
       }
+    },
+    {
+      "path": "pages/myCenter/index",
+      "style": {
+        "app-plus": {
+            "titleNView": false
+        },
+        "navigationBarTitleText": "个人中心"
+      }
     }
   ],
   "tabBar": {

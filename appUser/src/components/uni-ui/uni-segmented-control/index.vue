@@ -100,7 +100,7 @@
 		font-size: 16px;
 		border-radius: 5px;
 		box-sizing: border-box;
-		margin: 0px auto;
+		margin: 2px auto;
 		overflow: hidden;
 	}
 

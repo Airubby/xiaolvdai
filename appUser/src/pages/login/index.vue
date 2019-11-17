@@ -11,25 +11,19 @@
 					<input :value="initParams.code" placeholder="验证码" placeholder-style="color:#999;"/>
 					<button type="primary" size="mini" class="input-button" :style="inputButton" hover-class="primary-hover">获取验证码</button>
 				</view>
-				<button type="warn" class="mt15" style="background:#FF8000;" hover-class="warn-hover">马上登录</button>
+				<button type="warn" class="mt15" style="background:#FF8000;" hover-class="warn-hover" @click="login">马上登录</button>
 			</view>
 		</view>
+		<copyright></copyright>
+		<sure-tip ref="tip"></sure-tip>
     </view>
 </template>
-<style lang="less" scoped>
-	.input{
-		margin-bottom: 15px;
-		border-bottom: 1px solid #DCDFE6;
-		display: flex;
-		justify-content: space-between;
-    	padding-right: 10px;
-	}
-</style>
-
 <script>
 	import uniSegmentedControl from '@/components/uni-ui/uni-segmented-control/index.vue'
+	import copyright from '@/components/bottom-copyright.vue'
+	import sureTip from './components/sure-tip.vue'
 	export default {
-		components:{uniSegmentedControl},
+		components:{uniSegmentedControl,copyright,sureTip},
 		onLoad() {
 			
 		},
@@ -38,7 +32,7 @@
 				inputButton:{
 					width: "105px",
 					height: "35px",
-					"line-height": "35px",
+					lineHeight: "35px",
 					margin: "0",
 					background:"#40a563"
 				},
@@ -51,7 +45,7 @@
 					phone:'',
 					psword:'',
 					code:''
-				}
+				},
 			}
 		},
 		methods: {
@@ -60,6 +54,10 @@
 					this.current = index;
 				}
 			},
+			login:function(){
+				sessionStorage.setItem("userInfo","login");
+				this.$refs['tip'].open();
+			}
 		}
 	}
 </script>

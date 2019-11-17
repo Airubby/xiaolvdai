@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view class="content bgf5">
 		<view class="top-nav">
 			<view class="top-nav-con">
 				<view>
@@ -104,7 +104,7 @@
 							<text>公积金贷</text>
 						</view>
 						<view>
-							<text>月利率0.55%</text>?id='1'
+							<text>月利率0.55%</text>
 							<text class="line">|</text>
 							<text>等额本息</text>
 							<text class="line">|</text>
@@ -152,7 +152,7 @@
 				<view class="bottomnav-placeholder"></view>
 			</scroll-view>
 		</view>
-		<bottom-nav></bottom-nav>
+		<bottom-nav Info="home"></bottom-nav>
 	</view>
 </template>
 <style lang="less" scoped>

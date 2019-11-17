@@ -21,25 +21,17 @@
 			</view>
 			<button type="warn" class="mt15" style="background:#FF8000;" hover-class="warn-hover">马上注册</button>
 		</view>
+		<copyright></copyright>
 		<policy :dialogInfo="{title:'用户隐私保护政策'}" ref="policy"></policy>
 		<agreement :dialogInfo="{title:'用户注册协议'}" ref="agreement"></agreement>
     </view>
 </template>
-<style lang="less" scoped>
-	.input{
-		margin-bottom: 15px;
-		border-bottom: 1px solid #DCDFE6;
-		display: flex;
-		justify-content: space-between;
-    	padding-right: 10px;
-	}
-</style>
-
 <script>
 	import policy from './components/policy.vue'
 	import agreement from './components/agreement.vue'
+	import copyright from '@/components/bottom-copyright.vue'
 	export default {
-		components:{policy,agreement},
+		components:{policy,agreement,copyright},
 		onLoad() {
 			
 		},
@@ -48,7 +40,7 @@
 				inputButton:{
 					width: "105px",
 					height: "35px",
-					"line-height": "35px",
+					lineHeight: "35px",
 					margin: "0",
 					background:"#40a563"
 				},

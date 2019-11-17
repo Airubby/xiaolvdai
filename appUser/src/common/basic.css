@@ -38,6 +38,9 @@ a{
 .bgfff{
 	background: #fff;
 }
+.bgf5{
+	background: #f5f5f5;
+}
 .ml15{
 	margin-left: 15px;
 }
@@ -90,6 +93,13 @@ a{
 	font-weight: bold;
 }
 
+.input{
+	margin-bottom: 15px;
+	border-bottom: 1px solid #DCDFE6;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 10px;
+}
 .index-detail-box{
 	line-height: 22px;
 }
