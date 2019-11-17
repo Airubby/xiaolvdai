@@ -29,6 +29,15 @@ a{
 .color{
 	color: #40a563;
 }
+.bg{
+	background: #40a563;
+}
+.colorfff{
+	color: #fff;
+}
+.bgfff{
+	background: #fff;
+}
 .ml15{
 	margin-left: 15px;
 }
@@ -44,9 +53,7 @@ a{
 .mb10{
 	margin-bottom: 10px;
 }
-.bgfff{
-	background: #fff;
-}
+
 .flex{
 	display: flex;
 	justify-content: space-between;
@@ -81,4 +88,21 @@ a{
 	z-index: 9;
 	color: #40a563;
 	font-weight: bold;
+}
+
+.index-detail-box{
+	line-height: 22px;
+}
+.index-detail-box-title{
+	background: #40a563;
+	color: #fff;
+	padding: 3px 8px;
+	display: inline-block;
+	margin-bottom: 15px;
+}
+.index-detail-box-con {
+	display: flex;
+}
+.index-detail-box-con .arrows{
+	margin: 0 8px;
 }

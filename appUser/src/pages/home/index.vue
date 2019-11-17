@@ -49,7 +49,9 @@
 							<text>12、24、36期</text>
 						</view>
 						<view class="mt15">
-							<button type="warn" style="background:#FF8000;" hover-class="warn-hover">查看详情</button>
+							<navigator url="/pages/home/detail?id='1'">
+								<button type="warn" style="background:#FF8000;" hover-class="warn-hover">查看详情</button>
+							</navigator>
 						</view>
 					</view>
 				</view>
@@ -78,7 +80,40 @@
 							<text>12、24、36期</text>
 						</view>
 						<view class="mt15">
-							<button type="warn" style="background:#FF8000;" hover-class="warn-hover">查看详情</button>
+							<navigator url="/pages/home/detail?id='1'">
+								<button type="warn" style="background:#FF8000;" hover-class="warn-hover">查看详情</button>
+							</navigator>
+						</view>
+					</view>
+				</view>
+				<view class="bgfff sort-box">
+					<view class="flex sort-box-top">
+						<view class="sort-box-left">
+							<image src="/static/images/manager.png" class="sort-box-img" mode="widthFix"></image>
+							<text class="sort-box-img-info">已实名</text>
+						</view>
+						<view class="sort-box-right">
+							<view class="mb5">四川多维外包服务有限公司</view>
+							<view>信贷经理:010101<text class="ml15">获赞次数:252</text></view>
+						</view>
+					</view>
+					<view class="text-center">
+						<view class="color mb5">
+							<text>平安银行成都分行</text>
+							<text class="line">|</text>
+							<text>公积金贷</text>
+						</view>
+						<view>
+							<text>月利率0.55%</text>?id='1'
+							<text class="line">|</text>
+							<text>等额本息</text>
+							<text class="line">|</text>
+							<text>12、24、36期</text>
+						</view>
+						<view class="mt15">
+							<navigator url="/pages/home/detail?id='1'">
+								<button type="warn" style="background:#FF8000;" hover-class="warn-hover">查看详情</button>
+							</navigator>
 						</view>
 					</view>
 				</view>
@@ -107,36 +142,9 @@
 							<text>12、24、36期</text>
 						</view>
 						<view class="mt15">
-							<button type="warn" style="background:#FF8000;" hover-class="warn-hover">查看详情</button>
-						</view>
-					</view>
-				</view>
-				<view class="bgfff sort-box">
-					<view class="flex sort-box-top">
-						<view class="sort-box-left">
-							<image src="/static/images/manager.png" class="sort-box-img" mode="widthFix"></image>
-							<text class="sort-box-img-info">已实名</text>
-						</view>
-						<view class="sort-box-right">
-							<view class="mb5">四川多维外包服务有限公司</view>
-							<view>信贷经理:010101<text class="ml15">获赞次数:252</text></view>
-						</view>
-					</view>
-					<view class="text-center">
-						<view class="color mb5">
-							<text>平安银行成都分行</text>
-							<text class="line">|</text>
-							<text>公积金贷</text>
-						</view>
-						<view>
-							<text>月利率0.55%</text>
-							<text class="line">|</text>
-							<text>等额本息</text>
-							<text class="line">|</text>
-							<text>12、24、36期</text>
-						</view>
-						<view class="mt15">
-							<button type="warn" style="background:#FF8000;" hover-class="warn-hover">查看详情</button>
+							<navigator url="/pages/home/detail?id='1'">
+								<button type="warn" style="background:#FF8000;" hover-class="warn-hover">查看详情</button>
+							</navigator>
 						</view>
 					</view>
 				</view>

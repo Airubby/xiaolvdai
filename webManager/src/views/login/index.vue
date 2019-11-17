@@ -6,8 +6,8 @@
 				<el-row :gutter="20">
 					<el-col :span="14" :offset="5" style="margin-bottom:35px;">
 						<el-button-group style="width:100%;">
-							<el-button :type="flag?'primary':''" :class="{'primary':flag}" class="changebtn none-radius" size="medium" style="width:50%;" @click="change('true')">密码登录</el-button>
-							<el-button :type="!flag?'primary':''" :class="{'primary':!flag}" class="changebtn none-radius" size="medium" style="width:50%;" @click="change('false')">验证码登录</el-button>
+							<el-button :type="flag?'primary':''" :class="{'primary':flag}" class="changebtn" size="medium" style="width:50%;" @click="change('true')">密码登录</el-button>
+							<el-button :type="!flag?'primary':''" :class="{'primary':!flag}" class="changebtn" size="medium" style="width:50%;" @click="change('false')">验证码登录</el-button>
 						</el-button-group>
 					</el-col>
 					<el-col :span="14" :offset="5">

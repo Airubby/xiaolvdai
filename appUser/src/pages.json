@@ -11,6 +11,13 @@
       }
     },
     {
+      "path": "pages/home/detail",
+      "style": {
+        "navigationBarTitleText": "产品详情",
+        "navigationStyle":"default"
+      }
+    },
+    {
       "path": "pages/login/index",
       "style": {
         "navigationBarTitleText": "登录",
