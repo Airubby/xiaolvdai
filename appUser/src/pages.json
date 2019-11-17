@@ -29,7 +29,7 @@
     
   },
   "globalStyle": {
-    "navigationBarTextStyle": "#ffffff",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "小驴贷",
     "navigationBarBackgroundColor": "#40a563",
     "backgroundColor": "#40a563",

@@ -49,7 +49,7 @@
 							<text>12、24、36期</text>
 						</view>
 						<view class="mt15">
-							<button type="warn">查看详情</button>
+							<button type="warn" style="background:#FF8000;" hover-class="warn-hover">查看详情</button>
 						</view>
 					</view>
 				</view>
@@ -78,7 +78,7 @@
 							<text>12、24、36期</text>
 						</view>
 						<view class="mt15">
-							<button type="warn">查看详情</button>
+							<button type="warn" style="background:#FF8000;" hover-class="warn-hover">查看详情</button>
 						</view>
 					</view>
 				</view>
@@ -107,7 +107,7 @@
 							<text>12、24、36期</text>
 						</view>
 						<view class="mt15">
-							<button type="warn">查看详情</button>
+							<button type="warn" style="background:#FF8000;" hover-class="warn-hover">查看详情</button>
 						</view>
 					</view>
 				</view>
@@ -136,7 +136,7 @@
 							<text>12、24、36期</text>
 						</view>
 						<view class="mt15">
-							<button type="warn">查看详情</button>
+							<button type="warn" style="background:#FF8000;" hover-class="warn-hover">查看详情</button>
 						</view>
 					</view>
 				</view>
