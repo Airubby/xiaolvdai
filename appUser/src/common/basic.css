@@ -1,8 +1,5 @@
 /* #ifdef APP-PLUS */
-.top-nav{
-	height: 75px;
-	padding-top: 25px;
-}
+
 /* #endif */
 
 /*每个页面公共css */
@@ -12,6 +9,10 @@ page {
 	font-size: 14px;
 	background: #EFEFEF;
 	color: #666;
+}
+.status_bar {
+	height: var(--status-bar-height);
+	width: 100%;
 }
 .fl{
 	float: left;
@@ -50,6 +51,9 @@ a{
 .pd15{
 	padding: 15px;
 }
+.pd1520{
+	padding: 15px 20px;
+}
 .mb5{
 	margin-bottom: 5px;
 }
@@ -63,11 +67,11 @@ a{
 }
 .content{
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 }
 .nav-placeholder{
 	width: 100%;
-	height: 50px;
+	height: 44px;
 }
 .bottomnav-placeholder{
 	width: 100%;
@@ -81,18 +85,6 @@ a{
 	width: 100%;
 	height: calc(100% - 100px);
 }
-.top-nav{
-	padding-top: 0px;
-	width: 100%;
-	height: 50px;
-	line-height: 50px;
-	position: fixed;
-	background: #fff;
-	z-index: 9;
-	color: #40a563;
-	font-weight: bold;
-}
-
 .input{
 	margin-bottom: 15px;
 	border-bottom: 1px solid #DCDFE6;

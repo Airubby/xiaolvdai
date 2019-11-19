@@ -125,7 +125,8 @@
 			position: relative;
 			text-align: center;
 			.sort-box-img{
-				width: 55px;
+				width: 54px;
+				height: 64px;
 			}
 			.sort-box-img-info{
 				background: #40A563;

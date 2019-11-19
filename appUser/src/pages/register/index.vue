@@ -1,5 +1,5 @@
 <template>
-	<view class="content" style="padding-top:30px;">
+	<view class="content bgfff" style="padding-top:30px;">
 		<view class="pd15">
 			<view class="input"><input :value="initParams.phone" placeholder="手机号" placeholder-style="color:#999;"/></view>
 			<view class="input">

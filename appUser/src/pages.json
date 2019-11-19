@@ -39,6 +39,27 @@
         },
         "navigationBarTitleText": "个人中心"
       }
+    },
+    {
+      "path": "pages/myCenter/myApply/index",
+      "style": {
+        "navigationBarTitleText": "我的申请",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/realname/index",
+      "style": {
+        "navigationBarTitleText": "实名认证",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/psword/index",
+      "style": {
+        "navigationBarTitleText": "修改密码",
+        "navigationStyle":"default"
+      }
     }
   ],
   "tabBar": {

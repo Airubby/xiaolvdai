@@ -1,10 +1,10 @@
 <template>
 	<view class="bottom-nav">
-		<view class="bottom-nav-con" v-if="type=='0'">
+		<view class="bottom-nav-con" v-if="!loginStatus">
 			<navigator url="/pages/register/index" class="bottom-nav-box">注 册</navigator>
 			<navigator url="/pages/login/index" class="bottom-nav-box">登 录</navigator>
 		</view>
-		<view class="bottom-nav-con" v-if="type=='1'">
+		<view class="bottom-nav-con" v-if="loginStatus">
 			<text v-if="Info=='home'" class="bottom-nav-box disabled-nav">产品搜索</text>
 			<navigator url="/pages/home/index" class="bottom-nav-box" v-else>产品搜索</navigator>
 			<text class="bottom-nav-box" v-if="Info=='center'" @click="outLogin">退出登录</text>
@@ -42,49 +42,59 @@
 </style>
 
 <script>
-	export default {
-		components:{},
-		props:["Info"],
-		onLoad() {
-			console.log(11)
-		},
-		created(){
-			if(sessionStorage.getItem("userInfo")){
-				this.type='1';
+import { mapGetters } from 'vuex'
+import store from '@/store/index'
+export default {
+	components:{},
+	props:["Info"],
+	computed:{
+        ...mapGetters([
+            'loginStatus'
+        ]),
+    },
+	onLoad() {
+		
+	},
+	created(){
+		let _this=this;
+		uni.getStorage({
+			key: 'userLoginInfo',
+			success: function (res) {
+				store.dispatch('app/setStatus',true);
 			}
-			console.log(2)
-		},
-		data() {
-			return {
-				type:'0' //1 登录了，0 没登录
-			}
-		},
-		methods: {
-			outLogin:function(){
-				uni.showModal({
-                    title: '提示',
-					content: '确定退出登录',
-					// showCancel:true, //显示取消按钮，默认就为true
-					// cancelText:'取消',  //默认就为取消
-					// cancelColor:"#000000", //默认 #000000
-					// confirmText:'确定',
-					confirmColor:'#40a563',
-                    success: (res) => {
-                        if (res.confirm) {
-							sessionStorage.setItem("userInfo","");
-							uni.showToast({
-								icon: 'none',
-								title: '退出成功！'
-							});
-							uni.navigateTo({url: "/pages/home/index"})
-							
-                        }
-                    }
-                });
-				
-				
-			}
+		});
+	},
+	data() {
+		return {
+			
+		}
+	},
+	methods: {
+		outLogin:function(){
+			uni.showModal({
+				title: '提示',
+				content: '确定退出登录',
+				// showCancel:true, //显示取消按钮，默认就为true
+				// cancelText:'取消',  //默认就为取消
+				// cancelColor:"#000000", //默认 #000000
+				// confirmText:'确定',
+				confirmColor:'#40a563',
+				success: (res) => {
+					if (res.confirm) {
+						uni.removeStorage({
+							key: 'userLoginInfo',
+							success: function (res) {
+								store.dispatch('app/setStatus',false);
+								uni.navigateTo({url: "/pages/home/index"})
+							}
+						});
+					}
+				}
+			});
+			
+			
 		}
 	}
+}
 </script>
 

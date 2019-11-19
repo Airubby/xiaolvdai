@@ -1,5 +1,6 @@
 <template>
 	<view class="content bgf5">
+		<view class="status_bar"><!-- 这里是状态栏 --></view>
 		<view class="top-nav">
 			<view class="top-nav-con">
 				<view>
@@ -11,6 +12,7 @@
 				</view>
 			</view>
 		</view>
+		<view class="status_bar"><!-- 这里是状态栏高度 --></view>
 		<view class="nav-placeholder"></view>
 		<view class="content-navapp">
 			<scroll-view scroll-y="true" class="scroll-y">
@@ -156,7 +158,19 @@
 	</view>
 </template>
 <style lang="less" scoped>
+	.status_bar{
+		background: #fff;
+		color: #40A563;
+	}
 	.top-nav{
+		width: 100%;
+		height: 44px;
+		line-height: 44px;
+		position: fixed;
+		background: #fff;
+		z-index: 9;
+		color: #40a563;
+		font-weight: bold;
 		.top-nav-con{
 			padding: 0 15px;
 			display: flex;
@@ -207,7 +221,8 @@
 			position: relative;
 			text-align: center;
 			.sort-box-img{
-				width: 55px;
+				width: 54px;
+				height: 64px;
 			}
 			.sort-box-img-info{
 				background: #40A563;
