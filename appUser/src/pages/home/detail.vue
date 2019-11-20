@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view class="content bgfff">
 		<view class="sort-box">
 			<view class="flex sort-box-top">
 				<view class="sort-box-left">

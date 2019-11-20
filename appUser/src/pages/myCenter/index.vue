@@ -16,23 +16,26 @@
 				<view><text class="integral">10</text>分</view>
 			</view>
 			<view class="flex">
-				<navigator url="/pages/home/detail?id='1'">
+				<navigator url="/pages/myCenter/exchange/index">
 					<button type="warn" style="background:#FF8000;" hover-class="warn-hover">积分兑换</button>
 				</navigator>
-				<navigator url="/pages/home/detail?id='1'" class="ml15">
+				<navigator url="/pages/myCenter/earn/index" class="ml15">
 					<button type="primary" style="background:#40a563;" hover-class="warn-hover">赚取积分</button>
 				</navigator>
 			</view>
 		</view>
 		<view class="pd1520 bgfff nav-box">
-			<navigator url="/pages/myCenter/myApply/index">
-				<image src="/static/images/nav-one.png" style="width:30px;" mode="widthFix"></image><text class="title">我的申请</text>
+			<navigator url="/pages/myCenter/myApply/index" class="nav-con">
+				<image src="/static/images/nav-one.png" style="width:30px;" mode="widthFix"></image>
+				<text class="title">我的申请</text>
 			</navigator>
-			<navigator url="/pages/myCenter/realname/index" class="nav-a">
-				<image src="/static/images/nav-two.png" style="width:30px;" mode="widthFix"></image><text class="title">实名认证</text>
+			<navigator url="/pages/myCenter/realname/index" class="nav-con nav-a">
+				<image src="/static/images/nav-two.png" style="width:30px;" mode="widthFix"></image>
+				<text class="title">实名认证</text>
 			</navigator>
-			<navigator url="/pages/myCenter/psword/index">
-				<image src="/static/images/nav-three.png" style="width:30px;" mode="widthFix"></image><text class="title">修改密码</text>
+			<navigator url="/pages/myCenter/psword/index" class="nav-con">
+				<image src="/static/images/nav-three.png" style="width:30px;" mode="widthFix"></image>
+				<text class="title">修改密码</text>
 			</navigator>
 		</view>
 		<view class="bottomnav-placeholder"></view>
@@ -64,6 +67,9 @@
 		font-style: italic;
 	}
 	.nav-box{
+		.nav-con{
+			display: flex;
+		}
 		.nav-a{
 			margin: 40px 0;
 		}

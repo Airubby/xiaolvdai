@@ -7,7 +7,10 @@
             "titleNView": false
         },
         "navigationBarTitleText": "小驴贷-首页",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff",
         "enablePullDownRefresh":true   
+
       }
     },
     {
@@ -59,6 +62,29 @@
       "style": {
         "navigationBarTitleText": "修改密码",
         "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/earn/index",
+      "style": {
+        "navigationBarTitleText": "赚取积分",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/exchange/index",
+      "style": {
+        "navigationBarTitleText": "积分兑换",
+        "navigationStyle":"default",
+        "enablePullDownRefresh":true 
+      }
+    },
+    {
+      "path": "pages/myCenter/exchange/info",
+      "style": {
+        "navigationBarTitleText": "马上兑换",
+        "navigationStyle":"default",
+        "enablePullDownRefresh":true 
       }
     }
   ],

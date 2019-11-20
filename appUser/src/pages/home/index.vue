@@ -1,11 +1,11 @@
 <template>
 	<view class="content bgf5">
-		<view class="status_bar"><!-- 这里是状态栏 --></view>
 		<view class="top-nav">
+			<view class="status_bar"><!-- 这里是状态栏 --></view>
 			<view class="top-nav-con">
 				<view>
 					<image src="/static/images/local.png" class="top-nav-img" mode="aspectFit"></image>
-					<text>成都</text>
+					<text>定位中...</text>
 				</view>
 				<view class="prelative">
 					<a href="https://uniapp.dcloud.io/static/web-view.html">信贷经理登录</a>
@@ -158,20 +158,16 @@
 	</view>
 </template>
 <style lang="less" scoped>
-	.status_bar{
-		background: #fff;
-		color: #40A563;
-	}
 	.top-nav{
 		width: 100%;
-		height: 44px;
-		line-height: 44px;
 		position: fixed;
 		background: #fff;
 		z-index: 9;
 		color: #40a563;
 		font-weight: bold;
 		.top-nav-con{
+			height: 44px;
+			line-height: 44px;
 			padding: 0 15px;
 			display: flex;
 			justify-content: space-between;
