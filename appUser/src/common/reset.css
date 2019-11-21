@@ -1,12 +1,12 @@
 	/* #ifdef APP-PLUS */
 	uni-button{
-		font-size: 16px;
+		font-size: 14px;
 	}
 	.warn-hover{
-		background: rgba(255, 128, 0, 0.8);
+		background: rgba(255, 128, 0, 0.9);
 	}
 	.primary-hover{
-		background: rgba(64, 165, 99, 0.8);
+		background: rgba(64, 165, 99, 0.9);
 	}
 	uni-input{
 		width: 100%;

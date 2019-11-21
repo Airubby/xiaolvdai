@@ -2,7 +2,7 @@
 	<el-scrollbar class="scrollbar">
 		<div class="mycenter-pd">
 			<div class="info-box mb25">
-				<p>实名认证是为了核实用户的真实性，有利于贷款办理。认证成功后，可获得小驴贷款100用户积分！</p>
+				<p>实名认证是为了核实用户的真实性，有利于贷款办理。认证成功后，可获得小驴贷款10用户积分！</p>
 			</div>
 			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="85px">
 				<el-row :gutter="20">

@@ -17,10 +17,10 @@
 			</view>
 			<view class="flex">
 				<navigator url="/pages/myCenter/exchange/index">
-					<button type="warn" style="background:#FF8000;" hover-class="warn-hover">积分兑换</button>
+					<button type="warn" style="background:#FF8000;" hover-class="warn-hover" class="font-size14">积分兑换</button>
 				</navigator>
-				<navigator url="/pages/myCenter/earn/index" class="ml15">
-					<button type="primary" style="background:#40a563;" hover-class="warn-hover">赚取积分</button>
+				<navigator url="/pages/myCenter/earn/index" class="ml10">
+					<button type="primary" style="background:#40a563;" hover-class="warn-hover" class="font-size14">赚取积分</button>
 				</navigator>
 			</view>
 		</view>
@@ -85,7 +85,14 @@ import bottomNav from '@/components/bottom-nav.vue'
 	export default {
 		components:{bottomNav},
 		onLoad() {
-			
+			uni.getStorage({
+				key: 'userLoginInfo',
+				fail: function (res) {
+					uni.redirectTo({
+						url: '/pages/home/index'
+					});
+				}
+			});
 		},
 		data() {
 			return {

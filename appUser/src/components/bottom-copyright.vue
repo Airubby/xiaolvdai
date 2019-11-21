@@ -8,6 +8,7 @@
 		width: 100%;
 		height: 45px;
 		line-height: 45px;
+		background: #fff;
 		position: fixed;
 		bottom: 0;
 		z-index: 9;

@@ -81,13 +81,20 @@ export default {
 				confirmColor:'#40a563',
 				success: (res) => {
 					if (res.confirm) {
-						uni.removeStorage({
-							key: 'userLoginInfo',
-							success: function (res) {
-								store.dispatch('app/setStatus',false);
-								uni.navigateTo({url: "/pages/home/index"})
-							}
+						uni.showToast({
+							icon: 'none',
+							title: '退出成功！'
 						});
+						setTimeout(function() {
+							uni.removeStorage({
+								key: 'userLoginInfo',
+								success: function (res) {
+									store.dispatch('app/setStatus',false);
+									uni.reLaunch({url: "/pages/home/index"})
+								}
+							});
+						}, 1000)
+						
 					}
 				}
 			});
