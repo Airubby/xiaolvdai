@@ -200,42 +200,6 @@
 			color: #40a563;
 		}
 	}
-	.sort-box{
-		padding: 5px 15px 15px;
-		margin-bottom: 15px;
-		.sort-box-top{
-			margin-bottom: 12px;
-			padding-bottom: 10px;
-			border-bottom: 1px solid #dcdfe6;
-		}
-		.line{
-			margin: 0 5px;
-		}
-		.sort-box-left{
-			width: 55px;
-			height: 75px;
-			position: relative;
-			text-align: center;
-			.sort-box-img{
-				width: 54px;
-				height: 64px;
-			}
-			.sort-box-img-info{
-				background: #40A563;
-				color: #fff;
-				font-size: 12px;
-				width: 45px;
-				position: absolute;
-				bottom: 0;
-				left: 5px;
-			}
-		}
-		.sort-box-right{
-			width: calc(100% - 75px);
-			padding-top: 18px;
-		}
-	}
-	
 </style>
 
 <script>

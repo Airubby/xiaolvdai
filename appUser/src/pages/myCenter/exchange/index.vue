@@ -134,8 +134,8 @@
 				</navigator>
 			</view>
 		</view>
-		<view class="bottomnav-placeholder"></view>
-		<copyright></copyright>
+		<!-- <view class="bottomnav-placeholder"></view>
+		<copyright></copyright> -->
     </view>
 </template>
 <style lang="less" scoped>

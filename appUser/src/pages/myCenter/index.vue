@@ -16,15 +16,15 @@
 				<view><text class="integral">10</text>分</view>
 			</view>
 			<view class="flex">
-				<navigator url="/pages/myCenter/exchange/index">
-					<button type="warn" style="background:#FF8000;" hover-class="warn-hover" class="font-size14">积分兑换</button>
+				<navigator url="/pages/myCenter/exchange/index" style="margin-top:6px;">
+					<button type="warn" style="background:#FF8000;" hover-class="warn-hover">积分兑换</button>
 				</navigator>
-				<navigator url="/pages/myCenter/earn/index" class="ml10">
-					<button type="primary" style="background:#40a563;" hover-class="warn-hover" class="font-size14">赚取积分</button>
+				<navigator url="/pages/myCenter/earn/index" class="ml10" style="margin-top:6px;">
+					<button type="primary" style="background:#40a563;" hover-class="warn-hover">赚取积分</button>
 				</navigator>
 			</view>
 		</view>
-		<view class="pd1520 bgfff nav-box">
+		<view class="bgfff nav-box">
 			<navigator url="/pages/myCenter/myApply/index" class="nav-con">
 				<image src="/static/images/nav-one.png" style="width:30px;" mode="widthFix"></image>
 				<text class="title">我的申请</text>
@@ -53,6 +53,7 @@
 		display: flex;
 		color:#fff;
 		padding:10px 0 15px 20px;
+		box-sizing: border-box;
 		.center-top-text{
 			padding: 20px 0 0 15px;
 			line-height: 22px;
@@ -67,11 +68,13 @@
 		font-style: italic;
 	}
 	.nav-box{
+		padding:0 20px;
 		.nav-con{
 			display: flex;
+			padding: 20px 0;
 		}
 		.nav-a{
-			margin: 40px 0;
+			margin: 10px 0;
 		}
 		.title{
 			margin-left: 15px;
