@@ -116,6 +116,9 @@ a{
 	display: inline-block;
 	margin-bottom: 15px;
 }
+.index-detail-box-titleo{
+	background: #FF8000;
+}
 .index-detail-box-con {
 	display: flex;
 }
@@ -135,7 +138,7 @@ a{
 	padding-bottom: 10px;
 	border-bottom: 1px solid #dcdfe6;
 }
-.sort-box .line{
+.line{
 	margin: 0 5px;
 }
 .sort-box .sort-box-left{

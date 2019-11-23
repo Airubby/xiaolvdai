@@ -16,10 +16,12 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content:flex-start;
-		line-height: 24px;
 		align-items: center;
 		.ml5{
 			margin-left: 5px;
+		}
+		.ai-step{
+			margin: 3px 0;
 		}
 		.ai-step,.step-text{
 			display: flex;

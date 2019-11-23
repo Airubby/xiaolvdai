@@ -78,7 +78,7 @@
 			</view>
 		</view>
 		<view class="index-detail-box pd15">
-			<view class="index-detail-box-title">附加费用</view>
+			<view class="index-detail-box-title index-detail-box-titleo">附加费用</view>
 			<view class="index-detail-box-con">
 				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
 				<text>履行保险费（贷款金额0.3%）</text>
@@ -93,7 +93,7 @@
 			</view>
 		</view>
 		<view class="pd15">
-			<button type="warn" style="background:#FF8000;" hover-class="warn-hover">马上申请</button>
+			<button type="warn" style="background:#FF8000;" hover-class="warn-hover" @click="apply">马上申请</button>
 		</view>
 		<view class="pd15">
 			<button type="primary" style="background:#40a563;" hover-class="primary-hover">介绍详细，赞一个！</button>
@@ -118,29 +118,9 @@
 </template>
 <style lang="less" scoped>
 	.sort-box{
-		padding: 15px;
-		.sort-box-left{
-			width: 55px;
-			height: 75px;
-			position: relative;
-			text-align: center;
-			.sort-box-img{
-				width: 54px;
-				height: 64px;
-			}
-			.sort-box-img-info{
-				background: #40A563;
-				color: #fff;
-				font-size: 12px;
-				width: 45px;
-				position: absolute;
-				bottom: 0;
-				left: 5px;
-			}
-		}
-		.sort-box-right{
-			width: calc(100% - 75px);
-			padding-top: 18px;
+		padding: 15px 15px 0;
+		.sort-box-top{
+			border-bottom: none;
 		}
 	}
 	.sort-boxbottom{
@@ -148,9 +128,6 @@
 		line-height: 50px;
 		text-align: center;
 		font-size: 16px;
-	}
-	.line{
-		margin: 0 5px;
 	}
 </style>
 
@@ -169,7 +146,11 @@
 			}
 		},
 		methods: {
-			
+			apply:function(){
+				uni.navigateTo({
+					url: '/pages/home/apply'
+				});
+			}
 		}
 	}
 </script>

@@ -4,7 +4,8 @@
 			<view class="input"><input :value="initParams.phone" placeholder="手机号" placeholder-style="color:#999;"/></view>
 			<view class="input">
 				<input :value="initParams.code" placeholder="验证码" placeholder-style="color:#999;"/>
-				<button type="primary" size="mini" class="input-button" :style="inputButton" hover-class="primary-hover">获取验证码</button>
+				<button type="primary" size="mini" 
+						style="background:#40a563;width:105px;height:35px;line-height:35px;margin:0" class="input-button" hover-class="primary-hover">获取验证码</button>
 			</view>
 			<view class="input"><input :value="initParams.psword" placeholder="设置密码" placeholder-style="color:#999;"/></view>
 			<view class="mb5">

@@ -21,6 +21,13 @@
       }
     },
     {
+      "path": "pages/home/apply",
+      "style": {
+        "navigationBarTitleText": "申请咨询",
+        "navigationStyle":"default"
+      }
+    },
+    {
       "path": "pages/login/index",
       "style": {
         "navigationBarTitleText": "登录",

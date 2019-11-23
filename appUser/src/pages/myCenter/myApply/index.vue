@@ -27,7 +27,7 @@
 					</view>
 				</view>
 				<view>
-					<ai-steps activeColor="#40A563" :options="list" :active="active"></ai-steps>
+					<ai-steps activeColor="#40A563" :options="list" :active="active" :stepWidth="55"></ai-steps>
 				</view>
 				<view class="flex">
 					<button type="primary" class="apply-btn" @click="select()" style="background:#40a563;" hover-class="primary-hover">服务好,赞</button>
@@ -54,7 +54,7 @@
 					</view>
 				</view>
 				<view>
-					<ai-steps activeColor="#40A563" :options="list" :active="3"></ai-steps>
+					<ai-steps activeColor="#40A563" :options="list" :active="3" :stepWidth="55"></ai-steps>
 				</view>
 				<view class="flex">
 					<button type="primary" class="apply-btn" @click="select()" style="background:#40a563;" hover-class="primary-hover">服务好,赞</button>
@@ -81,7 +81,7 @@
 					</view>
 				</view>
 				<view>
-					<ai-steps activeColor="#40A563" :options="list" :active="2"></ai-steps>
+					<ai-steps activeColor="#40A563" :options="list" :active="2" :stepWidth="55"></ai-steps>
 				</view>
 				<view class="flex">
 					<button type="primary" class="apply-btn" @click="select()" style="background:#40a563;" hover-class="primary-hover">服务好,赞</button>
