@@ -5,7 +5,7 @@
 			<view class="top-nav-con">
 				<view>
 					<image src="/static/images/local.png" class="top-nav-img" mode="aspectFit"></image>
-					<text>定位中...</text>
+					<text>{{location}}</text>
 				</view>
 				<view class="prelative">
 					<a href="https://uniapp.dcloud.io/static/web-view.html">信贷经理登录</a>
@@ -206,10 +206,27 @@
 	import radioGroupBtn from '@/components/ai-ui/radio-group-btn/index.vue'
 	import uniLoadMore from '@/components/uni-ui/uni-load-more/uni-load-more.vue'
 	import bottomNav from '@/components/bottom-nav.vue'
+	import { mapGetters } from 'vuex'
+
 	export default {
 		components:{radioGroupBtn,uniLoadMore,bottomNav},
 		onLoad() {
-			
+			let _this=this;
+			uni.getLocation({
+				type: 'wgs84',
+				success: function (res) {
+					console.log(res)
+					_this.$store.dispatch('app/setLocation',res.address.city);
+				},
+				fail:function(res){
+					_this.$store.dispatch('app/setLocation',"定位失败！");
+				}
+			});
+		},
+		computed:{
+			...mapGetters([
+				'location'
+			]),
 		},
 		// 下拉刷新
 		onPullDownRefresh() {

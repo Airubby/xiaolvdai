@@ -1,0 +1,23 @@
+	/* #ifdef APP-PLUS */
+	uni-button{
+		font-size: 14px;
+	}
+	.warn-hover{
+		background: rgba(255, 128, 0, 0.9);
+	}
+	.primary-hover{
+		background: rgba(64, 165, 99, 0.9);
+	}
+	uni-input{
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
+		font-size: 14px;
+	}
+	uni-image{
+		vertical-align: middle;
+	}
+	/* #endif */
+	
+	
+	

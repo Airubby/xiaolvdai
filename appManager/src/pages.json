@@ -1,0 +1,54 @@
+{
+  "pages": [
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/register/index",
+      "style": {
+        "navigationBarTitleText": "注册",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/index",
+      "style": {
+        "app-plus": {
+            "titleNView": false
+        },
+        "navigationBarTitleText": "个人中心"
+      }
+    },
+    {
+      "path": "pages/myCenter/psword/index",
+      "style": {
+        "navigationBarTitleText": "修改密码",
+        "navigationStyle":"default"
+      }
+    }
+  ],
+  "tabBar": {
+    
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小驴贷",
+    "navigationBarBackgroundColor": "#40a563",
+    "backgroundColor": "#fff",
+    "navigationStyle":"custom"
+  },
+	"condition" : { 
+		"current": 0, 
+		"list": [
+			{
+				"name": "", 
+				"path": "", 
+				"query": "" 
+			}
+		]
+	}
+}
