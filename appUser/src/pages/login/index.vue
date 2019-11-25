@@ -12,7 +12,7 @@
 					<button type="primary" size="mini" 
 						style="background:#40a563;width:105px;height:35px;line-height:35px;margin:0" class="input-button" hover-class="primary-hover">获取验证码</button>
 				</view>
-				<button type="warn" class="mt25" style="background:#FF8000;" hover-class="warn-hover" @tap="loginFn">马上登录</button>
+				<button type="warn" class="mt25 font-size18" style="background:#FF8000;" hover-class="warn-hover" @tap="loginFn">马上登录</button>
 			</view>
 		</view>
 		<copyright></copyright>

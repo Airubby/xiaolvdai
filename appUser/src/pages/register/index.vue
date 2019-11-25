@@ -20,7 +20,7 @@
 				<text @tap="policyFn">《用户隐私保护政策》</text>
 				<text @tap="agreementFn">《用户注册协议》</text>
 			</view>
-			<button type="warn" class="mt15" style="background:#FF8000;" hover-class="warn-hover">马上注册</button>
+			<button type="warn" class="mt25 font-size18" style="background:#FF8000;" hover-class="warn-hover">马上注册</button>
 		</view>
 		<copyright></copyright>
 		<policy :dialogInfo="{title:'用户隐私保护政策'}" ref="policy"></policy>

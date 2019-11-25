@@ -19,76 +19,76 @@
 		</view>
 		<view class="index-detail-box pd15">
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>产品资方：平安银行成都分公司</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>申请额度：30000-200000元</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>还款方式：等额本息</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>利率：0.89-1.24%</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>贷款期限：12、24、36期</text>
 			</view>
 		</view>
 		<view class="index-detail-box pd15">
 			<view class="index-detail-box-title">申请条件</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>征信要求：无不良征信记录</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>年龄要求：年龄在21-55周岁之间的中国公民</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>收入要求：月收入3000元以上</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>贷款期限：本单位连续工作6个月以上</text>
 			</view>
 		</view>
 		<view class="index-detail-box pd15">
 			<view class="index-detail-box-title">申请资料</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>借款人身份证</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>工作证明（劳动合同复印件或者公司开具的工作证明，加盖公司公章）</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>收入证明文件（银行发薪记录如存折记录或近三个月个银行流水或工资单，或者填写由我公司提供的格式文件收入证明，盖公司公章即可）</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>住址证明文件（公用事业缴费单-上个月的水、电、煤气账单任意一张或房产证复印件）</text>
 			</view>
 		</view>
 		<view class="index-detail-box pd15">
 			<view class="index-detail-box-title index-detail-box-titleo">附加费用</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>履行保险费（贷款金额0.3%）</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>提前还款违约金：贷款不满6个月的，收取未还金额的3%；贷6个月-1年之内的，收取未还金额的2%贷款；1年以上的，收取未还金额的1%</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>助贷费：实际放款金额1%</text>
 			</view>
 		</view>
@@ -100,15 +100,15 @@
 		</view>
 		<view class="index-detail-box pd15">
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>小驴贷立志于优选贷款产品和信贷经理，从而降低客户的融资成本。</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>小驴贷不会向客户收费，若有人以本平台名义向您索取钱财，请勿上当受骗，以免给您带来损失！</text>
 			</view>
 			<view class="index-detail-box-con">
-				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;" mode="widthFix"></image></view>
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
 				<text>申请成功后您可以登录“个人中心”查看该笔贷款办理进度。</text>
 			</view>
 		</view>

@@ -3,7 +3,7 @@
 		<view class="status_bar"><!-- 这里是状态栏 --></view>
 		<view class="center-top">
 			<view class="center-top-img">
-				<image src="/static/images/centerimg.png" style="width:60px;" mode="widthFix"></image>
+				<image src="/static/images/centerimg.png" style="width:60px;height:74px;" mode="widthFix"></image>
 			</view>
 			<view class="center-top-text">
 				<view>用户：<text>152****3615</text></view>

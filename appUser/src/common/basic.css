@@ -75,6 +75,9 @@ a{
 .font-size14{
 	font-size: 14px;
 }
+.font-size18{
+	font-size: 18px;
+}
 .flex{
 	display: flex;
 	justify-content: space-between;
@@ -107,7 +110,7 @@ a{
 	padding-right: 10px;
 }
 .index-detail-box{
-	line-height: 22px;
+	line-height: 24px;
 }
 .index-detail-box-title{
 	background: #40a563;

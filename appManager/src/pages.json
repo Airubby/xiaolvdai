@@ -3,15 +3,19 @@
     {
       "path": "pages/login/index",
       "style": {
-        "navigationBarTitleText": "登录",
-        "navigationStyle":"default"
+        "navigationBarTitleText": "登录"
       }
     },
     {
       "path": "pages/register/index",
       "style": {
-        "navigationBarTitleText": "注册",
-        "navigationStyle":"default"
+        "navigationBarTitleText": "注册"
+      }
+    },
+    {
+      "path": "pages/register/realname",
+      "style": {
+        "navigationBarTitleText": "实名认证"
       }
     },
     {
@@ -27,6 +31,48 @@
       "path": "pages/myCenter/psword/index",
       "style": {
         "navigationBarTitleText": "修改密码",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/customer/index",
+      "style": {
+        "navigationBarTitleText": "我的客户",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/recharge/index",
+      "style": {
+        "navigationBarTitleText": "积分充值",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/qualification/index",
+      "style": {
+        "navigationBarTitleText": "资质认证",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/productUpload/index",
+      "style": {
+        "navigationBarTitleText": "上传产品",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/publishProduct/index",
+      "style": {
+        "navigationBarTitleText": "发布产品",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/feedback/index",
+      "style": {
+        "navigationBarTitleText": "问题反馈",
         "navigationStyle":"default"
       }
     }

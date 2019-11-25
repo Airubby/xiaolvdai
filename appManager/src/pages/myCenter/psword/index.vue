@@ -14,7 +14,7 @@
 				<button type="primary" size="mini" 
 					style="background:#40a563;width:105px;height:35px;line-height:35px;margin:0" class="input-button" hover-class="primary-hover">获取验证码</button>
 			</view>
-			<button type="primary" class="mt25" style="background:#40a563;" hover-class="primary-hover" @tap="resetPsword">确认修改</button>
+			<button type="warn" class="mt25 font-size18" style="background:#FF8000;" hover-class="warn-hover" @tap="resetPsword">确认修改</button>
 		</view>
 		<copyright></copyright>
     </view>

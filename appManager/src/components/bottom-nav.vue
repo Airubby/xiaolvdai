@@ -1,14 +1,7 @@
 <template>
 	<view class="bottom-nav">
-		<view class="bottom-nav-con" v-if="!loginStatus">
-			<navigator url="/pages/register/index" class="bottom-nav-box">注 册</navigator>
-			<navigator url="/pages/login/index" class="bottom-nav-box">登 录</navigator>
-		</view>
-		<view class="bottom-nav-con" v-if="loginStatus">
-			<text v-if="Info=='home'" class="bottom-nav-box disabled-nav">产品搜索</text>
-			<navigator url="/pages/home/index" class="bottom-nav-box" v-else>产品搜索</navigator>
+		<view class="bottom-nav-con">
 			<text class="bottom-nav-box" v-if="Info=='center'" @click="outLogin">退出登录</text>
-			<navigator url="/pages/myCenter/index" class="bottom-nav-box" v-else>个人中心</navigator>
 		</view>
     </view>
 </template>
@@ -21,19 +14,15 @@
 		bottom: 0;
 		background: #fff;
 		z-index: 9;
-		color: #fff;
-		background: #40a563;
+		color: #40a563;
 		.bottom-nav-con{
 			width: 100%;
 			display: flex;
         	justify-content: space-between;
 		}
         .bottom-nav-box{
-            width: 50%;
+            width: 100%;
             text-align: center;
-            &:nth-of-type(1){
-                border-right: 1px solid #fff;
-            }
 		}
 		.disabled-nav{
 			background: #999;
