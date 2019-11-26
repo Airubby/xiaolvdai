@@ -79,7 +79,7 @@ export default {
 								key: 'userLoginInfo',
 								success: function (res) {
 									store.dispatch('app/setStatus',false);
-									uni.reLaunch({url: "/pages/home/index"})
+									uni.reLaunch({url: "/pages/login/index"})
 								}
 							});
 						}, 1000)

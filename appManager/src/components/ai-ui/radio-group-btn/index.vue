@@ -4,7 +4,10 @@
             <view class="radio-group-btn">
                 <radio :value="item.value" :checked="item.value === value" />
             </view>
-            <view class="radio-group-text" :class="{'radio-active':item.value === value}">{{item.name}}</view>
+            <view class="radio-group-text" :class="{'radio-active':item.value === value}">
+				<view class="name">{{item.name}}</view>
+				<view class="detail">{{item.detail}}</view>
+			</view>
         </label>
     </radio-group>
 </template>
@@ -58,6 +61,7 @@
 		border-radius: 3px;
 		font-size: 14px;
 		cursor: pointer;
+		text-align: center;
 	}
 	.radio-group-text:hover{
 		border-color: #40A563;
@@ -70,5 +74,14 @@
 	}
 	.radio-active.radio-group-text:hover{
 		background: #40A563;
+	}
+	.name{
+		font-size: 20px;
+	}
+	.detail{
+		color: #999;
+	}
+	.radio-active.radio-group-text .detail{
+		color: #fff;
 	}
 </style>
