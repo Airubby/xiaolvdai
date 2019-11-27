@@ -7,7 +7,7 @@
 					<view><text class="integral">10</text>分</view>
 				</view>
 				<view class="flex">
-					<navigator url="/pages/myCenter/recharge/index" style="margin-top:6px;">
+					<navigator url="/pages/myCenter/recharge/detail" style="margin-top:6px;">
 						<button type="warn" style="background:#FF8000;" hover-class="warn-hover">积分明细</button>
 					</navigator>
 				</view>
@@ -19,10 +19,10 @@
 			<view class="title">请选择充值方式</view>
 			<view class="recharge"> 
 				<view class="recharge-box" :class="{active:zhifubao}" @tap="changeType(0)">
-					<image src="/static/images/zhifubao.png" style="width:100px;" mode="widthFix"></image>
+					<image src="/static/images/zhifubao.png" style="width:100px;height:32px;" mode="widthFix"></image>
 				</view>
 				<view class="recharge-box" :class="{active:weixin}" @tap="changeType(1)">
-					<image src="/static/images/weixin.png" style="width:100px;" mode="widthFix"></image>
+					<image src="/static/images/weixin.png" style="width:100px;height:32px;" mode="widthFix"></image>
 				</view>
 			</view>
 			<view class="mt25">

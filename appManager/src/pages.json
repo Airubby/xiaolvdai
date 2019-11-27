@@ -49,6 +49,13 @@
       }
     },
     {
+      "path": "pages/myCenter/recharge/detail",
+      "style": {
+        "navigationBarTitleText": "积分明细",
+        "navigationStyle":"default"
+      }
+    },
+    {
       "path": "pages/myCenter/qualification/index",
       "style": {
         "navigationBarTitleText": "资质认证",
