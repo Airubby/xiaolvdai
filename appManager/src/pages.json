@@ -42,6 +42,27 @@
       }
     },
     {
+      "path": "pages/myCenter/customer/applyInfo",
+      "style": {
+        "navigationBarTitleText": "申请信息",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/customer/progress",
+      "style": {
+        "navigationBarTitleText": "进度反馈",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/customer/applyInvalid",
+      "style": {
+        "navigationBarTitleText": "申请无效",
+        "navigationStyle":"default"
+      }
+    },
+    {
       "path": "pages/myCenter/recharge/index",
       "style": {
         "navigationBarTitleText": "积分充值",

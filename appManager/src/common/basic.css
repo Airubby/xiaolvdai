@@ -171,3 +171,44 @@ a{
 .login-btn{
 	width: calc(50% - 5px);
 }
+
+.search{
+	display: flex;
+	margin-bottom: 15px;
+}
+.search-btn{
+	width: 80px;
+	margin-left: 5px;
+}
+.search-input{
+	border: 1px solid #dcdfe6;
+	padding: 0 10px;
+	width: 200px;
+	border-radius: 5px;
+}
+.search-input uni-input{
+	height: 35px;
+	line-height: 35px;
+}
+
+.apply-top{
+	border-bottom: 1px solid #40A563;
+	height: 40px;
+	line-height: 40px;
+}
+.apply-title{
+	margin: 30px 0 10px 0;
+	color: #999;
+}
+.apply-user{
+	background: #40A563;
+	color: #fff;
+	padding: 10px 10px;
+}
+.apply-btn{
+	margin: 30px 0;
+}
+.apply-info-title{
+	text-indent: 16px;
+	margin: 0 0 5px 0;
+}

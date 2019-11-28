@@ -14,7 +14,7 @@
 			</view>
 			<view class="title">请选择充值金额</view>
 			<view>
-				<radio-group-btn :items="items" v-model="current"></radio-group-btn>
+				<radio-group-btn :items="items" v-model="current" :size="20"></radio-group-btn>
 			</view>
 			<view class="title">请选择充值方式</view>
 			<view class="recharge"> 

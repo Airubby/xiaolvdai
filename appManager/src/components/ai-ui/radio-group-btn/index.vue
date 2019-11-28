@@ -5,7 +5,7 @@
                 <radio :value="item.value" :checked="item.value === value" />
             </view>
             <view class="radio-group-text" :class="{'radio-active':item.value === value}">
-				<view class="name">{{item.name}}</view>
+				<view class="name" :style="{fontSize:size+'px'}">{{item.name}}</view>
 				<view class="detail">{{item.detail}}</view>
 			</view>
         </label>
@@ -18,6 +18,10 @@
             value: {
 				type: String,
 				default: ""
+			},
+			size: {
+				type: Number,
+				default: 14
 			},
 			items: {
 				type: Array,
@@ -74,9 +78,6 @@
 	}
 	.radio-active.radio-group-text:hover{
 		background: #40A563;
-	}
-	.name{
-		font-size: 20px;
 	}
 	.detail{
 		color: #999;

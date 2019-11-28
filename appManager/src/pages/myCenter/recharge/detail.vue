@@ -1,6 +1,6 @@
 <template>
 	<view class="content bgfff">
-		<view class="pd1520">
+		<view class="pd15">
 			<view class="search">
 				<view class="search-input"><input :value="initParams.date" placeholder="选择日期" placeholder-style="color:#999;" @tap="onShowDatePicker"/></view>
 				<view class="search-btn">
@@ -54,24 +54,7 @@
     </view>
 </template>
 <style lang="less" scoped>
-	.search{
-		display: flex;
-		margin-bottom: 10px;
-	}
-	.search-btn{
-		width: 80px;
-		margin-left: 5px;
-	}
-	.search-input{
-		border: 1px solid #dcdfe6;
-		padding: 0 10px;
-		width: 200px;
-		border-radius: 5px;
-		uni-input{
-			height: 35px;
-			line-height: 35px;
-		}
-	}
+	
 	.list-box{
 		border-bottom: 1px solid #dcdfe6;
 		padding: 10px 0;
