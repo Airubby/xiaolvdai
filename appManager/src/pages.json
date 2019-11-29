@@ -98,6 +98,20 @@
       }
     },
     {
+      "path": "pages/myCenter/publishProduct/productInfo",
+      "style": {
+        "navigationBarTitleText": "产品详情",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/publishProduct/upProduct",
+      "style": {
+        "navigationBarTitleText": "上架产品",
+        "navigationStyle":"default"
+      }
+    },
+    {
       "path": "pages/myCenter/feedback/index",
       "style": {
         "navigationBarTitleText": "问题反馈",

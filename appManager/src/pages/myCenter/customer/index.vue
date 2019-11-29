@@ -31,7 +31,7 @@
 								</navigator>
 							</view>
 							<view class="color">
-								-120积分
+								积分：-120
 							</view>
 						</view>
 					</view>
@@ -59,7 +59,7 @@
 								</navigator>
 							</view>
 							<view class="color">
-								-120积分
+								积分：-120
 							</view>
 						</view>
 					</view>
@@ -70,34 +70,7 @@
     </view>
 </template>
 <style lang="less" scoped>
-	.box-card{
-		margin-bottom: 15px;
-		.box-card-title{
-			color: #40A563;
-			display: flex;
-			justify-content: space-between;
-			padding: 10px 15px;
-			border-bottom: 1px solid #40A563;
-		}
-		.box-card-con{
-			padding: 20px 15px;
-			.userinfo{
-				color: #000;
-				border-bottom: 1px solid #e4e7ed;
-				height: 30px;
-				margin-bottom: 10px;
-			}
-		}
-		.customer-bottom{
-			line-height: 35px;
-		}
-		.customer-btn{
-			display: flex;
-			.other-btn{
-				margin-left: 5px;
-			}
-		}
-	}
+	
 </style>
 <script>
 import copyright from '@/components/bottom-copyright.vue'

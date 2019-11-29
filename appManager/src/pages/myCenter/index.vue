@@ -23,7 +23,7 @@
 					<button type="warn" style="background:#FF8000;" hover-class="warn-hover">积分充值</button>
 				</navigator>
 				<navigator url="/pages/myCenter/earn/index" class="ml10" style="margin-top:6px;">
-					<button type="primary" style="background:#40a563;" hover-class="warn-hover">赚取积分</button>
+					<button type="primary" style="background:#40a563;" hover-class="primary-hover">赚取积分</button>
 				</navigator>
 			</view>
 		</view>
