@@ -32,7 +32,7 @@
 				<image src="/static/images/nav-one.png" style="width:30px;" mode="widthFix"></image>
 				<text class="title">我的客户</text>
 			</navigator>
-			<navigator url="/pages/myCenter/qualification/index" class="nav-con nav-a">
+			<navigator url="/pages/myCenter/qualification/index" class="nav-con">
 				<image src="/static/images/nav-two.png" style="width:30px;" mode="widthFix"></image>
 				<text class="title">资质认证</text>
 			</navigator>

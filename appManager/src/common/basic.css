@@ -105,6 +105,9 @@ a{
 	width: 100%;
 	height: calc(100% - 100px);
 }
+.width-auto{
+	width: auto !important;
+}
 .input{
 	margin-bottom: 15px;
 	border-bottom: 1px solid #DCDFE6;
@@ -183,15 +186,20 @@ a{
 	width: 80px;
 	margin-left: 5px;
 }
+.search-btn uni-button{
+	line-height: 32px;
+}
 .search-input{
 	border: 1px solid #dcdfe6;
 	padding: 0 10px;
 	width: 200px;
+	height: 30px;
 	border-radius: 5px;
+	box-sizing: border-box;
 }
 .search-input uni-input{
-	height: 35px;
-	line-height: 35px;
+	height: 30px;
+	line-height: 30px;
 }
 
 .apply-top{
@@ -210,6 +218,9 @@ a{
 }
 .apply-btn{
 	margin: 30px 0;
+}
+.apply-btn-two{
+	width: calc(50% - 5px);
 }
 .apply-info-title{
 	text-indent: 16px;

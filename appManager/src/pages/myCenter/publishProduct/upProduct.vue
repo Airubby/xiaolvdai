@@ -12,13 +12,13 @@
 		<view class="ocolor upproduct-info">获赞300以上信贷经理，获客服务起价29积分/条</view>
 		<view class="pd15">
 			<view class="apply-title">发布单条积分竞价</view>
-			<view class="search-input"><input :value="initParams.code" placeholder="积分数" placeholder-style="color:#999;"/></view>
-			<view class="flex">
-				<view>
-					<button type="primary" class="font-size18" style="background:#40a563;" hover-class="primary-hover">确定发布</button>
+			<view class="search-input width-auto"><input :value="initParams.code" placeholder="积分数" placeholder-style="color:#999;"/></view>
+			<view class="flex apply-btn">
+				<view class="apply-btn-two">
+					<button type="primary" class="font-size18" style="background:#40a563;" hover-class="primary-hover" @tap="save">确定发布</button>
 				</view>
-				<view>
-					<button type="warn" size="" class="font-size18" style="background:#FF8000;" hover-class="warn-hover">暂不发布</button>
+				<view class="apply-btn-two">
+					<button type="warn" class="font-size18" style="background:#FF8000;" hover-class="warn-hover" @tap="back">暂不发布</button>
 				</view>
 			</view>
 			<view class="index-detail-box">
@@ -48,9 +48,6 @@
 	.upproduct-info{
 		padding: 10px 15px 0;
 	}
-	.search-input{
-		width: auto;
-	}
 </style>
 <script>
 import copyright from '@/components/bottom-copyright.vue'
@@ -68,22 +65,21 @@ export default {
 		}
 	},
 	methods: {
-		remove:function(){
+		back:function(){
+			uni.navigateBack();
+		},
+		save:function(){
 			uni.showModal({
-				title: '平安银行成都分行-房屋抵押',
-				content: '您确定删除该产品？',
-				cancelText:"考虑一下",
-				cancelColor:"#FF8000",
-				confirmText:"确认删除",
+				title: '抱歉发布失败！',
+				content: '您的账户积分不足，请充值',
+				showCancel:false,
+				confirmText:"立即充值",
 				confirmColor:"#40a563",
 				success: (res) => {
 					if (res.confirm) {
-						uni.showToast({
-							icon: 'none',
-							title: '删除成功！'
+						uni.navigateTo({
+							url: '/pages/myCenter/recharge/index'
 						});
-					}else{
-
 					}
 				}
 			});

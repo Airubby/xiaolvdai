@@ -92,7 +92,7 @@
 				<text>助贷费：实际放款金额1%</text>
 			</view>
 		</view>
-		<view class="pd15">
+		<!-- <view class="pd15">
 			<button type="warn" style="background:#FF8000;" hover-class="warn-hover" @click="apply">马上申请</button>
 		</view>
 		<view class="pd15">
@@ -113,7 +113,7 @@
 			</view>
 		</view>
 		<view class="bottomnav-placeholder"></view>
-		<bottom-nav></bottom-nav>
+		<bottom-nav></bottom-nav> -->
 	</view>
 </template>
 <style lang="less" scoped>
@@ -132,9 +132,9 @@
 </style>
 
 <script>
-	import bottomNav from '@/components/bottom-nav.vue'
+	
 	export default {
-		components:{bottomNav},
+		components:{},
 		onLoad:function(option) {  //option接受传过来的参数 是object对象
 			//:url="'/pages/navigate/navigate?item='+ encodeURIComponent(JSON.stringify(item))"
 			//JSON.parse(decodeURIComponent(option.item));

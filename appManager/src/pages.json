@@ -86,7 +86,21 @@
     {
       "path": "pages/myCenter/productUpload/index",
       "style": {
-        "navigationBarTitleText": "上传产品",
+        "navigationBarTitleText": "上传产品-步骤1",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/productUpload/stepTwo",
+      "style": {
+        "navigationBarTitleText": "上传产品-步骤2",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/productUpload/stepThree",
+      "style": {
+        "navigationBarTitleText": "上传产品-步骤3",
         "navigationStyle":"default"
       }
     },

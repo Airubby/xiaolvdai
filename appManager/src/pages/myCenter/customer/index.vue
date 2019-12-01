@@ -30,9 +30,9 @@
 									<button type="default" class="btn other-btn" @tap="sure" hover-class="default-hover">申请无效</button>
 								</navigator>
 							</view>
-							<view class="color">
+							<!-- <view class="color">
 								积分：-120
-							</view>
+							</view> -->
 						</view>
 					</view>
 				</view>
@@ -58,9 +58,9 @@
 									<button type="default" class="btn other-btn" @tap="sure" hover-class="default-hover">申请无效</button>
 								</navigator>
 							</view>
-							<view class="color">
+							<!-- <view class="color">
 								积分：-120
-							</view>
+							</view> -->
 						</view>
 					</view>
 				</view>
