@@ -4,7 +4,7 @@
 			<view class="search">
 				<view class="search-input"><input :value="initParams.phone" placeholder="手机号" placeholder-style="color:#999;" @tap="onShowDatePicker"/></view>
 				<view class="search-btn">
-					<button type="primary" style="background:#40a563;" @tap="sure" hover-class="primary-hover">搜 索</button>
+					<button type="primary" style="background:#40a563;" class="btn" @tap="sure" hover-class="primary-hover">搜 索</button>
 				</view>
 			</view>
 			<view>

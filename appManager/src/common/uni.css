@@ -823,7 +823,7 @@ radio-group label, checkbox-group label{
 
 /* textarea */
 .uni-textarea{
-	width:100%;
+	width:100% !important;
 	background:#FFF;
 }
 .uni-textarea textarea{

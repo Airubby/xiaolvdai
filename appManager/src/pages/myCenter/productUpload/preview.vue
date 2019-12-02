@@ -92,6 +92,28 @@
 				<text>助贷费：实际放款金额1%</text>
 			</view>
 		</view>
+		<!-- <view class="pd15">
+			<button type="warn" style="background:#FF8000;" hover-class="warn-hover" @click="apply">马上申请</button>
+		</view>
+		<view class="pd15">
+			<button type="primary" style="background:#40a563;" hover-class="primary-hover">介绍详细，赞一个！</button>
+		</view>
+		<view class="index-detail-box pd15">
+			<view class="index-detail-box-con">
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
+				<text>小驴贷立志于优选贷款产品和信贷经理，从而降低客户的融资成本。</text>
+			</view>
+			<view class="index-detail-box-con">
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
+				<text>小驴贷不会向客户收费，若有人以本平台名义向您索取钱财，请勿上当受骗，以免给您带来损失！</text>
+			</view>
+			<view class="index-detail-box-con">
+				<view class="arrows"><image src="/static/images/arrows.png" style="width: 6px;height:6px;" mode="widthFix"></image></view>
+				<text>申请成功后您可以登录“个人中心”查看该笔贷款办理进度。</text>
+			</view>
+		</view>
+		<view class="bottomnav-placeholder"></view>
+		<bottom-nav></bottom-nav> -->
 	</view>
 </template>
 <style lang="less" scoped>

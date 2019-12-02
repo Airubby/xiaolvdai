@@ -30,10 +30,10 @@
 			</view>
 			<view class="flex apply-btn">
 				<view class="apply-btn-two">
-					<button type="warn" class="font-size18" style="background:#FF8000;" hover-class="warn-hover" @tap="preve">上一步</button>
+					<button type="warn" class="font-size16" style="background:#FF8000;" hover-class="warn-hover" @tap="preve">上一步</button>
 				</view>
 				<view class="apply-btn-two">
-					<button type="primary" class="font-size18" style="background:#40a563;" hover-class="primary-hover" @tap="next">下一步</button>
+					<button type="primary" class="font-size16" style="background:#40a563;" hover-class="primary-hover" @tap="next">下一步</button>
 				</view>
 			</view>
 		</view>

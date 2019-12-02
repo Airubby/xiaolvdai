@@ -78,6 +78,9 @@ a{
 .font-size14{
 	font-size: 14px;
 }
+.font-size16{
+	font-size: 16px;
+}
 .font-size18{
 	font-size: 18px;
 }
@@ -186,14 +189,17 @@ a{
 	width: 80px;
 	margin-left: 5px;
 }
-.search-btn uni-button{
+.btn{
+	height: 32px;
 	line-height: 32px;
+	font-size: 14px;
+	padding: 0 10px;
 }
 .search-input{
 	border: 1px solid #dcdfe6;
 	padding: 0 10px;
 	width: 200px;
-	height: 30px;
+	height: 32px;
 	border-radius: 5px;
 	box-sizing: border-box;
 }
@@ -264,4 +270,10 @@ a{
 }
 .customer-btn .other-btn{
 	margin-left: 5px;
+}
+.textarea{
+	border: 1px solid #e4e7ed;
+	padding: 10px;
+	min-height: 50px;
+	border-radius: 5px;
 }

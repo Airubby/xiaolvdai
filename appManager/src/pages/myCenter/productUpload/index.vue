@@ -28,7 +28,7 @@
 					<radio-group-btn :items="items2" v-model="current2"></radio-group-btn>
 				</view>
 				<view class="apply-btn">
-					<button type="primary" class="font-size18" style="background:#40a563;" @tap="next" hover-class="primary-hover">下一步</button>
+					<button type="primary" class="font-size16" style="background:#40a563;" @tap="next" hover-class="primary-hover">下一步</button>
 				</view>
 			</view>
 		</view>

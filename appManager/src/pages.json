@@ -105,6 +105,13 @@
       }
     },
     {
+      "path": "pages/myCenter/productUpload/preview",
+      "style": {
+        "navigationBarTitleText": "产品预览",
+        "navigationStyle":"default"
+      }
+    },
+    {
       "path": "pages/myCenter/publishProduct/index",
       "style": {
         "navigationBarTitleText": "发布产品",
