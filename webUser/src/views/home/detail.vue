@@ -1,10 +1,7 @@
 <template>
     <div class="content">
         <div class="main-top color">
-            <div class="main-top-info">
-                <span>产品详情</span>
-                <el-button type="primary" class="fr mt10" @click="back">返回</el-button>
-            </div>
+            <div class="main-top-info"><router-link to="/page/index">产品搜索</router-link><em class="separate">/</em><span>产品详情</span></div>
         </div>
         <div class="index-detail">
             <div class="color index-detail-top">

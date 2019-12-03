@@ -1,5 +1,22 @@
 <template>
     <div class="content">
+        <div class="flex-between">
+            <div>
+                <img src="images/index-logo.png">
+            </div>
+            <div class="index-nav">
+                <router-link to="/page/index">首页</router-link>
+                <em>|</em>
+                <router-link to="/page/index">学习融资</router-link>
+                <em>|</em>
+                <router-link to="/page/index">大数据研究</router-link>
+                <em>|</em>
+                <router-link to="/page/index">手机浏览</router-link>
+            </div>
+        </div>
+        <div class="banner">
+            <img src="images/banner.png">
+        </div>
         <div class="main-top hcolor">
             <div class="main-top-info">
                 <span>产品搜索</span>
@@ -62,33 +79,6 @@
             </el-form>
         </div>
         <div class="index-con">
-            <div class="index-con-box">
-                <div class="index-con-box-img">
-                    <img src="images/manager.png">
-                    <span>已实名</span>
-                </div>
-                <div class="index-con-box-info">
-                    <div class="color">
-                        <span>最低月利率0.55%</span><em>|</em>
-                        <span>12、24、36期</span><em>|</em>
-                        <span>等额本息</span>
-                    </div>
-                    <div class="index-con-box-infocen">
-                        <span>信贷经理:010101</span><em>|</em>
-                        <span>四川多维外包服务有限公司</span><em>|</em>
-                        <span>获赞次数252</span>
-                    </div>
-                    <div class="index-con-box-infobottom">
-                        <span>最低月利率0.55%</span><em>|</em>
-                        <span>12、24、36期</span><em>|</em>
-                        <span>等额本息</span>
-                    </div>
-                </div>
-                <div class="index-con-box-btn">
-                    <p class="mb10"><el-button type="warning" @click="enterDetail">查看详情</el-button></p>
-                    <p><span class="color">1232341</span>人申请</p>
-                </div>
-            </div>
             <div class="index-con-box">
                 <div class="index-con-box-img">
                     <img src="images/manager.png">

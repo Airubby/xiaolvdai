@@ -5,7 +5,7 @@
 				<p>设置的密码必须介于6到15个字符之间,包含字母和数字</p>
 				<p>修改密码需要短信验证,我们将发送短信至您注册的手机号{{initParams.phone}}上</p>
 			</div>
-			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="65px">
+			<el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="65px" class="overhidden">
 				<el-row :gutter="20">
 					<el-col :span="17">
 						<el-form-item prop="psword" label="新密码">

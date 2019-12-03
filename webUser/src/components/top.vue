@@ -1,7 +1,8 @@
 <template>
     <div class="top flex">
-        <a href="https://www.baidu.com" target="_blank">
-            <img src="images/managerLogin.png">
+        <a href="http://manager.xiaolvyouzi.com:8080" target="_blank">
+            <span class="top-manger-login">信贷经理登录</span>
+            <!-- <img src="images/managerLogin.png"> -->
         </a>
         <div class="top-info">
             <template v-if="!login">
@@ -17,7 +18,18 @@
         </div>
     </div>
 </template>
-
+<style lang="less" scoped>
+    .top-manger-login{
+        height: 32px;
+        line-height: 32px;
+        border-radius: 3px;
+        background: #fff;
+        color: #40A563;
+        display: block;
+        padding: 0 10px;
+        font-style: normal;
+    }
+</style>
 <script>
 
 export default {
