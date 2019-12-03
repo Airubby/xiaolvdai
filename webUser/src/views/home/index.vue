@@ -29,18 +29,23 @@
             <el-form :model="initParams" :rules="rules" ref="ValidateForm" label-width="75px" class="overhidden ValidateForm">
                 <el-row :gutter="10">
                     <el-col :span="24" class="flex">
+                        <el-form-item label="产品机构:" class="more">
+                            <el-radio-group v-model="initParams.type" size="mini">
+                                <el-radio label="1" border>所有</el-radio>
+                                <el-radio label="2" border>银行</el-radio>
+                                <el-radio label="3" border>消费金融</el-radio>
+                                <el-radio label="4" border>小贷公司</el-radio>
+                                <el-radio label="5" border>融资租赁</el-radio>
+                                <el-radio label="6" border>典当行</el-radio>
+                            </el-radio-group>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="24" class="flex">
                         <el-form-item label="产品类型:" class="more">
                             <el-radio-group v-model="initParams.type" size="mini">
                                 <el-radio label="1" border>所有</el-radio>
-                                <el-radio label="2" border>工薪贷款</el-radio>
-                                <el-radio label="3" border>公积金贷</el-radio>
-                                <el-radio label="4" border>保单贷款</el-radio>
-                                <el-radio label="5" border>经营贷款</el-radio>
-                                <el-radio label="6" border>房屋抵押</el-radio>
-                                <el-radio label="7" border>房屋二抵</el-radio>
-                                <el-radio label="8" border>新房按揭</el-radio>
-                                <el-radio label="9" border>车辆抵押</el-radio>
-                                <el-radio label="10" border>新车按揭</el-radio>
+                                <el-radio label="2" border>抵押产品</el-radio>
+                                <el-radio label="3" border>信用产品</el-radio>
                             </el-radio-group>
                         </el-form-item>
                     </el-col>
@@ -79,6 +84,33 @@
             </el-form>
         </div>
         <div class="index-con">
+            <div class="index-con-box">
+                <div class="index-con-box-img">
+                    <img src="images/manager.png">
+                    <span>已实名</span>
+                </div>
+                <div class="index-con-box-info">
+                    <div class="color">
+                        <span>最低月利率0.55%</span><em>|</em>
+                        <span>12、24、36期</span><em>|</em>
+                        <span>等额本息</span>
+                    </div>
+                    <div class="index-con-box-infocen">
+                        <span>信贷经理:010101</span><em>|</em>
+                        <span>四川多维外包服务有限公司</span><em>|</em>
+                        <span>获赞次数252</span>
+                    </div>
+                    <div class="index-con-box-infobottom">
+                        <span>最低月利率0.55%</span><em>|</em>
+                        <span>12、24、36期</span><em>|</em>
+                        <span>等额本息</span>
+                    </div>
+                </div>
+                <div class="index-con-box-btn">
+                    <p class="mb10"><el-button type="warning" @click="enterDetail">查看详情</el-button></p>
+                    <p><span class="color">1232341</span>人申请</p>
+                </div>
+            </div>
             <div class="index-con-box">
                 <div class="index-con-box-img">
                     <img src="images/manager.png">

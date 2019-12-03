@@ -48,7 +48,8 @@
                 "enable" : true
             }
         },
-        "domain" : ""
+        "domain" : "",
+        "title" : "小驴贷"
     },
     "quickapp" : {},
     "mp-weixin" : {

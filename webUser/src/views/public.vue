@@ -1,6 +1,6 @@
 <template>
     <div class="appcontent flex">
-        <side></side>
+        <!-- <side></side> -->
         <div class="main">
             <top></top>
             <div class="main-box box-shadow bgfff">
@@ -8,7 +8,7 @@
             </div>
             <bottom></bottom>
         </div>
-        <side-two></side-two>
+        <!-- <side-two></side-two> -->
     </div>
 </template>
 
