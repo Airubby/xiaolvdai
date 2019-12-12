@@ -60,7 +60,17 @@
                 "enable" : true
             }
         },
-        "domain" : ""
+        "domain" : "",
+        "sdkConfigs" : {
+            "maps" : {
+                "qqmap" : {
+                    "key" : "F2HBZ-SMJ6X-TZS4V-TBSWF-JLWM3-COFOK"
+                }
+            }
+        },
+        "devServer" : {
+            "https" : true
+        }
     },
     "quickapp" : {},
     "mp-weixin" : {
