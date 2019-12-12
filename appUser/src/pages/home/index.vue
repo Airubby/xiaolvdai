@@ -211,14 +211,56 @@
 	export default {
 		components:{radioGroupBtn,uniLoadMore,bottomNav},
 		onLoad() {
+			// "baidu" : {
+			// 	"appkey_ios" : "Hn04FnGzdPqGAH4lxpRcnxiofC53s92g",
+			// 	"appkey_android" : "Hn04FnGzdPqGAH4lxpRcnxiofC53s92g"
+			// }
+			// "amap" : {
+			//     "appkey_ios" : "5b3914ca02a9dafc885c78f7a239f2cf",
+			//     "appkey_android" : "5b3914ca02a9dafc885c78f7a239f2cf"
+			// }
 			let _this=this;
-			uni.getLocation({
-				type: 'wgs84',
-				success: function (res) {
-					console.log(res)
-					_this.$store.dispatch('app/setLocation',res.address.city);
-				},
-				fail:function(res){
+			// uni.getLocation({
+			// 	type: 'wgs84',
+			// 	success: function (res) {
+			// 		console.log(res)
+			// 		_this.$store.dispatch('app/setLocation',res.address.city);
+			// 	},
+			// 	fail:function(res){
+			// 		_this.$store.dispatch('app/setLocation',"定位失败！");
+			// 	}
+			// });
+			uni.getLocation({  
+                type: 'gcj02', //返回可以用于uni.openLocation的经纬度  
+                geocode:true,  
+                success: function (res) {  
+					console.log(res);  
+					var lng=res.longitude;  
+					var lat=res.latitude;  
+					//开始判断，如果不是app则自行解析地址  
+					// #ifndef APP-PLUS   
+                    uni.request({  
+						url: 'https://restapi.amap.com/v3/geocode/regeo?key='+config.AMap_Key+'&location='+obj.lng+','+obj.lat,  
+						method: "get",  
+						dataType:"json",      
+						header: {  
+							'content-type': 'application/x-www-form-urlencoded' //自定义请求头信息  
+						},  
+						success:(res)=> {  
+							var data = res.data;  
+							console.log(data);  
+							if(data.status && data.status==1) {  
+								//定位到地址    
+								_this.$store.dispatch('app/setLocation',res.data.regeocode.formatted_address);    
+							}  
+						},  
+						fail:(res)=>{  
+							_this.$store.dispatch('app/setLocation',"定位失败！");
+						}  
+					})  
+                	// #endif
+				},  
+				fail:function(res){  
 					_this.$store.dispatch('app/setLocation',"定位失败！");
 				}
 			});

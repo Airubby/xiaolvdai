@@ -115,7 +115,7 @@ module.exports = {
             warnings: true,
             errors: true
         },
-        host: '127.0.0.1',
+        host: '172.18.34.107',
         port: 8081,
         https: false,
         hotOnly: false,
