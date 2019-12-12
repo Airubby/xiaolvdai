@@ -105,6 +105,10 @@ export default {
 						let token=this.$tool.Encrypt(r.token+"_"+this.initParams.phone);
 						sessionStorage.token=token
 						this.$store.dispatch('setToken',token);
+						let limits=["index","borrowingUser","ordRes","hannels","facility","creditMgr","qualification",
+						"productSet","loanProduct","appliInvalid","orders","sdBIL","userComplain","superSuPro","station",
+						"article","prize","prizeCash","userSuPro"];
+						this.$store.dispatch('setAuthInfo',limits);
 						this.$router.push({path:'/myCenter'})
 					});
 				}

@@ -8,7 +8,10 @@
         <div class="side-nav">
             <el-scrollbar class="scrollbar">
                 <div class="side-navbox">
-                    <router-link to="/myCenter/index">数据概况</router-link>
+                    <template v-for="item in navList">
+                        <router-link :to="item.path">{{item.meta.limit}}</router-link>
+                    </template>
+                    <!-- <router-link to="/myCenter/index">数据概况</router-link>
                     <router-link to="/myCenter/borrowingUser">借款用户</router-link>
                     <router-link to="/myCenter/ordRes">申请订单</router-link>
                     <router-link to="/myCenter/hannels">推广渠道</router-link>
@@ -26,7 +29,7 @@
                     <router-link to="/myCenter/prizeCash">奖品兑换</router-link>
                     <router-link to="/myCenter/superSuPro">部门权限</router-link>
                     <router-link to="/myCenter/station">岗位管理</router-link>
-                    <router-link to="/myCenter/userSuPro">人事管理</router-link>
+                    <router-link to="/myCenter/userSuPro">人事管理</router-link> -->
                 </div>
             </el-scrollbar>
         </div>
@@ -34,10 +37,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
     components:{},
     created () {
         
+    },
+    computed: {
+        ...mapGetters([
+            'navList'
+        ]),
     },
     mounted() {
         

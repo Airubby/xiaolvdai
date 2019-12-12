@@ -9,14 +9,18 @@ import './utils/mock.js'  //测试接口
 
 routerGo();
 function getInfo(){  //刷新页面重新获取权限
-    request.post('/checkToken',{"token":tool.Encrypt(sessionStorage.token).split("_")[0]},res=>{
-        if(res.token){
-            store.dispatch('setToken',sessionStorage.token);
-        }else{
-            sessionStorage.removeItem('token');
-            this.$store.dispatch('setToken',"");
-        }
-    })
+    // request.post('/checkToken',{"token":tool.Encrypt(sessionStorage.token).split("_")[0]},res=>{
+    //     if(res.token){
+    //         store.dispatch('setToken',sessionStorage.token);
+    //     }else{
+    //         sessionStorage.removeItem('token');
+    //         this.$store.dispatch('setToken',"");
+    //     }
+    // })
+    let limits=["index","borrowingUser","ordRes","hannels","facility","creditMgr","qualification",
+						"productSet","loanProduct","appliInvalid","orders","sdBIL","userComplain","superSuPro","station",
+						"article","prize","prizeCash","userSuPro"];
+    store.dispatch('setAuthInfo',limits);
 }
 async function routerGo(){
     if(sessionStorage.token){
