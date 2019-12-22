@@ -111,13 +111,7 @@ a{
 .width-auto{
 	width: auto !important;
 }
-.input{
-	margin-bottom: 15px;
-	border-bottom: 1px solid #DCDFE6;
-	display: flex;
-	justify-content: space-between;
-	padding-right: 10px;
-}
+
 .index-detail-box{
 	line-height: 24px;
 }

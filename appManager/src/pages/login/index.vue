@@ -6,10 +6,12 @@
 				<uni-segmented-control :current="current" :values="items" v-on:clickItem="onClickItem" styleType="button" activeColor="#40a563"></uni-segmented-control>
 			</view>
 			<view style="margin-top: 30px;">
-				<view class="input"><input :value="initParams.phone" placeholder="手机号" placeholder-style="color:#999;"/></view>
-				<view class="input" v-if="current === 0" ><input :value="initParams.psword" placeholder="密码" placeholder-style="color:#999;"/></view>
+				<ai-input v-model="initParams.phone" placeholder="请输入手机号" placeholderStyle="color:#999;"></ai-input>
+				<view class="input" v-if="current === 0" >
+					<ai-input v-model="initParams.psword" placeholder="请输密码" type="password" placeholderStyle="color:#999;"></ai-input>
+				</view>
 				<view class="input" v-if="current === 1">
-					<input :value="initParams.code" placeholder="验证码" placeholder-style="color:#999;"/>
+					<ai-input v-model="initParams.psword" placeholder="请验证码" placeholderStyle="color:#999;"></ai-input>
 					<button type="primary" size="mini" 
 						style="background:#40a563;width:105px;height:35px;line-height:35px;margin:0" class="input-button" hover-class="primary-hover">获取验证码</button>
 				</view>
@@ -60,6 +62,7 @@ export default {
 			}
 		},
 		loginFn:function(){
+			console.log(this.initParams)
 			uni.showToast({
 				icon: 'none',
 				title: '登录成功！'

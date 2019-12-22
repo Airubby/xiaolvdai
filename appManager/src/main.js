@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App'
 import store from './store'
 
+import aiInput from './components/ai-ui/ai-input'
+Vue.component('ai-input',aiInput)
 
 Vue.config.productionTip = false
 
