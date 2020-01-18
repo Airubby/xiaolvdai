@@ -7,14 +7,11 @@
 			</view>
 			<view style="margin-top: 30px;">
 				<ai-input v-model="initParams.phone" placeholder="请输入手机号" placeholderStyle="color:#999;"></ai-input>
-				<view class="input" v-if="current === 0" >
-					<ai-input v-model="initParams.psword" placeholder="请输密码" type="password" placeholderStyle="color:#999;"></ai-input>
-				</view>
-				<view class="input" v-if="current === 1">
-					<ai-input v-model="initParams.psword" placeholder="请验证码" placeholderStyle="color:#999;"></ai-input>
+				<ai-input v-if="current === 0" v-model="initParams.psword" placeholder="请输密码" type="password" placeholderStyle="color:#999;"></ai-input>
+				<ai-input v-if="current === 1" v-model="initParams.psword" placeholder="请验证码" placeholderStyle="color:#999;">
 					<button type="primary" size="mini" 
 						style="background:#40a563;width:105px;height:35px;line-height:35px;margin:0" class="input-button" hover-class="primary-hover">获取验证码</button>
-				</view>
+				</ai-input>
 				<view class="flex">
 					<view class="login-btn">
 						<button type="warn" size="" class="mt25 font-size18" style="background:#FF8000;" hover-class="warn-hover" @tap="loginFn">登录</button>

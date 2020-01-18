@@ -211,6 +211,7 @@
 	export default {
 		components:{radioGroupBtn,uniLoadMore,bottomNav},
 		onLoad() {
+			//定位问题，参照开发的DCIM  demo
 			// "baidu" : {
 			// 	"appkey_ios" : "Hn04FnGzdPqGAH4lxpRcnxiofC53s92g",
 			// 	"appkey_android" : "Hn04FnGzdPqGAH4lxpRcnxiofC53s92g"

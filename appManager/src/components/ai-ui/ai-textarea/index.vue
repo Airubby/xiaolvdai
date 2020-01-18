@@ -1,17 +1,17 @@
 <template>
-    <view class="input">
-        <input :focus="focus_" :type="inputType" :value="value" @input="onInput" :placeholder="placeholder"
-		 :password="type==='password'&&!showPassword" @focus="onFocus" @blur="onBlur" :placeholder-style="placeholderStyle" />
-		 <slot />
+    <view class="textarea">
+        <textarea :focus="focus_" :value="value" @input="onInput" :maxlength="maxlength" 
+		:auto-height="autoHeight"
+		:placeholder="placeholder"
+		 @focus="onFocus" @blur="onBlur" :placeholder-style="placeholderStyle" />
     </view>
 </template>
 <style lang="less" scoped>
-    .input{
-        margin-bottom: 15px;
-        border-bottom: 1px solid #DCDFE6;
-        display: flex;
-        justify-content: space-between;
-        padding-right: 10px;
+    .textarea{
+        border: 1px solid #e4e7ed;
+		padding: 10px;
+		min-height: 50px;
+		border-radius: 5px;
     }
 </style>
 <script>
@@ -21,10 +21,6 @@
 		},
 		props: {
 			/**
-			 * 输入类型
-			 */
-			type: String,
-			/**
 			 * 值
 			 */
 			value: String,
@@ -33,13 +29,14 @@
 			 */
             placeholder: String,
             // 占位符样式
-            placeholderStyle:String,
-			/**
-			 * 是否显示密码可见按钮
-			 */
-			displayable: {
-				type: [Boolean, String],
-				default: false
+			placeholderStyle:String,
+			maxlength:{
+				type:Number,
+				default:-1
+			},
+			autoHeight:{
+				type: Boolean,
+				default:true,
 			},
 			/**
 			 * 自动获取焦点
@@ -55,10 +52,7 @@
 		},
 		data() {
 			return {
-				/**
-				 * 显示密码明文
-				 */
-				showPassword: false,
+				
 				/**
 				 * 是否获取焦点
 				 */
@@ -66,10 +60,6 @@
 			}
 		},
 		computed: {
-			inputType() {
-				const type = this.type
-				return type === 'password' ? 'text' : type
-			},
 			focus_() {
 				return String(this.focus) !== 'false'
 			}

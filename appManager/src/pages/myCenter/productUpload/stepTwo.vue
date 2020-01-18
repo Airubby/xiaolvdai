@@ -70,20 +70,20 @@ export default {
 				psword:"",
 				code:""
 			},
-			current:"",
+			current:[],
 			items: [
-				{value: '1',name: '1期'},
-				{value: '2',name: '3期'},
-				{value: '3',name: '6期'},
-				{value: '4',name: '12期'},
-				{value: '5',name: '24期'},
-				{value: '6',name: '36期'},
-				{value: '7',name: '48期'},
-				{value: '8',name: '60期'},
-				{value: '9',name: '120期'},
-				{value: '10',name: '180期'},
-				{value: '11',name: '240期'},
-				{value: '12',name: '360期'},
+				{id: 1,name: '1期'},
+				{id: 2,name: '3期'},
+				{id: 3,name: '6期'},
+				{id: '4',name: '12期'},
+				{id: '5',name: '24期'},
+				{id: '6',name: '36期'},
+				{id: '7',name: '48期'},
+				{id: '8',name: '60期'},
+				{id: '9',name: '120期'},
+				{id: '10',name: '180期'},
+				{id: '11',name: '240期'},
+				{id: '12',name: '360期'},
 			],
 		}
 	},
@@ -94,6 +94,7 @@ export default {
 			});
 		},
 		next:function(){
+			console.log(this.current)
 			uni.navigateTo({
 				url: '/pages/myCenter/productUpload/stepThree'
 			});

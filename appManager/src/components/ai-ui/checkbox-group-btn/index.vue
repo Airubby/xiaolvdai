@@ -1,10 +1,10 @@
 <template>
 	<checkbox-group @change="checkboxChange" class="checkbox-group">
-		<label v-for="item in items" :key="item.value" class="checkbox-label">
+		<label v-for="item in items" :key="item.id" class="checkbox-label">
 			<view class="checkbox-group-btn">
-				<checkbox :value="item.value" :checked="value.indexOf(item.value)!=-1" />
+				<checkbox :value="item.id.toString()" :checked="value.indexOf(item.id.toString())!=-1" />
 			</view>
-			<view class="checkbox-group-text" :class="{'checkbox-active':value.indexOf(item.value)!=-1}">{{item.name}}</view>
+			<view class="checkbox-group-text" :class="{'checkbox-active':value.indexOf(item.id.toString())!=-1}">{{item.name}}</view>
 		</label>
 	</checkbox-group>
 </template>
@@ -19,7 +19,7 @@
 			items: {
 				type: Array,
 				default () {
-					return []; //{value:"value",name:"name"}
+					return []; //{id:"value",name:"name"}
 				}
 			},
         },
