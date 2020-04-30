@@ -29,9 +29,10 @@
 		</view> -->
 		<view class="pd15">
 			<button type="warn" class="font-size18" style="background:#FF8000;" hover-class="warn-hover" v-if="user.vip==1">到期日期：{{user.expireTime}}</button>
-			<navigator url="/pages/myCenter/applyVip/index" v-else>
+			<!-- <navigator url="/pages/myCenter/applyVip/index" v-else>
 				<button type="warn" class="font-size18" style="background:#FF8000;" hover-class="warn-hover">申请开通会员服务</button>
-			</navigator>
+			</navigator> -->
+			<button type="warn" v-else class="font-size18" style="background:#FF8000;" hover-class="warn-hover" @click="callPhone">申请开通会员服务</button>
 		</view>
 		<view class="bgfff nav-box">
 			<navigator url="/pages/myCenter/qualification/index" class="nav-con">
@@ -167,6 +168,11 @@ import uniIcons from '@/components/uni-ui/uni-icons/uni-icons.vue'
 			}
 		},
 		methods: {
+			callPhone:function(){
+				uni.makePhoneCall({
+					phoneNumber: "17318953719" //仅为示例
+				});
+			},
 			getInfo:function(){
 				this.$r.get("/manager/my",{},r=>{
 					this.user=Object.assign(this.user,r);

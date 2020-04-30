@@ -263,7 +263,7 @@ export default {
 					return;
 				}
 			}
-			this.initParams.period=this.initParams.periodList.sort().toString();
+			this.initParams.period=this.initParams.periodList.sort((a,b)=>a-b).toString();
 			this.$store.dispatch("setPreviewInfo",this.initParams);
 			uni.navigateTo({
 				url: '/pages/myCenter/productUpload/preview'
@@ -280,7 +280,7 @@ export default {
 					return;
 				}
 			}
-			this.initParams.periodList=this.initParams.periodList.sort();
+			this.initParams.periodList=this.initParams.periodList.sort((a,b)=>a-b);
 			if(this.status===3){
 				this.$r.post('/manager/saveProduct', this.initParams, r => {
 					uni.showToast({title: '编辑成功！'});

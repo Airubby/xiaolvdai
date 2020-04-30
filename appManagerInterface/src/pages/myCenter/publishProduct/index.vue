@@ -24,6 +24,8 @@
 									<navigator :url="'/pages/myCenter/publishProduct/productInfo?id='+ encodeURIComponent(JSON.stringify(item.id))">
 										<button type="primary" class="btn" style="background:#40a563;" hover-class="primary-hover">查看产品</button>
 									</navigator>
+									<button type="default" class="btn other-btn" @tap="downfn(item)" hover-class="default-hover" v-if="item.status==1">下架产品</button>
+									<button type="default" class="btn other-btn" @tap="upfn(item)" hover-class="default-hover" v-if="item.status==4">上架产品</button>
 									<navigator :url="'/pages/myCenter/productUpload/index?id='+ encodeURIComponent(JSON.stringify(item.id))" v-if="item.status==3">
 										<button type="default" class="btn other-btn" hover-class="default-hover">修改产品</button>
 									</navigator>
@@ -101,7 +103,7 @@ export default {
 	methods: {
 		getInfo:function(){
 			this.$r.get("/manager/my",{},r=>{
-				this.user.auditStatus=r.auditStatus;
+				this.user=r;
 			});
 		},
 		getList:function(fresh){
@@ -153,6 +155,22 @@ export default {
 					title: "资质未认证或者认证还未成功，无法发布产品！"
 				});
 			}
+		},
+		upfn:function(item){
+			if(this.user.vip==1){
+				this.$r.post('/product/'+item.id+'/online', {}, r => {
+					uni.showToast({title: '上架成功！'});
+					this.getList();
+				});
+			}else{
+				uni.showToast({title: "您还未开通会员，或者会员已过期，无法上架产品！"});
+			}
+		},
+		downfn:function(item){
+			this.$r.post('/product/'+item.id+'/offline', {}, r => {
+				uni.showToast({title: '下架成功！'});
+				this.getList();
+			});
 		}
 	}
 }
