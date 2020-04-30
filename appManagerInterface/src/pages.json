@@ -1,0 +1,178 @@
+{
+  "pages": [
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/register/index",
+      "style": {
+        "navigationBarTitleText": "注册"
+      }
+    },
+    {
+      "path": "pages/register/realname",
+      "style": {
+        "navigationBarTitleText": "实名认证"
+      }
+    },
+    {
+      "path": "pages/myCenter/index",
+      "style": {
+        "app-plus": {
+            "titleNView": false
+        },
+        "navigationBarTitleText": "个人中心"
+      }
+    },
+    {
+      "path": "pages/myCenter/applyVip/index",
+      "style": {
+        "navigationBarTitleText": "申请开通会员",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/psword/index",
+      "style": {
+        "navigationBarTitleText": "修改密码",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/customer/index",
+      "style": {
+        "navigationBarTitleText": "我的客户",
+        "navigationStyle":"default",
+        "enablePullDownRefresh":true   
+      }
+    },
+    {
+      "path": "pages/myCenter/customer/applyInfo",
+      "style": {
+        "navigationBarTitleText": "申请信息",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/customer/progress",
+      "style": {
+        "navigationBarTitleText": "进度反馈",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/customer/applyInvalid",
+      "style": {
+        "navigationBarTitleText": "申请无效",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/recharge/index",
+      "style": {
+        "navigationBarTitleText": "积分充值",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/recharge/detail",
+      "style": {
+        "navigationBarTitleText": "积分明细",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/qualification/index",
+      "style": {
+        "navigationBarTitleText": "资质认证",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/productUpload/index",
+      "style": {
+        "navigationBarTitleText": "上传产品",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/productUpload/stepOne",
+      "style": {
+        "navigationBarTitleText": "上传产品-步骤1",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/productUpload/stepTwo",
+      "style": {
+        "navigationBarTitleText": "上传产品-步骤2",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/productUpload/stepThree",
+      "style": {
+        "navigationBarTitleText": "上传产品-步骤3",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/productUpload/preview",
+      "style": {
+        "navigationBarTitleText": "产品预览",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/publishProduct/index",
+      "style": {
+        "navigationBarTitleText": "发布产品",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/publishProduct/productInfo",
+      "style": {
+        "navigationBarTitleText": "产品详情",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/publishProduct/upProduct",
+      "style": {
+        "navigationBarTitleText": "上架产品",
+        "navigationStyle":"default"
+      }
+    },
+    {
+      "path": "pages/myCenter/feedback/index",
+      "style": {
+        "navigationBarTitleText": "问题反馈",
+        "navigationStyle":"default"
+      }
+    }
+  ],
+  "tabBar": {
+    
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小驴优资",
+    "navigationBarBackgroundColor": "#40a563",
+    "backgroundColor": "#fff",
+    "navigationStyle":"custom"
+  },
+	"condition" : { 
+		"current": 0, 
+		"list": [
+			{
+				"name": "", 
+				"path": "", 
+				"query": "" 
+			}
+		]
+	}
+}
